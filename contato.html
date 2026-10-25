@@ -3,185 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Gui Setubal</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            color: #222222;
-        }
-
-        /* Menu Superior */
-        nav {
-            background-color: #ffffff;
-            padding: 15px 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            font-weight: bold;
-            font-size: 20px;
-            color: #0056b3;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #555555;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav ul li a:hover {
-            color: #0056b3;
-        }
-
-        /* Box do Formulário */
-        main {
-            max-width: 500px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .form-box {
-            background-color: #ffffff;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            border: 1px solid #eeeeee;
-        }
-
-        h2 {
-            margin-top: 0;
-            margin-bottom: 25px;
-            color: #222222;
-            text-align: center;
-            font-size: 28px;
-        }
-
-        .campo-grupo {
-            margin-bottom: 20px;
-        }
-
-        .campo-grupo label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: 600;
-            font-size: 14px;
-            color: #444444;
-        }
-
-        .campo-grupo input, .campo-grupo textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cccccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-family: inherit;
-            font-size: 14px;
-            color: #222222;
-            background-color: #ffffff;
-        }
-
-        .campo-grupo input:focus, .campo-grupo textarea:focus {
-            outline: none;
-            border-color: #0056b3;
-            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
-        }
-
-        .botao-enviar {
-            background-color: #0056b3;
-            color: #ffffff;
-            border: none;
-            padding: 14px;
-            width: 100%;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-
-        .botao-enviar:hover {
-            background-color: #004085;
-        }
-    </style>
+    <title>Contato</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="logo">DevScripts</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Menu Superior -->
-    <nav>
-        <div class="logo">Gui Setubal</div>
-        <ul>
-            <li><a href="index.html">Projetos</a></li>
-            <li><a href="contato.html" style="color: #0056b3; font-weight: bold;">Contato</a></li>
-        </ul>
-    </nav>
+    <main class="form-container">
+        <h1>Entre em Contato</h1>
+        <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
 
-    <!-- Formulário de Envio -->
-    <main>
-        <div class="form-box">
-            <h2>Fale Comigo</h2>
-            <form id="formularioContato" onsubmit="processarEnvio(event)">
-                <div class="campo-grupo">
-                    <label for="txtNome">Nome Completo</label>
-                    <input type="text" id="txtNome" required placeholder="Digite seu nome">
-                </div>
-                
-                <div class="campo-grupo">
-                    <label for="txtEmail">E-mail</label>
-                    <input type="email" id="txtEmail" required placeholder="seuemail@exemplo.com">
-                </div>
+        <form action="#" method="POST">
+            <div class="campo">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+            </div>
 
-                <div class="campo-grupo">
-                    <label for="txtMensagem">Sua Mensagem</label>
-                    <textarea id="txtMensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
-                </div>
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+            </div>
 
-                <button type="submit" class="botao-enviar">Enviar Mensagem</button>
-            </form>
-        </div>
+            <div class="campo">
+                <label for="motivo">Motivo do Contato:</label>
+                <select id="motivo" name="motivo">
+                    <option value="duvida">Dúvida sobre Script</option>
+                    <option value="parceria">Proposta de Projeto</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="mensagem">Sua Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Escreva aqui sua mensagem..."></textarea>
+            </div>
+
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
     </main>
 
-    <!-- Caixinha de Alerta Personalizada (Substitui o alert nativo do navegador) -->
-    <div id="meuAlertaCustomizado" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 22px; border-radius: 8px; max-width: 320px; width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.3); font-family: Arial, sans-serif; box-sizing: border-box;">
-            <h4 style="margin: 0 0 12px 0; color: #333333; font-size: 15px; border-bottom: 1px solid #eeeeee; padding-bottom: 8px; font-weight: normal;">Esta página diz:</h4>
-            <p style="margin: 0 0 24px 0; color: #555555; font-size: 14px;">Mensagem enviada!</p>
-            <div style="text-align: right;">
-                <button onclick="fecharAlerta()" style="background: #0056b3; color: white; border: none; padding: 8px 24px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px;">OK</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script de Funcionamento -->
-    <script>
-        function processarEnvio(event) {
-            event.preventDefault(); 
-            abrirAlerta();
-            document.getElementById("formularioContato").reset();
-        }
-
-        function abrirAlerta() {
-            document.getElementById("meuAlertaCustomizado").style.display = "flex";
-        }
-
-        function fecharAlerta() {
-            document.getElementById("meuAlertaCustomizado").style.display = "none";
-        }
-    </script>
-
+    <footer>
+        <p>&copy; 2026 guisetubal250-cyber. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
