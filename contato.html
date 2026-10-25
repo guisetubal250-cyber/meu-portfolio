@@ -1,194 +1,204 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Entre em contato com Setúbal, estudante de Tecnologia da Informação.">
-
     <meta name="theme-color" content="#080b14">
-
+    <meta name="description" content="Entre em contato com Setúbal.">
     <title>Setúbal | Contato</title>
-
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* CONTATO - TEMA FUTURISTA */
-
         body {
-            background:
-                radial-gradient(
-                    ellipse at 15% 0%,
-                    rgba(93, 63, 180, 0.13),
-                    transparent 45%
-                ),
-                #080b14;
+            margin: 0;
+            background: #080b14;
             color: #f4f6ff;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        .contato-cabecalho {
-            width: min(850px, 90%);
+        .topo {
+            min-height: 70px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: #111827;
+            border-bottom: 1px solid #252d40;
+        }
+
+        .logo {
+            color: #f4f6ff;
+            font-size: 1.7rem;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .menu a:hover,
+        .menu a.ativo {
+            color: #62d5ff;
+        }
+
+        .cabecalho-contato {
+            max-width: 800px;
+            width: 90%;
             margin: auto;
-            padding: 75px 0 35px;
+            padding: 65px 0 35px;
             text-align: center;
         }
 
-        .contato-cabecalho h1 {
-            font-size: clamp(2.7rem, 6vw, 4.2rem);
-            letter-spacing: -2px;
-            color: #f4f6ff;
+        .etiqueta {
+            color: #62d5ff;
+            font-size: .76rem;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
-        .contato-cabecalho h1 span {
+        .cabecalho-contato h1 {
+            font-size: clamp(2.7rem, 6vw, 4rem);
+            letter-spacing: -2px;
+            margin: 20px 0;
+        }
+
+        .cabecalho-contato h1 span,
+        .apresentacao-contato h2 span {
             background: linear-gradient(120deg, #a78bfa, #62d5ff);
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
         }
 
-        .contato-cabecalho p {
+        .cabecalho-contato p,
+        .apresentacao-contato > p {
             color: #a2abc2;
-            margin-top: 18px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .contato-layout {
             width: min(1050px, 88%);
             margin: 0 auto;
-            padding: 30px 0 90px;
+            padding: 20px 0 80px;
             display: grid;
-            grid-template-columns: 0.85fr 1.15fr;
+            grid-template-columns: .85fr 1.15fr;
             gap: 35px;
             align-items: start;
         }
 
-        /* PAINEL DE APRESENTAÇÃO */
-
-        .contato-apresentacao {
-            padding: 32px 10px 25px 0;
+        .apresentacao-contato {
+            padding-top: 25px;
         }
 
-        .contato-apresentacao h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            margin-bottom: 18px;
-            line-height: 1.2;
+        .apresentacao-contato h2 {
+            font-size: clamp(2rem, 4vw, 2.7rem);
+            line-height: 1.25;
         }
 
-        .contato-apresentacao h2 span {
-            background: linear-gradient(120deg, #a78bfa, #62d5ff);
-            color: transparent;
-            background-clip: text;
-            -webkit-background-clip: text;
-        }
-
-        .contato-apresentacao > p {
-            color: #a2abc2;
-            line-height: 1.9;
-            margin-bottom: 30px;
-        }
-
-        .contato-info {
+        .informacao {
             display: flex;
-            gap: 15px;
             align-items: center;
-            padding: 19px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.09);
+            gap: 15px;
+            padding: 20px 0;
+            border-top: 1px solid #252d40;
         }
 
-        .contato-icone {
-            width: 48px;
-            height: 48px;
+        .icone {
+            width: 46px;
+            height: 46px;
             flex-shrink: 0;
             display: grid;
             place-items: center;
-            border: 1px solid rgba(167, 139, 250, 0.25);
-            background: rgba(167, 139, 250, 0.1);
-            border-radius: 13px;
             color: #62d5ff;
-            font-size: 1.2rem;
-            font-weight: bold;
+            background: rgba(167, 139, 250, .10);
+            border: 1px solid rgba(167, 139, 250, .25);
+            border-radius: 12px;
+            font-weight: 800;
         }
 
-        .contato-info h3 {
+        .informacao h3 {
+            margin: 0 0 6px;
             font-size: 1rem;
-            margin-bottom: 5px;
-            color: #f4f6ff;
         }
 
-        .contato-info p {
+        .informacao p {
+            margin: 0;
             color: #a2abc2;
-            font-size: 0.9rem;
+            font-size: .9rem;
             line-height: 1.6;
-            overflow-wrap: anywhere;
         }
-
-        /* FORMULÁRIO */
 
         .formulario {
             padding: 32px;
-            border: 1px solid rgba(167, 139, 250, 0.2);
-            border-radius: 20px;
-            background:
-                radial-gradient(
-                    ellipse at top right,
-                    rgba(98, 213, 255, 0.07),
-                    transparent 50%
-                ),
-                linear-gradient(145deg, #111827, #0c1120);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            background: #111827;
+            border: 1px solid #293249;
+            border-radius: 18px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, .15);
         }
 
         .formulario h2 {
-            font-size: 1.8rem;
-            color: #f4f6ff;
+            font-size: 1.7rem;
+            margin-top: 0;
         }
 
-        .formulario > p {
+        .descricao-formulario {
             color: #a2abc2;
-            font-size: 0.88rem;
+            font-size: .9rem;
             line-height: 1.7;
-            margin: 10px 0 25px;
+            margin-bottom: 25px;
         }
 
         .campo {
             display: grid;
             gap: 9px;
-            margin-bottom: 21px;
+            margin-bottom: 20px;
         }
 
         .campo label {
-            color: #f4f6ff;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: .9rem;
+            font-weight: 700;
         }
 
-        .campo input:not([type="checkbox"]),
+        .campo input,
         .campo select,
         .campo textarea {
+            box-sizing: border-box;
             width: 100%;
-            padding: 14px 15px;
+            padding: 14px;
             color: #f4f6ff;
             background: #090e19;
-            border: 1px solid #293249;
+            border: 1px solid #303b52;
             border-radius: 9px;
-            outline: none;
             font: inherit;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
         }
 
         .campo input::placeholder,
         .campo textarea::placeholder {
-            color: #737f98;
+            color: #7f8ba3;
         }
 
         .campo input:focus,
         .campo select:focus,
         .campo textarea:focus {
             border-color: #a78bfa;
-            box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+            box-shadow: 0 0 0 3px rgba(167, 139, 250, .12);
         }
 
         .campo select {
@@ -196,92 +206,106 @@
         }
 
         .campo select option {
-            background: #101625;
-            color: #f4f6ff;
+            background: #111827;
         }
 
         .campo textarea {
-            min-height: 135px;
+            min-height: 130px;
             resize: vertical;
         }
 
         .campo-checkbox {
             display: flex;
             align-items: flex-start;
-            gap: 11px;
+            gap: 10px;
         }
 
         .campo-checkbox input {
             width: 17px;
             height: 17px;
-            margin-top: 5px;
-            flex-shrink: 0;
+            margin-top: 4px;
             accent-color: #a78bfa;
         }
 
         .campo-checkbox label {
             color: #a2abc2;
-            font-size: 0.84rem;
+            font-size: .84rem;
             font-weight: 400;
             line-height: 1.7;
         }
 
         .botao-enviar {
             width: 100%;
+            padding: 15px;
+            color: #080b14;
+            background: linear-gradient(120deg, #62d5ff, #a78bfa);
             border: none;
+            border-radius: 9px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: filter .2s, transform .2s;
         }
 
-        .aviso-formulario {
-            color: #8994ac !important;
-            font-size: 0.78rem !important;
+        .botao-enviar:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        .aviso {
+            color: #8994ac;
+            font-size: .78rem;
+            line-height: 1.7;
             text-align: center;
-            margin-top: 17px !important;
-            margin-bottom: 0 !important;
+            margin-bottom: 0;
         }
-
-        /* RODAPÉ */
 
         .rodape {
-            background: rgba(8, 11, 20, 0.7);
-            border-top: 1px solid rgba(255, 255, 255, 0.09);
+            padding: 28px 7%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            background: #080b14;
+            border-top: 1px solid #252d40;
         }
 
         .rodape p {
-            color: #a2abc2;
+            color: #8994ac;
+            font-size: .88rem;
         }
-
-        /* RESPONSIVIDADE */
 
         @media (max-width: 800px) {
             .contato-layout {
                 grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .contato-apresentacao {
-                padding-right: 0;
             }
         }
 
-        @media (max-width: 550px) {
-            .contato-cabecalho {
-                padding-top: 55px;
+        @media (max-width: 650px) {
+            .topo {
+                padding: 20px 5%;
+                flex-direction: column;
             }
 
-            .contato-layout {
-                width: 90%;
-                padding-bottom: 55px;
+            .menu {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .formulario {
                 padding: 24px 18px;
             }
+
+            .rodape {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
+            *, *::before, *::after {
                 animation: none !important;
                 transition: none !important;
             }
@@ -290,58 +314,32 @@
 </head>
 
 <body>
-
-    <!-- CABEÇALHO -->
-
     <header class="topo">
-
-        <a href="index.html" class="logo">
-            SETÚBAL<span>.</span>
-        </a>
+        <a href="index.html" class="logo">SETÚBAL</a>
 
         <nav aria-label="Menu principal">
             <ul class="menu">
-                <li>
-                    <a href="index.html">Início</a>
-                </li>
-
-                <li>
-                    <a href="galeria.html">Galeria</a>
-                </li>
-
-                <li>
-                    <a href="contato.html" class="ativo">Contato</a>
-                </li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html" class="ativo">Contato</a></li>
             </ul>
         </nav>
-
     </header>
 
-    <!-- TÍTULO -->
-
     <main>
-
-        <section class="contato-cabecalho">
-
+        <section class="cabecalho-contato">
             <span class="etiqueta">VAMOS CONVERSAR</span>
 
-            <h1>
-                Entre em <span>contato.</span>
-            </h1>
+            <h1>Entre em <span>contato.</span></h1>
 
             <p>
                 Tem alguma dúvida, sugestão ou ideia?
                 Preencha o formulário abaixo.
             </p>
-
         </section>
 
-        <!-- CONTEÚDO DO CONTATO -->
-
         <section class="contato-layout">
-
-            <div class="contato-apresentacao">
-
+            <div class="apresentacao-contato">
                 <span class="etiqueta">FALE COMIGO</span>
 
                 <h2>
@@ -352,62 +350,44 @@
                 <p>
                     Sou estudante iniciante de Tecnologia da Informação
                     e estou construindo minha jornada no mundo da
-                    programação. Este espaço foi criado para facilitar
-                    o contato e receber mensagens, sugestões e ideias.
+                    programação. Este espaço foi criado para receber
+                    mensagens, sugestões e ideias.
                 </p>
 
-                <div class="contato-info">
-
-                    <div class="contato-icone">@</div>
-
+                <div class="informacao">
+                    <div class="icone">@</div>
                     <div>
-                        <h3>Mensagem</h3>
+                        <h3>Mensagens</h3>
                         <p>Utilize o formulário desta página.</p>
                     </div>
-
                 </div>
 
-                <div class="contato-info">
-
-                    <div class="contato-icone">&lt;/&gt;</div>
-
+                <div class="informacao">
+                    <div class="icone">&lt;/&gt;</div>
                     <div>
-                        <h3>Área de interesse</h3>
-                        <p>Programação e Tecnologia da Informação.</p>
+                        <h3>Tecnologia</h3>
+                        <p>Programação e desenvolvimento web.</p>
                     </div>
-
                 </div>
 
-                <div class="contato-info">
-
-                    <div class="contato-icone">↗</div>
-
+                <div class="informacao">
+                    <div class="icone">↗</div>
                     <div>
                         <h3>Novas ideias</h3>
                         <p>Toda oportunidade de aprender é bem-vinda.</p>
                     </div>
-
                 </div>
-
             </div>
 
-            <!-- FORMULÁRIO -->
-
-            <form class="formulario"
-                  action="#"
-                  method="get">
-
+            <form class="formulario" action="#" method="get">
                 <h2>Envie uma mensagem</h2>
 
-                <p>
-                    Preencha os campos abaixo.
-                    Os campos com * são obrigatórios.
+                <p class="descricao-formulario">
+                    Preencha os campos abaixo. Os campos com * são obrigatórios.
                 </p>
 
                 <div class="campo">
-
                     <label for="nome">Nome completo *</label>
-
                     <input
                         type="text"
                         id="nome"
@@ -416,13 +396,10 @@
                         autocomplete="name"
                         minlength="2"
                         required>
-
                 </div>
 
                 <div class="campo">
-
                     <label for="email">E-mail *</label>
-
                     <input
                         type="email"
                         id="email"
@@ -430,33 +407,24 @@
                         placeholder="seuemail@exemplo.com"
                         autocomplete="email"
                         required>
-
                 </div>
 
                 <div class="campo">
-
                     <label for="assunto">Assunto *</label>
-
                     <select id="assunto" name="assunto" required>
-
                         <option value="" disabled selected>
                             Selecione um assunto
                         </option>
-
                         <option value="duvida">Dúvida</option>
                         <option value="sugestao">Sugestão</option>
                         <option value="projeto">Projeto</option>
                         <option value="elogio">Elogio</option>
                         <option value="outro">Outro</option>
-
                     </select>
-
                 </div>
 
                 <div class="campo">
-
                     <label for="mensagem">Sua mensagem *</label>
-
                     <textarea
                         id="mensagem"
                         name="mensagem"
@@ -464,11 +432,9 @@
                         minlength="10"
                         placeholder="Escreva sua mensagem..."
                         required></textarea>
-
                 </div>
 
-                <div class="campo campo-checkbox">
-
+                <div class="campo-checkbox campo">
                     <input
                         type="checkbox"
                         id="confirmacao"
@@ -478,37 +444,24 @@
                     <label for="confirmacao">
                         Confirmo que revisei as informações preenchidas.
                     </label>
-
                 </div>
 
-                <button type="submit" class="botao botao-enviar">
+                <button type="submit" class="botao-enviar">
                     Enviar mensagem ↗
                 </button>
 
-                <p class="aviso-formulario">
-                    Formulário demonstrativo. O envio real de mensagens
-                    exige uma integração com servidor ou serviço de formulários.
+                <p class="aviso">
+                    Formulário demonstrativo. Para enviar mensagens de verdade,
+                    será necessário conectar um serviço ou servidor.
                 </p>
-
             </form>
-
         </section>
-
     </main>
 
-    <!-- RODAPÉ -->
-
     <footer class="rodape">
-
-        <a href="index.html" class="logo">
-            SETÚBAL<span>.</span>
-        </a>
-
+        <a href="index.html" class="logo">SETÚBAL</a>
         <p>Portfólio de um estudante de TI.</p>
-
-        <p>© 2026 — Projeto de desenvolvimento web.</p>
-
+        <p>© 2026 — Todos os direitos reservados.</p>
     </footer>
-
 </body>
 </html>
