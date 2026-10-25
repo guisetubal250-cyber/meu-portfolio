@@ -1,5 +1,5 @@
 /* ==========================================
-   CONFIGURAÇÕES GERAIS
+   RAIZ E CORES DO TEMA (Cyber / Neon)
    ========================================== */
 * {
     margin: 0;
@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #060b13; /* Fundo ainda mais profundo e moderno */
+    background-color: #0b071e; /* Fundo roxo ultra escuro */
     color: #ffffff;
     min-height: 100vh;
     overflow-x: hidden;
@@ -19,9 +19,9 @@ body {
    HEADER / MENU
    ========================================== */
 header {
-    background-color: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(12px); /* Efeito blur de vidro no menu */
-    border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+    background-color: rgba(11, 7, 30, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid #ff007f; /* Linha Rosa Neon */
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
@@ -34,8 +34,9 @@ header {
 header .logo {
     font-size: 24px;
     font-weight: 800;
-    color: #00d2ff;
+    color: #00f0ff; /* Ciano Neon */
     letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
 }
 
 nav ul {
@@ -54,174 +55,178 @@ nav ul li a {
 
 nav ul li a:hover, 
 nav ul li a.active {
-    color: #00d2ff;
-    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+    color: #ff007f; /* Rosa Neon ativo */
+    text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
 }
 
 /* ==========================================
-   LAYOUT DE DUAS COLUNAS (CONTATO)
+   ESTRUTURA HERO (Inspirada no modelo enviado)
    ========================================== */
-.page-container {
+.hero-container {
     max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
+    margin: 80px auto;
+    padding: 0 30px;
 }
 
-.contato-wrapper {
+.hero-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide em duas metades perfeitas */
+    grid-template-columns: 1.2fr 0.8fr; /* Duas colunas equilibradas */
     gap: 60px;
     align-items: center;
 }
 
-/* Coluna 1: Informações de Texto */
-.contato-info h1 {
-    font-size: 42px;
+/* Coluna de Textos */
+.subtitulo-tag {
+    color: #00f0ff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hero-textos h1 {
+    font-size: 54px;
     font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #ffffff, #00d2ff);
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.nome-destaque {
+    background: linear-gradient(to right, #00f0ff, #ff007f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.contato-info p {
-    color: #94a3b8;
-    font-size: 17px;
-    line-height: 1.6;
-    margin-bottom: 35px;
-}
-
-.info-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 35px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #cbd5e1;
-    font-size: 16px;
-}
-
-.info-item i {
-    color: #00d2ff;
-    font-size: 20px;
-}
-
-/* Ícones de Redes Sociais */
-.redes-sociais {
-    display: flex;
-    gap: 15px;
-}
-
-.rede-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: #111c30;
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
+.hero-textos p {
+    color: #b4b2cd;
     font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Botões Modernizados */
+.botoes-grupo {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-principal {
+    background: linear-gradient(135deg, #ff007f 0%, #7928ca 100%);
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(255, 0, 127, 0.4);
     transition: all 0.3s ease;
 }
 
-.rede-icon:hover {
-    background-color: #00d2ff;
-    color: #000000;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+.btn-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 0, 127, 0.6);
 }
 
-/* Coluna 2: Caixa do Formulário de Vidro */
-.formulario-box form {
-    background: rgba(17, 28, 48, 0.6); /* Efeito transparente Glassmorphism */
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 210, 255, 0.15);
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.btn-secundario {
+    border: 2px solid #00f0ff;
+    color: #00f0ff;
+    padding: 13px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
-.campo {
+.btn-secundario:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 240, 245, 0.3);
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   CARD DE PERFIL (Coluna Direita)
+   ========================================== */
+.perfil-card {
+    background: linear-gradient(145deg, #161036, #0e0a25);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 24px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
-    margin-bottom: 22px;
+    align-items: center;
 }
 
-.campo label {
-    color: #00d2ff !important; /* Labels azuis combinando */
-    font-size: 12px;
+.avatar-circulo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00f0ff 0%, #ff007f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+}
+
+.avatar-circulo span {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0b071e;
+    letter-spacing: -1px;
+}
+
+.perfil-card h2 {
+    font-size: 26px;
     font-weight: 700;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
-.campo input, 
-.campo textarea {
+/* Grade de etiquetas (Badges) */
+.badges {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
-    padding: 14px 18px;
-    border-radius: 8px;
-    border: 1px solid #1e293b;
-    background-color: #0f172a !important;
-    color: #ffffff !important;
-    font-size: 15px;
-    outline: none;
+}
+
+.badges span {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #b4b2cd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
     transition: all 0.3s ease;
 }
 
-.campo input:focus, 
-.campo textarea:focus {
-    border-color: #00d2ff;
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
-    background-color: #131e35 !important;
+.badges span i {
+    color: #00f0ff;
 }
 
-/* ==========================================
-   BOTÃO SUPER MODERNO COM ÍCONE
-   ========================================== */
-form button, button[type="submit"] {
-    background: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%) !important;
-    color: #ffffff !important;
-    border: none !important;
-    padding: 16px !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-    border-radius: 8px !important; /* Cantos levemente suavizados, estilo Tech */
-    cursor: pointer !important;
-    box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3) !important;
-    transition: all 0.3s ease !important;
-    margin-top: 10px !important;
-    width: 100% !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
+.perfil-card:hover .badges span {
+    border-color: rgba(0, 240, 255, 0.25);
+    color: #ffffff;
 }
 
-form button:hover, button[type="submit"]:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5) !important;
-    background: linear-gradient(135deg, #00e5ff 0%, #0052d4 100%) !important;
-}
-
-/* ==========================================
-   RESPONSIVIDADE (PARA CELULAR)
-   ========================================== */
-@media (max-width: 768px) {
-    .header { padding: 20px; }
-    .contato-wrapper {
-        grid-template-columns: 1fr; /* Vira uma única coluna no celular */
-        gap: 40px;
+/* RESPONSIVIDADE PARA CELULAR */
+@media (max-width: 900px) {
+    .hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
-    .contato-info h1 { font-size: 32px; }
+    .hero-textos { text-align: center; }
+    .botoes-grupo { justify-content: center; }
 }
