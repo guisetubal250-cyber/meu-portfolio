@@ -3,178 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria e Contato - Gui Setubal</title>
+    <title>Meu Portfólio - Galeria de Projetos</title>
     <style>
-        /* Configurações básicas da página usando Branco, Preto e Azul Escuro */
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #ffffff; /* Fundo Branco */
-            color: #000000; /* Texto Preto */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Menu de Navegação Original */
+        nav {
+            background-color: #ffffff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
         }
 
-        h1, h2 {
-            color: #001f3f; /* Azul Escuro nos títulos */
-            margin-bottom: 25px;
+        nav .logo {
             font-weight: bold;
+            font-size: 20px;
+            color: #0056b3;
         }
 
-        /* --- ESTILO DA GALERIA DE IMAGENS --- */
-        .galeria-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            width: 100%;
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+
+        main {
             max-width: 1200px;
-            margin-bottom: 60px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .galeria-item {
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        /* Grade da Galeria Original */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .projeto-card {
             background-color: #ffffff;
             border-radius: 8px;
             overflow: hidden;
-            border: 2px solid #000000; /* Borda Preta */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.2s;
         }
 
-        .galeria-item:hover {
+        .projeto-card:hover {
             transform: scale(1.03);
-            border-color: #002d62; /* Borda muda para Azul Escuro no hover */
         }
 
-        .galeria-item img {
+        .projeto-card img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
             display: block;
-            border-bottom: 2px solid #000000; /* Divisória Preta */
         }
 
-        .legenda {
+        .projeto-info {
             padding: 15px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #000000; /* Texto Preto */
-            text-align: center;
-            background-color: #ffffff;
+            text-align: left;
         }
 
-        /* --- ESTILO DO FORMULÁRIO --- */
-        .form-container {
-            background: #ffffff;
-            padding: 35px;
-            border-radius: 8px;
-            border: 2px solid #000000; /* Borda Preta */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            max-width: 450px;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 50px;
+        .projeto-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #000000; /* Texto Preto */
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #000000; /* Borda Preta nos campos */
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: #ffffff;
-            color: #000000;
+        .projeto-info p {
+            margin: 0;
             font-size: 14px;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #002d62; /* Foco muda para Azul Escuro */
-        }
-
-        /* Botão Azul Escuro Marcante */
-        .btn-enviar {
-            background-color: #002d62; /* Azul Escuro */
-            color: #ffffff; /* Texto Branco */
-            border: none;
-            padding: 14px;
-            width: 100%;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-
-        .btn-enviar:hover {
-            background-color: #001f3f; /* Azul Ainda Mais Escuro no hover */
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <h1>Galeria do Meu Projeto</h1>
+    <!-- Menu Superior -->
+    <nav>
+        <div class="logo">Gui Setubal</div>
+        <ul>
+            <li><a href="index.html" style="color: #0056b3; font-weight: bold;">Projetos</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
 
-    <!-- Seção da Galeria -->
-    <div class="galeria-container">
-        <!-- Item 1 -->
-        <div class="galeria-item">
-            <img src="foto1.jpg" alt="Projeto 1">
-            <div class="legenda">Nome do Projeto 1</div>
-        </div>
+    <!-- Galeria de Projetos -->
+    <main>
+        <h1>Galeria de Projetos</h1>
 
-        <!-- Item 2 -->
-        <div class="galeria-item">
-            <img src="foto2.jpg" alt="Projeto 2">
-            <div class="legenda">Nome do Projeto 2</div>
-        </div>
-
-        <!-- Item 3 (Link de exemplo online) -->
-        <div class="galeria-item">
-            <img src="https://picsum.photos" alt="Exemplo Online">
-            <div class="legenda">Exemplo de Imagem Online</div>
-        </div>
-    </div>
-
-    <h2>Entre em Contato</h2>
-
-    <!-- Formulário de Contato -->
-    <div class="form-container">
-        <form id="meuFormulario" onsubmit="enviarFormulario(event)">
-            <div class="form-group">
-                <label for="nome">Nome Completo:</label>
-                <input type="text" id="nome" required placeholder="Digite seu nome">
-            </div>
-            <div class="form-group">
-                <label for="mensagem">Sua Mensagem:</label>
-                <textarea id="mensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
-            </div>
-            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-        </form>
-    </div>
-
-    <!-- Script Simples do Alerta Nativo original -->
-    <script>
-        function enviarFormulario(event) {
-            event.preventDefault(); // Evita recarregar a página
+        <div class="galeria-grid">
             
-            alert("Mensagem enviada!"); // Alerta padrão do navegador do início
-            
-            document.getElementById("meuFormulario").reset(); // Limpa os campos
-        }
-    </script>
+            <div class="projeto-card">
+                <img src="foto1.jpg" alt="Projeto 1">
+                <div class="projeto-info">
+                    <h3>Nome do Projeto 1</h3>
+                    <p>Descrição sobre o que foi feito neste desenvolvimento.</p>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <img src="foto2.jpg" alt="Projeto 2">
+                <div class="projeto-info">
+                    <h3>Nome do Projeto 2</h3>
+                    <p>Descrição detalhando as ferramentas aplicadas.</p>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <img src="https://picsum.photos" alt="Exemplo Online">
+                <div class="projeto-info">
+                    <h3>Exemplo de Projeto Online</h3>
+                    <p>Imagem via link externo para teste de visualização.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
 
 </body>
 </html>
