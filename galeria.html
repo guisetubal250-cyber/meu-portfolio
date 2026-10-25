@@ -1,170 +1,59 @@
-/* ==================================================== */
-/* NOVOS ESTILOS REFINADOS PARA A PÁGINA INICIAL        */
-/* ==================================================== */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Portfólio Setúbal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* Container dividido em duas colunas responsivas */
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 40px 20px;
-    text-align: left; /* Alinhamento profissional à esquerda */
-}
+    <!-- Menu Superior Atualizado -->
+    <nav>
+        <div class="logo">Setúbal<span>.</span></div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="galeria.html" class="active">Galeria</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
 
-.hero-conteudo {
-    flex: 1;
-    max-width: 600px;
-}
+    <main>
+        <span class="sub-tag">Meus Códigos</span>
+        <h1>Galeria</h1>
+        <p class="descricao-pagina">Algoritmos, estruturas de dados e scripts desenvolvidos durante meus estudos.</p>
 
-.hero-conteudo h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
+        <div class="galeria-grid">
+            
+            <div class="projeto-card">
+                <div class="projeto-banner banner-html">IF / ELSE</div>
+                <div class="projeto-info">
+                    <span class="projeto-tag">Script 01</span>
+                    <h3>Estruturas condicionais</h3>
+                    <p>Desenvolvimento de algoritmos para tomada de decisões e controle de fluxo no sistema.</p>
+                </div>
+            </div>
 
-/* Efeito de Texto Gradiente com Brilho */
-.texto-gradiente {
-    background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
-}
+            <div class="projeto-card">
+                <div class="projeto-banner banner-css">FOR / WHILE</div>
+                <div class="projeto-info">
+                    <span class="projeto-tag">Script 02</span>
+                    <h3>Laços de repetição</h3>
+                    <p>Criação de loops e iterações eficientes para automação de tarefas e varredura de dados.</p>
+                </div>
+            </div>
 
-.descricao-hero {
-    color: #94a3b8;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 35px;
-}
+            <div class="projeto-card">
+                <div class="projeto-banner banner-js">FUNCTIONS</div>
+                <div class="projeto-info">
+                    <span class="projeto-tag">Script 03</span>
+                    <h3>Funções e manipulação</h3>
+                    <p>Scripts modulares e reaproveitáveis criados para processar variáveis e executar blocos lógicos.</p>
+                </div>
+            </div>
 
-/* Área de botões alinhados */
-.hero-botoes {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 45px;
-}
+        </div>
+    </main>
 
-.btn-secundario {
-    display: inline-block;
-    background-color: transparent;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-weight: bold;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.3s ease;
-}
-
-.btn-secundario:hover {
-    border-color: #38bdf8;
-    color: #38bdf8;
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
-}
-
-/* Painel de Estatísticas Fictícias */
-.hero-stats {
-    display: flex;
-    gap: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 30px;
-}
-
-.stat-item h3 {
-    margin: 0;
-    font-size: 26px;
-    color: #38bdf8;
-    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
-}
-
-.stat-item p {
-    margin: 5px 0 0 0;
-    font-size: 13px;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Ilustração Visual Decorativa de Código (Coluna Direita) */
-.hero-visual {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-/* Simula uma janela de IDE / Editor de Código flutuando */
-.caixa-codigo-decorativa {
-    background-color: #0b0f19;
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    border-radius: 12px;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(56, 189, 248, 0.05);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    overflow: hidden;
-    animation: flutuarAnima 4s ease-in-out infinite; /* Efeito flutuante sutil */
-}
-
-.topo-janela {
-    background-color: #020617;
-    padding: 12px;
-    display: flex;
-    gap: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.topo-janela .ponto {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-}
-.topo-janela .vermelha { background-color: #ef4444; }
-.topo-janela .amarela { background-color: #eab308; }
-.topo-janela .verde { background-color: #22c55e; }
-
-.caixa-codigo-decorativa pre {
-    margin: 0;
-    padding: 20px;
-    text-align: left;
-    line-height: 1.5;
-}
-
-/* Cores do código falso */
-.comentario { color: #64748b; font-style: italic; }
-.palavra-chave { color: #f43f5e; }
-.texto { color: #10b981; }
-.funcao { color: #38bdf8; }
-
-/* Animação suave de flutuação para o elemento visual */
-@keyframes flutuarAnima {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Responsividade para telas menores de celular */
-@media (max-width: 900px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 20px;
-    }
-    .hero-botoes {
-        justify-content: center;
-    }
-    .hero-stats {
-        justify-content: center;
-        gap: 25px;
-    }
-    .hero-visual {
-        width: 100%;
-        margin-top: 20px;
-    }
-}
+</body>
+</html>
