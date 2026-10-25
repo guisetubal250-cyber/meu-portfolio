@@ -1,74 +1,413 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Entre em contato com a equipe Vision.">
-    <title>Vision | Contato</title>
+
+    <meta name="description"
+          content="Entre em contato com Setúbal, estudante de Tecnologia da Informação.">
+
+    <meta name="theme-color" content="#080b14">
+
+    <title>Setúbal | Contato</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CONTATO - TEMA FUTURISTA */
+
+        body {
+            background:
+                radial-gradient(
+                    ellipse at 15% 0%,
+                    rgba(93, 63, 180, 0.13),
+                    transparent 45%
+                ),
+                #080b14;
+            color: #f4f6ff;
+        }
+
+        .contato-cabecalho {
+            width: min(850px, 90%);
+            margin: auto;
+            padding: 75px 0 35px;
+            text-align: center;
+        }
+
+        .contato-cabecalho h1 {
+            font-size: clamp(2.7rem, 6vw, 4.2rem);
+            letter-spacing: -2px;
+            color: #f4f6ff;
+        }
+
+        .contato-cabecalho h1 span {
+            background: linear-gradient(120deg, #a78bfa, #62d5ff);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .contato-cabecalho p {
+            color: #a2abc2;
+            margin-top: 18px;
+            line-height: 1.8;
+        }
+
+        .contato-layout {
+            width: min(1050px, 88%);
+            margin: 0 auto;
+            padding: 30px 0 90px;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 35px;
+            align-items: start;
+        }
+
+        /* PAINEL DE APRESENTAÇÃO */
+
+        .contato-apresentacao {
+            padding: 32px 10px 25px 0;
+        }
+
+        .contato-apresentacao h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+
+        .contato-apresentacao h2 span {
+            background: linear-gradient(120deg, #a78bfa, #62d5ff);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .contato-apresentacao > p {
+            color: #a2abc2;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .contato-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding: 19px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .contato-icone {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            background: rgba(167, 139, 250, 0.1);
+            border-radius: 13px;
+            color: #62d5ff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .contato-info h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #f4f6ff;
+        }
+
+        .contato-info p {
+            color: #a2abc2;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        /* FORMULÁRIO */
+
+        .formulario {
+            padding: 32px;
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 20px;
+            background:
+                radial-gradient(
+                    ellipse at top right,
+                    rgba(98, 213, 255, 0.07),
+                    transparent 50%
+                ),
+                linear-gradient(145deg, #111827, #0c1120);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .formulario h2 {
+            font-size: 1.8rem;
+            color: #f4f6ff;
+        }
+
+        .formulario > p {
+            color: #a2abc2;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin: 10px 0 25px;
+        }
+
+        .campo {
+            display: grid;
+            gap: 9px;
+            margin-bottom: 21px;
+        }
+
+        .campo label {
+            color: #f4f6ff;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .campo input:not([type="checkbox"]),
+        .campo select,
+        .campo textarea {
+            width: 100%;
+            padding: 14px 15px;
+            color: #f4f6ff;
+            background: #090e19;
+            border: 1px solid #293249;
+            border-radius: 9px;
+            outline: none;
+            font: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .campo input::placeholder,
+        .campo textarea::placeholder {
+            color: #737f98;
+        }
+
+        .campo input:focus,
+        .campo select:focus,
+        .campo textarea:focus {
+            border-color: #a78bfa;
+            box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+        }
+
+        .campo select {
+            cursor: pointer;
+        }
+
+        .campo select option {
+            background: #101625;
+            color: #f4f6ff;
+        }
+
+        .campo textarea {
+            min-height: 135px;
+            resize: vertical;
+        }
+
+        .campo-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+        }
+
+        .campo-checkbox input {
+            width: 17px;
+            height: 17px;
+            margin-top: 5px;
+            flex-shrink: 0;
+            accent-color: #a78bfa;
+        }
+
+        .campo-checkbox label {
+            color: #a2abc2;
+            font-size: 0.84rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .botao-enviar {
+            width: 100%;
+            border: none;
+        }
+
+        .aviso-formulario {
+            color: #8994ac !important;
+            font-size: 0.78rem !important;
+            text-align: center;
+            margin-top: 17px !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* RODAPÉ */
+
+        .rodape {
+            background: rgba(8, 11, 20, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .rodape p {
+            color: #a2abc2;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 800px) {
+            .contato-layout {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .contato-apresentacao {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .contato-cabecalho {
+                padding-top: 55px;
+            }
+
+            .contato-layout {
+                width: 90%;
+                padding-bottom: 55px;
+            }
+
+            .formulario {
+                padding: 24px 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
+    <!-- CABEÇALHO -->
+
     <header class="topo">
-        <a href="index.html" class="logo">VISION<span>.</span></a>
+
+        <a href="index.html" class="logo">
+            SETÚBAL<span>.</span>
+        </a>
 
         <nav aria-label="Menu principal">
             <ul class="menu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="contato.html" class="ativo">Contato</a></li>
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li>
+                    <a href="galeria.html">Galeria</a>
+                </li>
+
+                <li>
+                    <a href="contato.html" class="ativo">Contato</a>
+                </li>
             </ul>
         </nav>
+
     </header>
 
+    <!-- TÍTULO -->
+
     <main>
-        <section class="pagina-cabecalho">
+
+        <section class="contato-cabecalho">
+
             <span class="etiqueta">VAMOS CONVERSAR</span>
-            <h1>Entre em <span>contato.</span></h1>
-            <p>Tem alguma dúvida, sugestão ou ideia? Adoraríamos conhecer.</p>
+
+            <h1>
+                Entre em <span>contato.</span>
+            </h1>
+
+            <p>
+                Tem alguma dúvida, sugestão ou ideia?
+                Preencha o formulário abaixo.
+            </p>
+
         </section>
 
-        <section class="contato secao">
-            <div class="contato-info">
-                <span class="etiqueta">FALE COM A GENTE</span>
-                <h2>Uma boa conversa pode mudar tudo.</h2>
+        <!-- CONTEÚDO DO CONTATO -->
+
+        <section class="contato-layout">
+
+            <div class="contato-apresentacao">
+
+                <span class="etiqueta">FALE COMIGO</span>
+
+                <h2>
+                    Toda grande ideia começa com uma
+                    <span>conversa.</span>
+                </h2>
+
                 <p>
-                    Preencha o formulário ao lado com seus dados
-                    e sua mensagem.
+                    Sou estudante iniciante de Tecnologia da Informação
+                    e estou construindo minha jornada no mundo da
+                    programação. Este espaço foi criado para facilitar
+                    o contato e receber mensagens, sugestões e ideias.
                 </p>
 
-                <div class="info-item">
-                    <span class="info-icone">@</span>
+                <div class="contato-info">
+
+                    <div class="contato-icone">@</div>
+
                     <div>
-                        <h3>E-mail</h3>
-                        <p>contato@vision.example</p>
+                        <h3>Mensagem</h3>
+                        <p>Utilize o formulário desta página.</p>
                     </div>
+
                 </div>
 
-                <div class="info-item">
-                    <span class="info-icone">↗</span>
+                <div class="contato-info">
+
+                    <div class="contato-icone">&lt;/&gt;</div>
+
                     <div>
-                        <h3>Atendimento</h3>
-                        <p>Entre em contato pelo formulário.</p>
+                        <h3>Área de interesse</h3>
+                        <p>Programação e Tecnologia da Informação.</p>
                     </div>
+
                 </div>
 
-                <div class="info-item">
-                    <span class="info-icone">⌘</span>
+                <div class="contato-info">
+
+                    <div class="contato-icone">↗</div>
+
                     <div>
-                        <h3>Nosso objetivo</h3>
-                        <p>Transformar ideias em novas possibilidades.</p>
+                        <h3>Novas ideias</h3>
+                        <p>Toda oportunidade de aprender é bem-vinda.</p>
                     </div>
+
                 </div>
+
             </div>
 
-            <form class="formulario" action="#" method="get">
-                <h2>Envie sua mensagem</h2>
-                <p class="form-descricao">Os campos marcados com * são obrigatórios.</p>
+            <!-- FORMULÁRIO -->
+
+            <form class="formulario"
+                  action="#"
+                  method="get">
+
+                <h2>Envie uma mensagem</h2>
+
+                <p>
+                    Preencha os campos abaixo.
+                    Os campos com * são obrigatórios.
+                </p>
 
                 <div class="campo">
+
                     <label for="nome">Nome completo *</label>
+
                     <input
                         type="text"
                         id="nome"
@@ -77,10 +416,13 @@
                         autocomplete="name"
                         minlength="2"
                         required>
+
                 </div>
 
                 <div class="campo">
+
                     <label for="email">E-mail *</label>
+
                     <input
                         type="email"
                         id="email"
@@ -88,57 +430,84 @@
                         placeholder="seuemail@exemplo.com"
                         autocomplete="email"
                         required>
+
                 </div>
 
                 <div class="campo">
+
                     <label for="assunto">Assunto *</label>
+
                     <select id="assunto" name="assunto" required>
-                        <option value="" disabled selected>Selecione um assunto</option>
+
+                        <option value="" disabled selected>
+                            Selecione um assunto
+                        </option>
+
                         <option value="duvida">Dúvida</option>
                         <option value="sugestao">Sugestão</option>
+                        <option value="projeto">Projeto</option>
                         <option value="elogio">Elogio</option>
                         <option value="outro">Outro</option>
+
                     </select>
+
                 </div>
 
                 <div class="campo">
+
                     <label for="mensagem">Sua mensagem *</label>
+
                     <textarea
                         id="mensagem"
                         name="mensagem"
                         rows="5"
-                        placeholder="Escreva sua mensagem aqui..."
                         minlength="10"
+                        placeholder="Escreva sua mensagem..."
                         required></textarea>
+
                 </div>
 
                 <div class="campo campo-checkbox">
+
                     <input
                         type="checkbox"
-                        id="privacidade"
-                        name="privacidade"
+                        id="confirmacao"
+                        name="confirmacao"
                         required>
-                    <label for="privacidade">
-                        Confirmo que revisei os dados preenchidos.
+
+                    <label for="confirmacao">
+                        Confirmo que revisei as informações preenchidas.
                     </label>
+
                 </div>
 
                 <button type="submit" class="botao botao-enviar">
                     Enviar mensagem ↗
                 </button>
 
-                <p class="aviso-form">
-                    Este formulário é demonstrativo e ainda não envia
-                    mensagens para um servidor.
+                <p class="aviso-formulario">
+                    Formulário demonstrativo. O envio real de mensagens
+                    exige uma integração com servidor ou serviço de formulários.
                 </p>
+
             </form>
+
         </section>
+
     </main>
 
+    <!-- RODAPÉ -->
+
     <footer class="rodape">
-        <a href="index.html" class="logo">VISION<span>.</span></a>
-        <p>Projeto acadêmico de desenvolvimento web.</p>
-        <p>© 2026 Vision. Todos os direitos reservados.</p>
+
+        <a href="index.html" class="logo">
+            SETÚBAL<span>.</span>
+        </a>
+
+        <p>Portfólio de um estudante de TI.</p>
+
+        <p>© 2026 — Projeto de desenvolvimento web.</p>
+
     </footer>
 
 </body>
