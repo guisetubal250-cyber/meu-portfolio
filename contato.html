@@ -3,56 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Galeria | DevScripts</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca de ícones modernos -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
+
+    <!-- MENU SUPERIOR FIXO -->
     <header>
         <div class="logo">DevScripts</div>
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="contato.html" class="active">Contato</a></li>
+                <li><a href="galeria.html" class="active">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="form-container">
-        <h1>Entre em Contato</h1>
-        <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
+    <!-- CONTEÚDO DA GALERIA -->
+    <main class="galeria-container" style="max-width: 1200px; margin: 60px auto; padding: 0 30px; text-align: center;">
+        <span style="color: #0055ff; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Meus Scripts e Algoritmos</span>
+        <h1 style="font-size: 42px; font-weight: 800; margin: 10px 0 15px 0; color: #ffffff;">Galeria</h1>
+        <p style="color: #cbd5e1; font-size: 16px; margin-bottom: 50px;">Projetos lógicos e automações desenvolvidos durante meus estudos de programação.</p>
 
-        <form action="#" method="POST">
-            <div class="campo">
-                <label for="nome">Nome Completo:</label>
-                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+        <!-- GRADE DOS 3 CARDS -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <!-- CARD 01 - LOGIC -->
+            <div class="projeto-card" style="background: #0a0a0a; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); text-align: left; box-shadow: 0 15px 35px rgba(0,0,0,0.8);">
+                <!-- Banner do Card com degradê Azul Elétrico -->
+                <div style="height: 180px; background: linear-gradient(135deg, #002288 0%, #0055ff 100%); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 48px; font-weight: 900; color: #ffffff; letter-spacing: 2px; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">LOGIC</span>
+                </div>
+                <!-- Textos do Card -->
+                <div style="padding: 25px;">
+                    <span style="color: #0055ff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Projeto 01</span>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Lógica Estruturada</h3>
+                    <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6;">Resolução de problemas complexos quebrando algoritmos em pequenos blocos eficientes, condicionais simples e estruturas de repetição limpas.</p>
+                </div>
             </div>
 
-            <div class="campo">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+            <!-- CARD 02 - SCRIPT -->
+            <div class="projeto-card" style="background: #0a0a0a; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); text-align: left; box-shadow: 0 15px 35px rgba(0,0,0,0.8);">
+                <!-- Banner do Card com contraste Azul e Preto -->
+                <div style="height: 180px; background: linear-gradient(135deg, #001144 0%, #0055ff 100%); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 48px; font-weight: 900; color: #ffffff; letter-spacing: 2px; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">SCRIPT</span>
+                </div>
+                <!-- Textos do Card -->
+                <div style="padding: 25px;">
+                    <span style="color: #0055ff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Projeto 02</span>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Automação de Tarefas</h3>
+                    <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6;">Criação de scripts focados em otimizar rotinas repetitivas do dia a dia, organizando arquivos locais e tratando fluxos de dados de forma automática.</p>
+                </div>
             </div>
 
-            <div class="campo">
-                <label for="motivo">Motivo do Contato:</label>
-                <select id="motivo" name="motivo">
-                    <option value="duvida">Dúvida sobre Script</option>
-                    <option value="parceria">Proposta de Projeto</option>
-                    <option value="outros">Outros</option>
-                </select>
+            <!-- CARD 03 - CYBER -->
+            <div class="projeto-card" style="background: #0a0a0a; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); text-align: left; box-shadow: 0 15px 35px rgba(0,0,0,0.8);">
+                <!-- Banner do Card com azul escuro tecnológico -->
+                <div style="height: 180px; background: linear-gradient(135deg, #0033aa 0%, #002277 100%); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 48px; font-weight: 900; color: #ffffff; letter-spacing: 2px; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">CYBER</span>
+                </div>
+                <!-- Textos do Card -->
+                <div style="padding: 25px;">
+                    <span style="color: #0055ff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Projeto 03</span>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Algoritmos Avançados</h3>
+                    <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6;">Desenvolvimento de funções lógicas para segurança de dados, validação de entradas de usuários e manipulação segura de variáveis em sistemas.</p>
+                </div>
             </div>
 
-            <div class="campo">
-                <label for="mensagem">Sua Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Escreva aqui sua mensagem..."></textarea>
-            </div>
-
-            <button type="submit" class="btn">Enviar Mensagem</button>
-        </form>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 guisetubal250-cyber. Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
