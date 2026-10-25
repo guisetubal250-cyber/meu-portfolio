@@ -1,162 +1,227 @@
 /* ==========================================
-   ESTILOS GERAIS DO SITE
+   CONFIGURAÇÕES GERAIS
    ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
-    background-color: #0b111e; /* Fundo escuro elegante */
+    background-color: #060b13; /* Fundo ainda mais profundo e moderno */
     color: #ffffff;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* ==========================================
-   CABEÇALHO E MENU DE NAVEGAÇÃO (HEADER)
+   HEADER / MENU
    ========================================== */
 header {
-    background-color: #0f172a;
-    border-bottom: 2px solid #00d2ff;
-    padding: 20px 40px;
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px); /* Efeito blur de vidro no menu */
+    border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 800;
     color: #00d2ff;
+    letter-spacing: 1px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 nav ul li a {
-    color: #cbd5e1;
+    color: #94a3b8;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover, 
 nav ul li a.active {
-    color: #00d2ff; /* Destaque azul na página ativa */
+    color: #00d2ff;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
 }
 
 /* ==========================================
-   CONTAINER DO FORMULÁRIO DE CONTATO
+   LAYOUT DE DUAS COLUNAS (CONTATO)
    ========================================== */
-.formulario-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
+.page-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-.formulario-container h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    color: #ffffff;
+.contato-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas metades perfeitas */
+    gap: 60px;
+    align-items: center;
 }
 
-.formulario-container p {
+/* Coluna 1: Informações de Texto */
+.contato-info h1 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffffff, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contato-info p {
     color: #94a3b8;
-    margin-bottom: 30px;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.info-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #cbd5e1;
     font-size: 16px;
 }
 
-/* Caixa interna do Formulário */
-.formulario-container form {
-    background-color: #111c30; /* Fundo ligeiramente mais claro */
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 12px;
-    padding: 30px;
-    text-align: left;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+.info-item i {
+    color: #00d2ff;
+    font-size: 20px;
 }
 
-/* Divs que separam os campos */
-.formulario-container .campo {
+/* Ícones de Redes Sociais */
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+}
+
+.rede-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #111c30;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.rede-icon:hover {
+    background-color: #00d2ff;
+    color: #000000;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+}
+
+/* Coluna 2: Caixa do Formulário de Vidro */
+.formulario-box form {
+    background: rgba(17, 28, 48, 0.6); /* Efeito transparente Glassmorphism */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 210, 255, 0.15);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.campo {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
-/* Textos acima das caixas (Nome, E-mail, Mensagem) */
-.formulario-container label {
-    color: #ffffff !important;
-    font-size: 14px;
-    font-weight: 600;
+.campo label {
+    color: #00d2ff !important; /* Labels azuis combinando */
+    font-size: 12px;
+    font-weight: 700;
     margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
-/* Caixas de Texto (Inputs e Textarea) */
-.formulario-container input, 
-.formulario-container textarea {
+.campo input, 
+.campo textarea {
     width: 100%;
-    padding: 12px 16px;
-    border-radius: 6px;
-    border: 1px solid #334155;
-    background-color: #1e293b !important; /* Fundo escuro moderno para a caixa */
-    color: #ffffff !important; /* Texto que o usuário digita fica branco */
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+    background-color: #0f172a !important;
+    color: #ffffff !important;
     font-size: 15px;
     outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-/* Efeito quando o usuário clica para digitar na caixa */
-.formulario-container input:focus, 
-.formulario-container textarea:focus {
+.campo input:focus, 
+.campo textarea:focus {
     border-color: #00d2ff;
-    box-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
-}
-
-/* Caixa da mensagem (Textarea) */
-.formulario-container textarea {
-    resize: vertical;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+    background-color: #131e35 !important;
 }
 
 /* ==========================================
-   BOTÃO DE ENVIAR SUPER MODERNO
+   BOTÃO SUPER MODERNO COM ÍCONE
    ========================================== */
 form button, button[type="submit"] {
     background: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%) !important;
     color: #ffffff !important;
     border: none !important;
-    padding: 15px 30px !important;
+    padding: 16px !important;
     font-size: 16px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    border-radius: 50px !important; /* Estilo pílula arredondado */
+    letter-spacing: 1.5px !important;
+    border-radius: 8px !important; /* Cantos levemente suavizados, estilo Tech */
     cursor: pointer !important;
-    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3) !important;
     transition: all 0.3s ease !important;
     margin-top: 10px !important;
     width: 100% !important;
-    display: block !important;
-    text-align: center;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Efeito ao passar o mouse no botão */
 form button:hover, button[type="submit"]:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5) !important;
     background: linear-gradient(135deg, #00e5ff 0%, #0052d4 100%) !important;
 }
 
-/* Efeito ao clicar no botão */
-form button:active, button[type="submit"]:active {
-    transform: translateY(1px) !important;
-    box-shadow: 0 3px 10px rgba(0, 210, 255, 0.2) !important;
+/* ==========================================
+   RESPONSIVIDADE (PARA CELULAR)
+   ========================================== */
+@media (max-width: 768px) {
+    .header { padding: 20px; }
+    .contato-wrapper {
+        grid-template-columns: 1fr; /* Vira uma única coluna no celular */
+        gap: 40px;
+    }
+    .contato-info h1 { font-size: 32px; }
 }
