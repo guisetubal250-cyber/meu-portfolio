@@ -1,21 +1,40 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#080b14">
-    <meta name="description" content="Galeria de estudos de Setúbal em programação.">
+    <meta name="description" content="Galeria de projetos e estudos de Setúbal em programação.">
+
     <title>Setúbal | Galeria</title>
+
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* ========================================
+           CONFIGURAÇÕES GERAIS
+        ======================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             background: #080b14;
             color: #f4f6ff;
             font-family: Arial, Helvetica, sans-serif;
         }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ========================================
+           CABEÇALHO E MENU
+        ======================================== */
 
         .topo {
             min-height: 70px;
@@ -36,19 +55,22 @@
             letter-spacing: -1px;
         }
 
+        /* Sem o ponto azul depois do nome */
+
         .menu {
             display: flex;
-            gap: 28px;
             align-items: center;
-            list-style: none;
+            gap: 28px;
             padding: 0;
             margin: 0;
+            list-style: none;
         }
 
         .menu a {
             color: #cbd5e1;
             text-decoration: none;
             font-weight: 700;
+            transition: color 0.25s ease;
         }
 
         .menu a:hover,
@@ -56,9 +78,13 @@
             color: #62d5ff;
         }
 
+        /* ========================================
+           CONTEÚDO PRINCIPAL
+        ======================================== */
+
         .galeria-pagina {
             width: min(1120px, 90%);
-            margin: auto;
+            margin: 0 auto;
             padding: 65px 0 80px;
         }
 
@@ -66,33 +92,41 @@
             max-width: 800px;
             margin: 0 auto 50px;
             text-align: center;
+            animation: entrada 0.7s ease both;
         }
 
         .etiqueta {
-            color: #62d5ff;
-            font-size: .76rem;
+            display: inline-block;
+            color: #8a91ff;
+            font-size: 0.76rem;
             font-weight: 800;
             letter-spacing: 2px;
         }
 
         .galeria-cabecalho h1 {
+            margin: 20px 0;
             font-size: clamp(2.8rem, 6vw, 4.3rem);
             letter-spacing: -2px;
-            margin: 20px 0;
+            line-height: 1.15;
         }
 
         .galeria-cabecalho h1 span {
-            background: linear-gradient(120deg, #a78bfa, #62d5ff);
+            background: linear-gradient(
+                120deg,
+                #a78bfa,
+                #62d5ff
+            );
+
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
         }
 
-        .galeria-cabecalho p,
-        .projeto-conteudo p,
-        .sobre-projetos p,
-        .mensagem-final p {
+        .galeria-cabecalho p {
+            max-width: 700px;
+            margin: 0 auto;
             color: #a2abc2;
+            font-size: 1rem;
             line-height: 1.9;
         }
 
@@ -100,105 +134,203 @@
             width: 85px;
             height: 4px;
             margin: 25px auto 0;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #a78bfa, #62d5ff);
+            border-radius: 20px;
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #62d5ff
+            );
         }
+
+        /* ========================================
+           GRADE DE PROJETOS
+        ======================================== */
 
         .grade-projetos {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 25px;
+            align-items: stretch;
         }
 
         .projeto {
             min-width: 0;
             overflow: hidden;
-            background: #111827;
+            background: #101522;
             border: 1px solid #293249;
             border-radius: 20px;
-            transition: transform .3s, box-shadow .3s;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
         .projeto:hover {
             transform: translateY(-7px);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+            border-color: #4b5275;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.30);
         }
 
+        /* ========================================
+           ÁREA COLORIDA DOS CARTÕES
+        ======================================== */
+
         .projeto-topo {
+            position: relative;
+            isolation: isolate;
             height: 195px;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
             overflow: hidden;
-            transition: filter .3s;
+
+            transition:
+                filter 0.35s ease,
+                background 0.35s ease;
         }
 
-        .projeto:hover .projeto-topo {
-            filter: brightness(1.08) saturate(1.12);
+        /* LÓGICA — AZUL SOMBREADO */
+
+        .projeto-topo.logica {
+            background:
+                radial-gradient(
+                    ellipse at 75% 20%,
+                    rgba(69, 91, 255, 0.38),
+                    transparent 48%
+                ),
+                linear-gradient(
+                    135deg,
+                    #080b2b 0%,
+                    #15105c 50%,
+                    #172b72 100%
+                ) !important;
+
+            box-shadow: inset 0 -20px 45px rgba(0, 0, 0, 0.22);
         }
+
+        /* SCRIPTS — ROXO SOMBREADO */
+
+        .projeto-topo.scripts {
+            background:
+                radial-gradient(
+                    ellipse at 75% 20%,
+                    rgba(184, 55, 255, 0.34),
+                    transparent 48%
+                ),
+                linear-gradient(
+                    135deg,
+                    #190523 0%,
+                    #3b0b55 50%,
+                    #65116f 100%
+                ) !important;
+
+            box-shadow: inset 0 -20px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        /* PYTHON — VIOLETA SOMBREADO */
+
+        .projeto-topo.python {
+            background:
+                radial-gradient(
+                    ellipse at 75% 20%,
+                    rgba(145, 57, 255, 0.38),
+                    transparent 48%
+                ),
+                linear-gradient(
+                    135deg,
+                    #16052e 0%,
+                    #350968 50%,
+                    #58129a 100%
+                ) !important;
+
+            box-shadow: inset 0 -20px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ========================================
+           CÍRCULOS DECORATIVOS
+        ======================================== */
 
         .projeto-topo::before,
         .projeto-topo::after {
             content: "";
             position: absolute;
-            border: 1px solid rgba(255, 255, 255, .22);
+            z-index: -1;
+            border: 1px solid rgba(255, 255, 255, 0.13);
             border-radius: 50%;
+            pointer-events: none;
         }
 
         .projeto-topo::before {
             width: 180px;
             height: 180px;
-            transform: translate(-45px, 30px);
+            left: 12%;
+            top: 30%;
         }
 
         .projeto-topo::after {
             width: 125px;
             height: 125px;
-            transform: translate(55px, -30px);
+            right: 16%;
+            top: 2%;
         }
+
+        /* ========================================
+           TÍTULOS DOS CARTÕES
+        ======================================== */
 
         .projeto-topo h2 {
             position: relative;
             z-index: 1;
-            color: white;
+            margin: 0;
+            color: #ffffff !important;
             font-size: clamp(1.7rem, 3vw, 2.4rem);
+            font-weight: 800;
             letter-spacing: 1px;
+            text-align: center;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .logica {
-            background: linear-gradient(135deg, #315eea, #3987ff, #35c4f5);
+        /* BRILHO NO HOVER */
+
+        .projeto:hover .projeto-topo {
+            filter: brightness(1.2);
         }
 
-        .scripts {
-            background: linear-gradient(135deg, #8138ed, #b83de0, #ed4fa9);
-        }
-
-        .python {
-            background: linear-gradient(135deg, #009b70, #00b894, #20d5b9);
-        }
+        /* ========================================
+           TEXTO DOS PROJETOS
+        ======================================== */
 
         .projeto-conteudo {
             padding: 26px 24px 30px;
         }
 
         .projeto-numero {
-            color: #62d5ff;
-            font-size: .74rem;
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #8b9aff;
+            font-size: 0.74rem;
             font-weight: 800;
             letter-spacing: 1px;
         }
 
         .projeto-conteudo h3 {
+            margin: 0 0 13px;
+            color: #f4f6ff;
             font-size: 1.22rem;
             line-height: 1.45;
-            margin: 15px 0 12px;
         }
 
         .projeto-conteudo p {
-            font-size: .94rem;
-            margin-bottom: 22px;
+            margin: 0 0 22px;
+            color: #a2abc2;
+            font-size: 0.94rem;
+            line-height: 1.85;
         }
+
+        /* ========================================
+           ETIQUETAS DE TECNOLOGIAS
+        ======================================== */
 
         .lista-tecnologias {
             display: flex;
@@ -210,60 +342,114 @@
         .tecnologia {
             padding: 6px 10px;
             color: #c4b5fd;
-            background: rgba(167, 139, 250, .10);
-            border: 1px solid rgba(167, 139, 250, .20);
+            background: rgba(139, 92, 246, 0.10);
+            border: 1px solid rgba(167, 139, 250, 0.22);
             border-radius: 7px;
-            font-size: .73rem;
+            font-size: 0.73rem;
+            font-weight: 600;
         }
 
+        /* ========================================
+           LINKS DOS PROJETOS
+        ======================================== */
+
         .projeto-link {
+            display: inline-block;
             color: #62d5ff;
-            font-size: .9rem;
+            font-size: 0.9rem;
             font-weight: 700;
             text-decoration: none;
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
         }
 
         .projeto-link:hover {
             color: #c4b5fd;
+            transform: translateX(3px);
         }
 
-        .sobre-projetos,
-        .mensagem-final {
-            margin-top: 35px;
+        /* ========================================
+           SEÇÃO SOBRE OS PROJETOS
+        ======================================== */
+
+        .sobre-projetos {
+            margin-top: 60px;
             padding: 35px;
-            background: #101625;
+            background: #101522;
             border: 1px solid #293249;
             border-radius: 18px;
         }
 
-        .sobre-projetos h2,
-        .mensagem-final h2 {
+        .sobre-projetos h2 {
+            margin-top: 0;
             font-size: clamp(1.7rem, 4vw, 2.4rem);
+            line-height: 1.35;
         }
 
         .sobre-projetos h2 span {
-            color: #62d5ff;
+            color: #8b9aff;
         }
 
+        .sobre-projetos p {
+            max-width: 850px;
+            margin-bottom: 0;
+            color: #a2abc2;
+            line-height: 1.9;
+        }
+
+        /* ========================================
+           CHAMADA PARA CONTATO
+        ======================================== */
+
         .mensagem-final {
-            text-align: center;
+            margin-top: 28px;
             padding: 45px 25px;
+            text-align: center;
+            background: #0d1422;
+            border: 1px solid #293249;
+            border-radius: 18px;
+        }
+
+        .mensagem-final h2 {
+            margin-top: 0;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
         }
 
         .mensagem-final p {
             max-width: 650px;
             margin: 0 auto 25px;
+            color: #a2abc2;
+            line-height: 1.9;
         }
 
         .botao-contato {
             display: inline-block;
             padding: 14px 24px;
-            color: #080b14;
-            background: linear-gradient(120deg, #62d5ff, #a78bfa);
+            color: #ffffff;
+            background: linear-gradient(
+                120deg,
+                #5135c9,
+                #7535bd
+            );
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 10px;
             font-weight: 800;
             text-decoration: none;
+
+            transition:
+                transform 0.2s ease,
+                filter 0.2s ease;
         }
+
+        .botao-contato:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.2);
+        }
+
+        /* ========================================
+           RODAPÉ
+        ======================================== */
 
         .rodape {
             padding: 28px 7%;
@@ -277,9 +463,30 @@
         }
 
         .rodape p {
+            margin: 0;
             color: #8994ac;
-            font-size: .88rem;
+            font-size: 0.88rem;
         }
+
+        /* ========================================
+           ANIMAÇÕES
+        ======================================== */
+
+        @keyframes entrada {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+           TABLETS
+        ======================================== */
 
         @media (max-width: 900px) {
             .grade-projetos {
@@ -291,6 +498,10 @@
             }
         }
 
+        /* ========================================
+           CELULARES
+        ======================================== */
+
         @media (max-width: 650px) {
             .topo {
                 padding: 20px 5%;
@@ -298,21 +509,44 @@
             }
 
             .menu {
-                gap: 20px;
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 20px;
+            }
+
+            .galeria-pagina {
+                width: 90%;
+                padding-top: 45px;
+            }
+
+            .galeria-cabecalho {
+                margin-bottom: 35px;
             }
 
             .grade-projetos {
                 grid-template-columns: 1fr;
+                gap: 22px;
             }
 
             .projeto:last-child {
                 grid-column: auto;
             }
 
+            .projeto-topo {
+                height: 180px;
+            }
+
+            .projeto-conteudo {
+                padding: 24px 21px 28px;
+            }
+
             .sobre-projetos {
+                margin-top: 40px;
                 padding: 25px 20px;
+            }
+
+            .mensagem-final {
+                padding: 35px 20px;
             }
 
             .rodape {
@@ -321,8 +555,12 @@
             }
         }
 
+        /* ACESSIBILIDADE */
+
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+            *,
+            *::before,
+            *::after {
                 animation: none !important;
                 transition: none !important;
             }
@@ -331,23 +569,43 @@
 </head>
 
 <body>
+
+    <!-- CABEÇALHO -->
+
     <header class="topo">
         <a href="index.html" class="logo">SETÚBAL</a>
 
         <nav aria-label="Menu principal">
             <ul class="menu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="galeria.html" class="ativo">Galeria</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li>
+                    <a href="galeria.html" class="ativo">Galeria</a>
+                </li>
+
+                <li>
+                    <a href="contato.html">Contato</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="galeria-pagina">
-        <section class="galeria-cabecalho">
-            <span class="etiqueta">MEUS ESTUDOS • MEUS PROJETOS</span>
+    <!-- CONTEÚDO PRINCIPAL -->
 
-            <h1>Minha <span>Galeria.</span></h1>
+    <main class="galeria-pagina">
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="galeria-cabecalho">
+            <span class="etiqueta">
+                MEUS ESTUDOS • MEUS PROJETOS
+            </span>
+
+            <h1>
+                Minha <span>Galeria.</span>
+            </h1>
 
             <p>
                 Conheça as áreas de programação que estou estudando
@@ -357,7 +615,14 @@
             <div class="linha-decorativa"></div>
         </section>
 
-        <section class="grade-projetos" aria-label="Projetos de programação">
+        <!-- CARTÕES DE PROJETOS -->
+
+        <section
+            class="grade-projetos"
+            aria-label="Projetos de programação">
+
+            <!-- PROJETO 01: LÓGICA -->
+
             <article class="projeto">
                 <div class="projeto-topo logica">
                     <h2>LÓGICA</h2>
@@ -365,6 +630,7 @@
 
                 <div class="projeto-conteudo">
                     <span class="projeto-numero">PROJETO 01</span>
+
                     <h3>Lógica de Programação</h3>
 
                     <p>
@@ -379,9 +645,13 @@
                         <span class="tecnologia">Condições</span>
                     </div>
 
-                    <a href="contato.html" class="projeto-link">Conheça mais →</a>
+                    <a href="contato.html" class="projeto-link">
+                        Conheça mais →
+                    </a>
                 </div>
             </article>
+
+            <!-- PROJETO 02: SCRIPTS -->
 
             <article class="projeto">
                 <div class="projeto-topo scripts">
@@ -390,11 +660,13 @@
 
                 <div class="projeto-conteudo">
                     <span class="projeto-numero">PROJETO 02</span>
+
                     <h3>Scripts e Terminal</h3>
 
                     <p>
                         Exploração de comandos, scripts e automações
-                        para compreender como executar tarefas com código.
+                        para compreender como o código pode executar
+                        tarefas e facilitar processos.
                     </p>
 
                     <div class="lista-tecnologias">
@@ -403,9 +675,13 @@
                         <span class="tecnologia">Automação</span>
                     </div>
 
-                    <a href="contato.html" class="projeto-link">Conheça mais →</a>
+                    <a href="contato.html" class="projeto-link">
+                        Conheça mais →
+                    </a>
                 </div>
             </article>
+
+            <!-- PROJETO 03: PYTHON -->
 
             <article class="projeto">
                 <div class="projeto-topo python">
@@ -414,6 +690,7 @@
 
                 <div class="projeto-conteudo">
                     <span class="projeto-numero">PROJETO 03</span>
+
                     <h3>Programação em Python</h3>
 
                     <p>
@@ -427,37 +704,56 @@
                         <span class="tecnologia">Prática</span>
                     </div>
 
-                    <a href="contato.html" class="projeto-link">Conheça mais →</a>
+                    <a href="contato.html" class="projeto-link">
+                        Conheça mais →
+                    </a>
                 </div>
             </article>
+
         </section>
+
+        <!-- MINHA JORNADA -->
 
         <section class="sobre-projetos">
-            <h2>Aprendendo hoje. <span>Evoluindo sempre.</span></h2>
+            <h2>
+                Aprendendo hoje.
+                <span>Evoluindo sempre.</span>
+            </h2>
 
             <p>
-                Sou estudante iniciante de Tecnologia da Informação.
-                Cada exercício e projeto é uma oportunidade de aprender,
-                praticar e construir habilidades para o futuro.
+                Sou estudante iniciante de Tecnologia da Informação
+                e estou desenvolvendo minhas habilidades em programação.
+                Cada exercício é uma oportunidade de aprender, praticar
+                e construir projetos cada vez melhores.
             </p>
         </section>
+
+        <!-- CHAMADA PARA CONTATO -->
 
         <section class="mensagem-final">
             <h2>Vamos conversar sobre tecnologia?</h2>
 
             <p>
-                Tem alguma sugestão, ideia ou dica de programação?
+                Tem uma sugestão, uma ideia ou uma dica de programação?
                 Entre em contato e vamos trocar conhecimentos.
             </p>
 
-            <a href="contato.html" class="botao-contato">Ir para contato ↗</a>
+            <a href="contato.html" class="botao-contato">
+                Ir para contato ↗
+            </a>
         </section>
+
     </main>
+
+    <!-- RODAPÉ -->
 
     <footer class="rodape">
         <a href="index.html" class="logo">SETÚBAL</a>
+
         <p>Portfólio de um estudante de TI.</p>
-        <p>© 2026 — Todos os direitos reservados.</p>
+
+        <p>© 2026 — Projeto de desenvolvimento web.</p>
     </footer>
+
 </body>
 </html>
