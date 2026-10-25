@@ -1,593 +1,313 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Conheça Setúbal, estudante de Tecnologia da Informação, sua jornada, seus objetivos e seus projetos.">
-
     <meta name="theme-color" content="#080b14">
-
-    <title>Setúbal | Portfólio de TI</title>
-
+    <meta name="description" content="Conheça Setúbal, estudante de Tecnologia da Informação.">
+    <title>Setúbal | Início</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* APRESENTAÇÃO */
+        body {
+            margin: 0;
+            background: #080b14;
+            color: #f4f6ff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topo {
+            min-height: 70px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: #111827;
+            border-bottom: 1px solid #252d40;
+        }
+
+        .logo {
+            color: #f4f6ff;
+            font-size: 1.7rem;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color .2s;
+        }
+
+        .menu a:hover,
+        .menu a.ativo {
+            color: #62d5ff;
+        }
 
         .inicio {
-            width: min(1120px, 88%);
-            margin: auto;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 7%;
+            text-align: center;
+            background: radial-gradient(ellipse at top, #18223a 0%, #080b14 65%);
         }
 
         .apresentacao {
-            min-height: 590px;
-            display: flex;
-            align-items: center;
-            padding: 85px 0;
-        }
-
-        .apresentacao-conteudo {
             max-width: 850px;
-            animation: entrada 0.9s ease both;
         }
 
-        .selo {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 9px 15px;
-            margin-bottom: 28px;
-            color: var(--azul);
-            background: rgba(98, 213, 255, 0.06);
-            border: 1px solid rgba(98, 213, 255, 0.2);
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
+        .etiqueta {
+            color: #62d5ff;
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: 3px;
         }
 
-        .selo::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--azul);
-            box-shadow: 0 0 12px var(--azul);
-        }
-
-        .apresentacao h1 {
-            max-width: 800px;
-            font-size: clamp(3rem, 7vw, 5.8rem);
-            line-height: 1.05;
+        h1 {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 1.1;
             letter-spacing: -3px;
-            margin-bottom: 28px;
+            margin: 22px 0;
         }
 
-        .apresentacao h1 span {
-            display: block;
-            margin-top: 10px;
+        h1 span,
+        .destaque {
+            background: linear-gradient(120deg, #a78bfa, #62d5ff);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
         }
 
-        .texto-destaque {
-            max-width: 720px;
-            color: var(--texto);
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            line-height: 1.8;
-            margin-bottom: 18px;
-        }
-
-        .texto-apresentacao {
-            max-width: 680px;
-            color: var(--texto-suave);
-            font-size: 1rem;
+        .apresentacao p {
+            color: #a2abc2;
+            font-size: 1.08rem;
             line-height: 1.9;
-            margin-bottom: 14px;
+            max-width: 720px;
+            margin: 0 auto 30px;
         }
 
-        .acoes-inicio {
+        .botoes {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 35px;
+            justify-content: center;
+            gap: 14px;
         }
 
-        .detalhe {
-            width: 100%;
-            height: 1px;
-            margin-top: 45px;
-            background: linear-gradient(
-                90deg,
-                var(--roxo),
-                var(--azul),
-                transparent
-            );
-            opacity: 0.5;
+        .botao {
+            display: inline-block;
+            padding: 14px 23px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: transform .2s, filter .2s;
         }
 
-        /* SOBRE MIM */
-
-        .sobre-mim {
-            padding: 75px 0;
-            border-top: 1px solid var(--borda);
+        .botao:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
         }
 
-        .cabecalho-secao {
-            max-width: 700px;
-            margin-bottom: 38px;
+        .botao-principal {
+            color: #080b14;
+            background: linear-gradient(120deg, #62d5ff, #a78bfa);
         }
 
-        .cabecalho-secao h2 {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            margin-bottom: 18px;
+        .botao-secundario {
+            color: #f4f6ff;
+            border: 1px solid #39445e;
+            background: #111827;
         }
 
-        .cabecalho-secao p {
-            font-size: 1rem;
+        .sobre {
+            max-width: 1000px;
+            margin: auto;
+            padding: 65px 7%;
+            text-align: center;
+        }
+
+        .sobre h2 {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+        }
+
+        .sobre p {
+            color: #a2abc2;
             line-height: 1.9;
+            max-width: 780px;
+            margin: auto;
         }
 
-        .grade-sobre {
+        .areas {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
+            margin-top: 35px;
         }
 
-        .bloco-sobre {
-            padding: 28px;
-            background: linear-gradient(145deg, #121a2b, #0c1120);
-            border: 1px solid var(--borda);
-            border-radius: 16px;
-            transition: transform 0.3s ease,
-                        border-color 0.3s ease;
+        .area {
+            padding: 25px 20px;
+            text-align: left;
+            background: #111827;
+            border: 1px solid #293249;
+            border-radius: 15px;
         }
 
-        .bloco-sobre:hover {
-            transform: translateY(-6px);
-            border-color: rgba(167, 139, 250, 0.5);
+        .area h3 {
+            color: #62d5ff;
         }
 
-        .icone-texto {
-            display: grid;
-            place-items: center;
-            width: 48px;
-            height: 48px;
-            margin-bottom: 22px;
-            border: 1px solid rgba(167, 139, 250, 0.25);
-            border-radius: 12px;
-            background: rgba(167, 139, 250, 0.1);
-            color: var(--roxo);
-            font-family: monospace;
-            font-size: 1.2rem;
-            font-weight: bold;
+        .area p {
+            font-size: .92rem;
         }
 
-        .bloco-sobre h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
+        .rodape {
+            padding: 28px 7%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            background: #080b14;
+            border-top: 1px solid #252d40;
         }
 
-        .bloco-sobre p {
-            font-size: 0.94rem;
-            line-height: 1.8;
+        .rodape p {
+            color: #8994ac;
+            font-size: .88rem;
         }
 
-        /* OBJETIVOS */
-
-        .objetivos {
-            padding: 70px 35px;
-            margin: 20px 0 85px;
-            background:
-                radial-gradient(
-                    ellipse at top left,
-                    rgba(167, 139, 250, 0.12),
-                    transparent 55%
-                ),
-                #101625;
-            border: 1px solid var(--borda);
-            border-radius: 22px;
-        }
-
-        .objetivos h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 20px;
-        }
-
-        .objetivos > p {
-            max-width: 720px;
-            line-height: 1.9;
-        }
-
-        .lista-objetivos {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
-            margin-top: 32px;
-            list-style: none;
-        }
-
-        .lista-objetivos li {
-            padding: 17px;
-            border: 1px solid var(--borda);
-            border-radius: 12px;
-            background: rgba(8, 11, 20, 0.45);
-            color: var(--texto-suave);
-        }
-
-        .lista-objetivos li::before {
-            content: "✓";
-            margin-right: 12px;
-            color: var(--azul);
-            font-weight: bold;
-        }
-
-        /* CHAMADA FINAL */
-
-        .final-inicio {
-            text-align: center;
-            padding: 75px 20px;
-            margin-bottom: 45px;
-            border-top: 1px solid var(--borda);
-        }
-
-        .final-inicio h2 {
-            max-width: 750px;
-            margin: 0 auto 20px;
-            font-size: clamp(2rem, 4vw, 3.4rem);
-        }
-
-        .final-inicio p {
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.9;
-        }
-
-        .final-inicio .acoes-inicio {
-            justify-content: center;
-        }
-
-        /* ANIMAÇÃO */
-
-        @keyframes entrada {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* TABLETS */
-
-        @media (max-width: 800px) {
-            .grade-sobre {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .apresentacao {
-                min-height: auto;
-                padding: 75px 0;
-            }
-        }
-
-        /* CELULARES */
-
-        @media (max-width: 550px) {
-            .inicio {
-                width: 90%;
-            }
-
-            .apresentacao {
-                padding: 60px 0;
-            }
-
-            .apresentacao h1 {
-                font-size: clamp(2.7rem, 12vw, 4rem);
-                letter-spacing: -1.8px;
-            }
-
-            .acoes-inicio {
+        @media (max-width: 650px) {
+            .topo {
+                padding: 20px 5%;
                 flex-direction: column;
             }
 
-            .acoes-inicio .botao {
-                width: 100%;
+            .menu {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .areas {
+                grid-template-columns: 1fr;
+            }
+
+            .inicio {
+                padding: 65px 6%;
+            }
+
+            h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .rodape {
+                flex-direction: column;
                 text-align: center;
-            }
-
-            .grade-sobre {
-                grid-template-columns: 1fr;
-            }
-
-            .objetivos {
-                padding: 35px 22px;
-            }
-
-            .lista-objetivos {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .apresentacao-conteudo {
-                animation: none;
-            }
-
-            .bloco-sobre {
-                transition: none;
             }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- CABEÇALHO -->
-
     <header class="topo">
+        <a href="index.html" class="logo">SETÚBAL</a>
 
-        <a href="index.html" class="logo">
-            SETÚBAL<span>.</span>
-        </a>
-
-        <nav aria-label="Navegação principal">
+        <nav aria-label="Menu principal">
             <ul class="menu">
-
-                <li>
-                    <a href="index.html" class="ativo">
-                        Início
-                    </a>
-                </li>
-
-                <li>
-                    <a href="galeria.html">
-                        Galeria
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contato.html">
-                        Contato
-                    </a>
-                </li>
-
+                <li><a href="index.html" class="ativo">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
-
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-
-    <main class="inicio">
-
-        <!-- APRESENTAÇÃO -->
-
-        <section class="apresentacao">
-
-            <div class="apresentacao-conteudo">
-
-                <span class="selo">
-                    ESTUDANTE DE TECNOLOGIA DA INFORMAÇÃO
-                </span>
+    <main>
+        <section class="inicio">
+            <div class="apresentacao">
+                <span class="etiqueta">ESTUDANTE DE TECNOLOGIA DA INFORMAÇÃO</span>
 
                 <h1>
-                    Bem-vindo ao
-                    <span>meu universo.</span>
+                    Bem-vindo ao meu<br>
+                    <span>universo digital.</span>
                 </h1>
 
-                <p class="texto-destaque">
-                    Olá! Seja muito bem-vindo ao meu espaço na internet.
-                    Sou um estudante iniciante de Tecnologia da Informação,
-                    interessado em programação, desenvolvimento web
-                    e inovação.
-                </p>
-
-                <p class="texto-apresentacao">
-                    Estou no começo da minha jornada na TI, aprendendo
-                    a transformar ideias em projetos por meio do código.
-                    Cada nova descoberta é uma oportunidade de aprender,
-                    desenvolver minhas habilidades e construir meu futuro
-                    profissional.
-                </p>
-
-                <p class="texto-apresentacao">
-                    Criei este site para apresentar meus interesses,
-                    compartilhar meu aprendizado e mostrar minha evolução
-                    no mundo da tecnologia.
-                </p>
-
-                <div class="acoes-inicio">
-
-                    <a href="#sobre" class="botao">
-                        Conheça mais sobre mim ↓
-                    </a>
-
-                    <a href="galeria.html"
-                       class="botao botao-secundario">
-                        Explorar galeria ↗
-                    </a>
-
-                </div>
-
-                <div class="detalhe"></div>
-
-            </div>
-
-        </section>
-
-        <!-- SOBRE MIM -->
-
-        <section class="sobre-mim" id="sobre">
-
-            <div class="cabecalho-secao">
-
-                <span class="etiqueta">
-                    UM POUCO SOBRE MIM
-                </span>
-
-                <h2>
-                    Aprendendo hoje.
-                    <span>Construindo o amanhã.</span>
-                </h2>
-
                 <p>
-                    A tecnologia está sempre evoluindo, e eu quero
-                    evoluir junto com ela. Meu objetivo é estudar,
-                    praticar o que aprendo e transformar meu conhecimento
-                    em experiências reais.
+                    Olá! Sou Setúbal, um estudante iniciante de Tecnologia
+                    da Informação. Estou começando minha jornada no mundo
+                    da programação, explorando novas tecnologias e aprendendo
+                    a transformar ideias em projetos.
                 </p>
 
+                <div class="botoes">
+                    <a href="galeria.html" class="botao botao-principal">
+                        Conheça meus projetos ↗
+                    </a>
+
+                    <a href="contato.html" class="botao botao-secundario">
+                        Entre em contato
+                    </a>
+                </div>
             </div>
-
-            <div class="grade-sobre">
-
-                <article class="bloco-sobre">
-
-                    <div class="icone-texto">&lt;/&gt;</div>
-
-                    <h3>Programação</h3>
-
-                    <p>
-                        Estou desenvolvendo minha lógica de programação
-                        e aprendendo a escrever códigos para criar
-                        soluções digitais.
-                    </p>
-
-                </article>
-
-                <article class="bloco-sobre">
-
-                    <div class="icone-texto">{ }</div>
-
-                    <h3>Desenvolvimento web</h3>
-
-                    <p>
-                        Tenho interesse em HTML e CSS e quero aprender
-                        JavaScript para criar páginas modernas,
-                        interativas e funcionais.
-                    </p>
-
-                </article>
-
-                <article class="bloco-sobre">
-
-                    <div class="icone-texto">++</div>
-
-                    <h3>Evolução constante</h3>
-
-                    <p>
-                        Quero ampliar meus conhecimentos, enfrentar
-                        novos desafios e melhorar meus projetos
-                        a cada etapa da minha jornada.
-                    </p>
-
-                </article>
-
-            </div>
-
         </section>
 
-        <!-- OBJETIVOS PROFISSIONAIS -->
+        <section class="sobre">
+            <span class="etiqueta">UM POUCO SOBRE MIM</span>
 
-        <section class="objetivos">
-
-            <span class="etiqueta">
-                MEU CAMINHO NA TECNOLOGIA
-            </span>
-
-            <h2>
-                O começo de uma
-                <span>grande jornada.</span>
-            </h2>
+            <h2>Aprender, criar e <span class="destaque">evoluir.</span></h2>
 
             <p>
-                Sei que aprender programação exige dedicação,
-                paciência e prática. Quero continuar estudando,
-                experimentar novas ferramentas e desenvolver
-                projetos que representem meu progresso.
+                Estou construindo minha base em TI por meio de estudos,
+                exercícios e projetos práticos. Meu objetivo é desenvolver
+                minhas habilidades, aprender novas linguagens e crescer
+                cada vez mais na área da tecnologia.
             </p>
 
-            <ul class="lista-objetivos">
+            <div class="areas">
+                <article class="area">
+                    <h3>01. Lógica</h3>
+                    <p>
+                        Aprender a resolver problemas usando algoritmos,
+                        variáveis e estruturas de decisão.
+                    </p>
+                </article>
 
-                <li>
-                    Aprender novas linguagens de programação.
-                </li>
+                <article class="area">
+                    <h3>02. Scripts</h3>
+                    <p>
+                        Conhecer comandos, terminal e maneiras de
+                        automatizar tarefas.
+                    </p>
+                </article>
 
-                <li>
-                    Criar sites e aplicações web.
-                </li>
-
-                <li>
-                    Desenvolver projetos próprios.
-                </li>
-
-                <li>
-                    Construir uma carreira na área de TI.
-                </li>
-
-            </ul>
-
-        </section>
-
-        <!-- CONHEÇA MAIS -->
-
-        <section class="final-inicio">
-
-            <span class="etiqueta">
-                EXPLORE MEU ESPAÇO
-            </span>
-
-            <h2>
-                Isso é apenas o começo.
-            </h2>
-
-            <p>
-                Este site representa o início da minha trajetória
-                na tecnologia. Explore as outras páginas para
-                conhecer a galeria e entrar em contato comigo.
-            </p>
-
-            <div class="acoes-inicio">
-
-                <a href="galeria.html" class="botao">
-                    Conheça a galeria ↗
-                </a>
-
-                <a href="contato.html"
-                   class="botao botao-secundario">
-                    Entre em contato ↗
-                </a>
-
+                <article class="area">
+                    <h3>03. Python</h3>
+                    <p>
+                        Praticar programação e criar pequenos programas
+                        para desenvolver minha experiência.
+                    </p>
+                </article>
             </div>
-
         </section>
-
     </main>
 
-    <!-- RODAPÉ -->
-
     <footer class="rodape">
-
-        <a href="index.html" class="logo">
-            SETÚBAL<span>.</span>
-        </a>
-
-        <p>
-            Desenvolvido por um estudante de TI.
-        </p>
-
-        <p>
-            © 2026 — Projeto de desenvolvimento web.
-        </p>
-
+        <a href="index.html" class="logo">SETÚBAL</a>
+        <p>Portfólio de um estudante de TI.</p>
+        <p>© 2026 — Todos os direitos reservados.</p>
     </footer>
-
 </body>
-
 </html>
