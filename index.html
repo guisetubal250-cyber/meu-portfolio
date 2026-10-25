@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio de Scripts</title>
+    <title>Início | DevScripts</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Ícones modernos -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
     <header>
@@ -18,28 +20,38 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
+    <main class="page-container">
+        <!-- Seção Principal de Apresentação -->
+        <div class="contato-info" style="margin-bottom: 50px;">
             <h1>Lógica de Programação & Automação</h1>
-            <p>Bem-vindo ao meu espaço de estudos. Aqui compartilho a estrutura dos meus scripts e algoritmos.</p>
-            <a href="galeria.html" class="btn">Ver Projetos</a>
-        </section>
+            <p>Bem-vindo ao meu espaço de estudos. Aqui compartilho a estrutura dos meus scripts, códigos e algoritmos desenvolvidos para solucionar problemas reais.</p>
+            <a href="galeria.html" class="rede-icon" style="width: auto; height: auto; padding: 12px 30px; border-radius: 8px; background: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%); color: #fff; font-weight: bold; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: inline-block;">
+                Ver Projetos <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+        </div>
 
-        <section class="conteudo">
-            <h2>O que eu desenvolvo?</h2>
-            <article class="card">
-                <h3>Scripts de Automação</h3>
-                <p>Criação de códigos para otimizar tarefas repetitivas do dia a dia, tratando dados e organizando arquivos de forma lógica.</p>
-            </article>
-            <article class="card">
-                <h3>Algoritmos Estruturados</h3>
-                <p>Resolução de problemas complexos quebrando a lógica em pequenos blocos eficientes e limpos.</p>
-            </article>
-        </section>
+        <!-- Seção O que eu desenvolvo (Estilizada com caixas de vidro modernas) -->
+        <h2 style="font-size: 24px; color: #00d2ff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">O que eu desenvolvo?</h2>
+        
+        <div class="contato-wrapper" style="grid-template-columns: 1fr 1fr; gap: 30px;">
+            
+            <!-- Caixa 1 -->
+            <div class="formulario-box" style="padding: 25px;">
+                <h3 style="color: #00d2ff; font-size: 20px; margin-bottom: 10px;"><i class="fas fa-code-branch" style="margin-right: 10px;"></i> Scripts de Automação</h3>
+                <p style="color: #94a3b8; font-size: 15px; line-height: 1.6;">Criação de códigos para otimizar tarefas repetitivas do dia a dia, tratando dados e organizando arquivos de forma lógica e automatizada.</p>
+            </div>
+
+            <!-- Caixa 2 -->
+            <div class="formulario-box" style="padding: 25px;">
+                <h3 style="color: #00d2ff; font-size: 20px; margin-bottom: 10px;"><i class="fas fa-brain" style="margin-right: 10px;"></i> Algoritmos Estruturados</h3>
+                <p style="color: #94a3b8; font-size: 15px; line-height: 1.6;">Resolução de problemas complexos quebrando a lógica computacional em pequenos blocos eficientes, limpos e de fácil manutenção.</p>
+            </div>
+
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 guisetubal250-cyber. Todos os direitos reservados.</p>
+    <footer style="text-align: center; padding: 30px; color: #64748b; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px;">
+        &copy; 2026 guisetubal250-cyber. Todos os direitos reservados.
     </footer>
 </body>
 </html>
