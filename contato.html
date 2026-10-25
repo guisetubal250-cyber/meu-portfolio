@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Contato | DevScripts</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Ícones modernos para as redes sociais -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
     <header>
@@ -18,34 +20,59 @@
         </nav>
     </header>
 
-    <main class="formulario-container">
-        <h1>Entre em Contato</h1>
-        <p>Dúvidas sobre os roteiros ou propostas de projetos? Mande uma mensagem!</p>
-        
-        <!-- Altere o email abaixo para o seu email real -->
-        <form action="https://formsubmit.co" method="POST">
+    <main class="page-container">
+        <div class="contato-wrapper">
             
-            <!-- Redireciona de volta para a sua página de contato após enviar -->
-            <input type="hidden" name="_next" value="https://github.io">
-            <input type="hidden" name="_captcha" value="false">
+            <!-- COLUNA DA ESQUERDA: Informações e Redes Sociais -->
+            <div class="contato-info">
+                <h1>Vamos criar algo incrível juntos?</h1>
+                <p>Dúvidas sobre os roteiros, propostas de projetos ou apenas quer bater um papo sobre programação? Mande uma mensagem!</p>
+                
+                <div class="info-links">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>seuemail@exemplo.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Brasil</span>
+                    </div>
+                </div>
 
-            <div class="campo">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="name" placeholder="Seu nome completo" required>
+                <div class="redes-sociais">
+                    <a href="https://github.com" target="_blank" class="rede-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" class="rede-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" class="rede-icon"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
 
-            <div class="campo">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            <!-- COLUNA DA DIREITA: O Formulário Moderno -->
+            <div class="formulario-box">
+                <!-- Altere o email abaixo para o seu email real do FormSubmit -->
+                <form action="https://formsubmit.co" method="POST">
+                    <input type="hidden" name="_next" value="https://github.io">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="campo">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="name" placeholder="Como quer ser chamado?" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Seu Melhor E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensagem">Sua Mensagem</label>
+                        <textarea id="mensagem" name="message" rows="5" placeholder="Conte-me sobre o seu projeto..." required></textarea>
+                    </div>
+
+                    <button type="submit">Enviar Mensagem <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                </form>
             </div>
 
-            <div class="campo">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="message" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
-            </div>
-
-            <button type="submit">Enviar Mensagem</button>
-        </form>
+        </div>
     </main>
 </body>
 </html>
