@@ -3,34 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria | DevScripts</title>
+    <title>Galeria - Meus Projetos</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones modernos -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        /* Estilização exclusiva para simular o terminal de código nos cards */
-        .mock-code-box {
-            width: 100%;
-            height: 200px;
-            background-color: #050911;
-            border-radius: 8px;
-            padding: 15px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 13px;
-            text-align: left;
-            line-height: 1.5;
-            overflow: hidden;
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
-        }
-        .tag { color: #f43f5e; } /* Cor para tags HTML como <div>, <h1> */
-        .attr { color: #fb923c; } /* Cor para atributos como class, href */
-        .val { color: #4ade80; } /* Cor para valores de atributos */
-        .text { color: #e2e8f0; } /* Cor para textos comuns */
-        .comment { color: #64748b; font-style: italic; } /* Cor para comentários */
-        .css-sel { color: #a855f7; } /* Cor para seletores CSS */
-        .css-prop { color: #38bdf8; } /* Cor para propriedades CSS */
-    </style>
 </head>
 <body>
     <header>
@@ -44,66 +18,42 @@
         </nav>
     </header>
 
-    <main class="page-container">
-        <div class="contato-info" style="text-align: center; margin-bottom: 40px;">
-            <h1>Minha Galeria de Projetos</h1>
-            <p>Confira os trechos e estruturas de códigos lógicos desenvolvidos.</p>
-        </div>
-
-        <!-- GRADE DE PROJETOS COM TERMINAIS DE CÓDIGO -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            
-            <!-- CARD 1: Estrutura HTML -->
-            <div class="formulario-box" style="padding: 20px; text-align: center;">
-                <div class="mock-code-box">
-                    <span class="comment">&lt;!-- Estrutura Contato --&gt;</span><br>
-                    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"box"</span><span class="tag">&gt;</span><br>
-                    &nbsp;&nbsp;<span class="tag">&lt;h1&gt;</span><span class="text">Entre em Contato</span><span class="tag">&lt;/h1&gt;</span><br>
-                    &nbsp;&nbsp;<span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="val">"POST"</span><span class="tag">&gt;</span><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"email"</span> <span class="attr">required</span><span class="tag">&gt;</span><br>
-                    &nbsp;&nbsp;<span class="tag">&lt;/form&gt;</span><br>
-                    <span class="tag">&lt;/div&gt;</span>
+    <main>
+        <h1>Minha Galeria de Projetos</h1>
+        <p style="color: #94a3b8; margin-bottom: 30px;">Acompanhe visualmente as estruturas lógicas e as tecnologias utilizadas no desenvolvimento de rotinas automatizadas.</p>
+        
+        <div class="grid-galeria">
+            <!-- Item 1 -->
+            <div class="item-galeria">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%231e293b'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='24' fill='%2338bdf8' text-anchor='middle'>[ LOGICA CONDICIONAL ]</text></svg>" alt="Lógica de Programação Estruturada">
+                <div class="info-galeria">
+                    <h3>01. Lógica Condicional</h3>
+                    <p>Desenvolvimento de fluxos algoritmos estruturados utilizando estruturas de decisão (IF/ELSE) e loops de repetição para validação de dados.</p>
                 </div>
-                <h3 style="color: #ffffff; font-size: 18px; margin: 15px 0 5px 0;"><i class="fab fa-html5" style="color: #e34c26; margin-right: 8px;"></i>Estrutura HTML</h3>
-                <p style="color: #94a3b8; font-size: 14px;">Marcação semântica e estruturação limpa para formulários e layouts modernos.</p>
             </div>
 
-            <!-- CARD 2: Estilização CSS -->
-            <div class="formulario-box" style="padding: 20px; text-align: center;">
-                <div class="mock-code-box">
-                    <span class="comment">/* Estilização Neon */</span><br>
-                    <span class="css-sel">.btn-moderno</span> {<br>
-                    &nbsp;&nbsp;<span class="css-prop">background</span>: <span class="text">linear-gradient();</span><br>
-                    &nbsp;&nbsp;<span class="css-prop">border-radius</span>: <span class="text">50px;</span><br>
-                    &nbsp;&nbsp;<span class="css-prop">box-shadow</span>: <span class="text">0 4px #00d2ff;</span><br>
-                    &nbsp;&nbsp;<span class="css-prop">transition</span>: <span class="text">all 0.3s ease;</span><br>
-                    }<br>
-                    <span class="css-sel">.btn-moderno:hover</span> { <span class="css-prop">transform</span>: <span class="text">scale(1.05);</span> }
+            <!-- Item 2 -->
+            <div class="item-galeria">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%231e293b'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='24' fill='%2338bdf8' text-anchor='middle'>[ PYTHON AUTOMATION ]</text></svg>" alt="Scripts de Automação com Python">
+                <div class="info-galeria">
+                    <h3>02. Automação com Python</h3>
+                    <p>Criação de scripts limpos e modulares voltados para a manipulação automatizada de sistemas de arquivos e leitura de logs.</p>
                 </div>
-                <h3 style="color: #ffffff; font-size: 18px; margin: 15px 0 5px 0;"><i class="fab fa-css3-alt" style="color: #264de4; margin-right: 8px;"></i>Estilização CSS</h3>
-                <p style="color: #94a3b8; font-size: 14px;">Estilos avançados com efeitos Glassmorphism, degradês e animações interativas.</p>
             </div>
 
-            <!-- CARD 3: Automação e Lógica -->
-            <div class="formulario-box" style="padding: 20px; text-align: center;">
-                <div class="mock-code-box">
-                    <span class="comment">// API Envio Silencioso</span><br>
-                    <span class="tag">document</span>.<span class="css-prop">getElementById</span>(<span class="val">'form'</span>)<br>
-                    .<span class="css-prop">addEventListener</span>(<span class="val">'submit'</span>, (<span class="attr">e</span>) <span class="tag">=&gt;</span> {<br>
-                    &nbsp;&nbsp;<span class="attr">e</span>.<span class="css-prop">preventDefault</span>();<br>
-                    &nbsp;&nbsp;<span class="css-prop">fetch</span>(<span class="text">this.action, { method: 'POST' }</span>)<br>
-                    &nbsp;&nbsp;.<span class="css-prop">then</span>(<span class="attr">res</span> <span class="tag">=&gt;</span> <span class="text">res.json()</span>);<br>
-                    });
+            <!-- Item 3 -->
+            <div class="item-galeria">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%231e293b'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='24' fill='%2338bdf8' text-anchor='middle'>[ BASH TERMINAL ]</text></svg>" alt="Terminal Shell Bash">
+                <div class="info-galeria">
+                    <h3>03. Scripts Bash & Terminal</h3>
+                    <p>Construção de rotinas executadas diretamente no prompt de comando (CLI), focadas em comandos estruturados e gerenciamento de tarefas.</p>
                 </div>
-                <h3 style="color: #ffffff; font-size: 18px; margin: 15px 0 5px 0;"><i class="fab fa-js" style="color: #f7df1e; margin-right: 8px;"></i>Lógica JavaScript</h3>
-                <p style="color: #94a3b8; font-size: 14px;">Scripts inteligentes voltados para interceptação de dados e requisições assíncronas.</p>
             </div>
-
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 30px; color: #64748b; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px;">
-        &copy; 2026 guisetubal250-cyber. Todos os direitos reservados.
+    <footer>
+        <p>&copy; 2026 guisetubal250-cyber. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
