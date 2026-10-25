@@ -1,76 +1,107 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início - Portfólio Setúbal</title>
-    <!-- Vinculando o arquivo CSS externo -->
+    <meta name="description" content="Explore um mundo de criatividade, tecnologia e inspiração.">
+    <title>Vision | Página Inicial</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Menu Superior -->
-    <nav>
-        <div class="logo">Setúbal<span>.</span></div>
-        <ul>
-            <li><a href="index.html" class="active">Início</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+    <header class="topo">
+        <a href="index.html" class="logo">VISION<span>.</span></a>
 
-    <!-- Estrutura Hero de Alto Impacto Visual -->
-    <main class="hero-container">
-        <!-- Coluna da Esquerda: Textos e Botões -->
-        <div class="hero-conteudo">
-            <span class="sub-tag">Lógica de Programação & Scripts</span>
-            <h1>Construindo Soluções Através de <span class="texto-gradiente">Algoritmos</span></h1>
-            <p class="descricao-hero">
-                Bem-vindo ao meu espaço de desenvolvimento. Aqui transformo problemas complexos em códigos limpos, documentando minha evolução e dominando a arquitetura de scripts modernos estruturados do absoluto zero.
-            </p>
-            
-            <div class="hero-botoes">
-                <a href="galeria.html" class="btn-home">Explorar Scripts</a>
-                <a href="contato.html" class="btn-secundario">Entrar em Contato</a>
-            </div>
+        <nav aria-label="Menu principal">
+            <ul class="menu">
+                <li><a href="index.html" class="ativo">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <!-- Pequenos Indicadores de Destaque -->
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Código Autoral</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Ativo</h3>
-                    <p>No GitHub Pages</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Foco</h3>
-                    <p>Lógica Pura</p>
+    <main>
+        <section class="hero">
+            <div class="hero-conteudo">
+                <span class="etiqueta">CRIATIVIDADE SEM LIMITES</span>
+
+                <h1>Explore um mundo de
+                    <span>possibilidades.</span>
+                </h1>
+
+                <p>
+                    Um espaço dedicado à tecnologia, à arte e à criatividade.
+                    Descubra ideias, explore imagens e entre em contato conosco.
+                </p>
+
+                <div class="botoes">
+                    <a href="galeria.html" class="botao">Explorar galeria ↗</a>
+                    <a href="contato.html" class="botao botao-secundario">Fale conosco</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Coluna da Direita: Elemento Visual Abstrato (Ilustração de Código) -->
-        <div class="hero-visual">
-            <div class="caixa-codigo-decorativa">
-                <div class="topo-janela">
-                    <span class="ponto vermelha"></span>
-                    <span class="ponto amarela"></span>
-                    <span class="ponto verde"></span>
+            <div class="hero-imagem">
+                <img
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85"
+                    alt="Placa eletrônica com componentes tecnológicos">
+                <div class="imagem-legenda">
+                    <span>01 / INOVAÇÃO</span>
+                    <strong>O futuro começa com uma ideia.</strong>
                 </div>
-                <pre><code><span class="comentario">// Iniciando o fluxo lógico</span>
-<span class="palavra-chave">const</span> desenvolvedor = <span class="texto">"Setúbal"</span>;
-<span class="palavra-chave">let</span> stack = [<span class="texto">"Scripts"</span>, <span class="texto">"Lógica"</span>];
-
-<span class="palavra-chave">function</span> <span class="funcao">criarSolucao</span>(problema) {
-    <span class="palavra-chave">if</span> (problema === <span class="palavra-chave">true</span>) {
-        <span class="palavra-chave">return</span> <span class="texto">"Código Limpo 🚀"</span>;
-    }
-}</code></pre>
             </div>
-        </div>
+        </section>
+
+        <section class="sobre secao">
+            <div class="titulo-secao">
+                <span class="etiqueta">QUEM SOMOS</span>
+                <h2>Ideias que ganham <span>vida.</span></h2>
+                <p>
+                    Acreditamos que a criatividade pode transformar
+                    a maneira como enxergamos o mundo.
+                </p>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <span class="numero">01</span>
+                    <h3>Tecnologia</h3>
+                    <p>Descubra novas possibilidades por meio da inovação digital.</p>
+                    <a href="galeria.html">Descobrir mais →</a>
+                </article>
+
+                <article class="card">
+                    <span class="numero">02</span>
+                    <h3>Criatividade</h3>
+                    <p>Transformamos ideias em experiências visuais marcantes.</p>
+                    <a href="galeria.html">Ver inspirações →</a>
+                </article>
+
+                <article class="card">
+                    <span class="numero">03</span>
+                    <h3>Conexão</h3>
+                    <p>Compartilhe suas ideias e converse com nossa equipe.</p>
+                    <a href="contato.html">Entrar em contato →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="chamada">
+            <div>
+                <span class="etiqueta">SUA IDEIA IMPORTA</span>
+                <h2>Vamos criar algo incrível?</h2>
+                <p>Envie uma mensagem e compartilhe sua ideia conosco.</p>
+            </div>
+            <a href="contato.html" class="botao">Começar agora ↗</a>
+        </section>
     </main>
+
+    <footer class="rodape">
+        <a href="index.html" class="logo">VISION<span>.</span></a>
+        <p>Projeto acadêmico de desenvolvimento web.</p>
+        <p>© 2026 Vision. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
