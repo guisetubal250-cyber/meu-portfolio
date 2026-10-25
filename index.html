@@ -5,6 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria e Contato - Gui Setubal</title>
     <style>
+        /* Configurações básicas da página usando Branco, Preto e Azul Escuro */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #ffffff; /* Fundo Branco */
+            color: #000000; /* Texto Preto */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, h2 {
+            color: #001f3f; /* Azul Escuro nos títulos */
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* --- ESTILO DA GALERIA DE IMAGENS --- */
+        .galeria-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 60px;
+        }
+
+        .galeria-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #000000; /* Borda Preta */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.03);
+            border-color: #002d62; /* Borda muda para Azul Escuro no hover */
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 2px solid #000000; /* Divisória Preta */
+        }
+
+        .legenda {
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000; /* Texto Preto */
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        /* --- ESTILO DO FORMULÁRIO --- */
+        .form-container {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 8px;
+            border: 2px solid #000000; /* Borda Preta */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 450px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #000000; /* Texto Preto */
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #000000; /* Borda Preta nos campos */
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 14px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #002d62; /* Foco muda para Azul Escuro */
+        }
+
+        /* Botão Azul Escuro Marcante */
+        .btn-enviar {
+            background-color: #002d62; /* Azul Escuro */
+            color: #ffffff; /* Texto Branco */
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn-enviar:hover {
+            background-color: #001f3f; /* Azul Ainda Mais Escuro no hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Galeria do Meu Projeto</h1>
+
+    <!-- Seção da Galeria -->
+    <div class="galeria-container">
+        <!-- Item 1 -->
+        <div class="galeria-item">
+            <img src="foto1.jpg" alt="Projeto 1">
+            <div class="legenda">Nome do Projeto 1</div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="galeria-item">
+            <img src="foto2.jpg" alt="Projeto 2">
+            <div class="legenda">Nome do Projeto 2</div>
+        </div>
+
+        <!-- Item 3 (Link de exemplo online) -->
+        <div class="galeria-item">
+            <img src="https://picsum.photos" alt="Exemplo Online">
+            <div class="legenda">Exemplo de Imagem Online</div>
+        </div>
+    </div>
+
+    <h2>Entre em Contato</h2>
+
+    <!-- Formulário de Contato -->
+    <div class="form-container">
+        <form id="meuFormulario" onsubmit="enviarFormulario(event)">
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" required placeholder="Digite seu nome">
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Sua Mensagem:</label>
+                <textarea id="mensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <!-- Script Simples do Alerta Nativo original -->
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita recarregar a página
+            
+            alert("Mensagem enviada!"); // Alerta padrão do navegador do início
+            
+            document.getElementById("meuFormulario").reset(); // Limpa os campos
+        }
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria e Contato - Gui Setubal</title>
+    <style>
         /* Configurações básicas da página */
         body {
             font-family: Arial, sans-serif;
