@@ -3,162 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Gui Setubal</title>
+    <title>Galeria e Contato - Gui Setubal</title>
     <style>
+        /* Configurações básicas da página */
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             margin: 0;
-            padding: 0;
-            color: #222222;
-        }
-
-        /* Menu Superior */
-        nav {
-            background-color: #ffffff;
-            padding: 15px 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 20px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
         }
 
-        nav .logo {
-            font-weight: bold;
-            font-size: 20px;
-            color: #0056b3;
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
         }
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #555555;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav ul li a:hover {
-            color: #0056b3;
-        }
-
-        /* Conteúdo Principal */
-        main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #222222;
-        }
-
-        p.subtitulo {
-            color: #666666;
-            margin-bottom: 40px;
-            font-size: 16px;
-        }
-
-        /* Grid da Galeria */
-        .galeria-grid {
+        /* --- ESTILO DA GALERIA DE IMAGENS --- */
+        .galeria-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             width: 100%;
+            max-width: 1200px;
+            margin-bottom: 50px;
         }
 
-        .projeto-card {
-            background-color: #ffffff;
-            border-radius: 10px;
+        .galeria-item {
+            background-color: #fff;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
         }
 
-        .projeto-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        .galeria-item:hover {
+            transform: scale(1.03);
         }
 
-        .projeto-card img {
+        .galeria-item img {
             width: 100%;
-            height: 210px;
+            height: 200px;
             object-fit: cover;
             display: block;
         }
 
-        .projeto-info {
-            padding: 20px;
-            text-align: left;
-        }
-
-        .projeto-info h3 {
-            margin: 0 0 10px 0;
-            font-size: 18px;
-            color: #222222;
-        }
-
-        .projeto-info p {
-            margin: 0;
+        .legenda {
+            padding: 15px;
             font-size: 14px;
-            color: #666666;
-            line-height: 1.4;
+            color: #555;
+            text-align: center;
+        }
+
+        /* --- ESTILO DO FORMULÁRIO --- */
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-enviar {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn-enviar:hover {
+            background-color: #004085;
         }
     </style>
 </head>
 <body>
 
-    <!-- Menu Superior -->
-    <nav>
-        <div class="logo">Gui Setubal</div>
-        <ul>
-            <li><a href="index.html" style="color: #0056b3; font-weight: bold;">Projetos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+    <h1>Galeria do Meu Projeto</h1>
 
-    <!-- Galeria de Projetos -->
-    <main>
-        <h1>Galeria de Projetos</h1>
-        <p class="subtitulo">Confira abaixo os meus trabalhos mais recentes desenvolvidos na web.</p>
-
-        <div class="galeria-grid">
-            
-            <div class="projeto-card">
-                <img src="foto1.jpg" alt="Captura do Projeto 1">
-                <div class="projeto-info">
-                    <h3>Nome do Projeto 1</h3>
-                    <p>Breve descrição sobre o que foi feito neste desenvolvimento web ou aplicação.</p>
-                </div>
-            </div>
-
-            <div class="projeto-card">
-                <img src="foto2.jpg" alt="Captura do Projeto 2">
-                <div class="projeto-info">
-                    <h3>Nome do Projeto 2</h3>
-                    <p>Breve descrição detalhando as linguagens ou ferramentas aplicadas neste card.</p>
-                </div>
-            </div>
-
-            <div class="projeto-card">
-                <img src="https://picsum.photos" alt="Exemplo Online">
-                <div class="projeto-info">
-                    <h3>Exemplo de Projeto Online</h3>
-                    <p>Esta imagem está rodando via link externo apenas para teste de visualização da grade.</p>
-                </div>
-            </div>
-
+    <!-- Seção da Galeria -->
+    <div class="galeria-container">
+        <!-- Item 1 -->
+        <div class="galeria-item">
+            <img src="foto1.jpg" alt="Projeto 1">
+            <div class="legenda">Nome do Projeto 1</div>
         </div>
-    </main>
+
+        <!-- Item 2 -->
+        <div class="galeria-item">
+            <img src="foto2.jpg" alt="Projeto 2">
+            <div class="legenda">Nome do Projeto 2</div>
+        </div>
+
+        <!-- Item 3 (Link de exemplo online) -->
+        <div class="galeria-item">
+            <img src="https://picsum.photos" alt="Exemplo Online">
+            <div class="legenda">Exemplo de Imagem Online</div>
+        </div>
+    </div>
+
+    <h2>Entre em Contato</h2>
+
+    <!-- Formulário de Contato -->
+    <div class="form-container">
+        <form id="meuFormulario" onsubmit="enviarFormulario(event)">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <!-- Script Simples do Alerta Nativo -->
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita recarregar a página
+            
+            alert("Mensagem enviada!"); // Alerta padrão do navegador
+            
+            document.getElementById("meuFormulario").reset(); // Limpa os campos
+        }
+    </script>
 
 </body>
 </html>
