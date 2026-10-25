@@ -1,57 +1,145 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Portfólio Setúbal</title>
+    <meta name="description" content="Entre em contato com a equipe Vision.">
+    <title>Vision | Contato</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Menu Superior Atualizado -->
-    <nav>
-        <div class="logo">Setúbal<span>.</span></div>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="contato.html" class="active">Contato</a></li>
-        </ul>
-    </nav>
+    <header class="topo">
+        <a href="index.html" class="logo">VISION<span>.</span></a>
+
+        <nav aria-label="Menu principal">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html" class="ativo">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <span class="sub-tag">Fale Comigo</span>
-        <h1>Contato</h1>
-        <p class="descricao-pagina">Envie uma mensagem preenchendo os campos abaixo.</p>
+        <section class="pagina-cabecalho">
+            <span class="etiqueta">VAMOS CONVERSAR</span>
+            <h1>Entre em <span>contato.</span></h1>
+            <p>Tem alguma dúvida, sugestão ou ideia? Adoraríamos conhecer.</p>
+        </section>
 
-        <div class="form-container">
-            <form id="formularioContato" onsubmit="processarEnvio(event)">
-                <div class="form-group">
-                    <label for="txtNome">Nome Completo</label>
-                    <input type="text" id="txtNome" required placeholder="Digite seu nome">
-                </div>
-                
-                <div class="form-group">
-                    <label for="txtEmail">E-mail</label>
-                    <input type="email" id="txtEmail" required placeholder="seuemail@exemplo.com">
+        <section class="contato secao">
+            <div class="contato-info">
+                <span class="etiqueta">FALE COM A GENTE</span>
+                <h2>Uma boa conversa pode mudar tudo.</h2>
+                <p>
+                    Preencha o formulário ao lado com seus dados
+                    e sua mensagem.
+                </p>
+
+                <div class="info-item">
+                    <span class="info-icone">@</span>
+                    <div>
+                        <h3>E-mail</h3>
+                        <p>contato@vision.example</p>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="txtMensagem">Sua Mensagem</label>
-                    <textarea id="txtMensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+                <div class="info-item">
+                    <span class="info-icone">↗</span>
+                    <div>
+                        <h3>Atendimento</h3>
+                        <p>Entre em contato pelo formulário.</p>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+                <div class="info-item">
+                    <span class="info-icone">⌘</span>
+                    <div>
+                        <h3>Nosso objetivo</h3>
+                        <p>Transformar ideias em novas possibilidades.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="formulario" action="#" method="get">
+                <h2>Envie sua mensagem</h2>
+                <p class="form-descricao">Os campos marcados com * são obrigatórios.</p>
+
+                <div class="campo">
+                    <label for="nome">Nome completo *</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite seu nome"
+                        autocomplete="name"
+                        minlength="2"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="seuemail@exemplo.com"
+                        autocomplete="email"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="assunto">Assunto *</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="" disabled selected>Selecione um assunto</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="elogio">Elogio</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Sua mensagem *</label>
+                    <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        rows="5"
+                        placeholder="Escreva sua mensagem aqui..."
+                        minlength="10"
+                        required></textarea>
+                </div>
+
+                <div class="campo campo-checkbox">
+                    <input
+                        type="checkbox"
+                        id="privacidade"
+                        name="privacidade"
+                        required>
+                    <label for="privacidade">
+                        Confirmo que revisei os dados preenchidos.
+                    </label>
+                </div>
+
+                <button type="submit" class="botao botao-enviar">
+                    Enviar mensagem ↗
+                </button>
+
+                <p class="aviso-form">
+                    Este formulário é demonstrativo e ainda não envia
+                    mensagens para um servidor.
+                </p>
             </form>
-        </div>
+        </section>
     </main>
 
-    <script>
-        function processarEnvio(event) {
-            event.preventDefault(); 
-            alert("Mensagem enviada!"); 
-            document.getElementById("formularioContato").reset(); 
-        }
-    </script>
+    <footer class="rodape">
+        <a href="index.html" class="logo">VISION<span>.</span></a>
+        <p>Projeto acadêmico de desenvolvimento web.</p>
+        <p>© 2026 Vision. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
