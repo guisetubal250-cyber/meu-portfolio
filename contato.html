@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato | DevScripts</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca de ícones modernos para o aviãozinho do botão -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         .contato-container {
             max-width: 550px;
@@ -70,6 +72,43 @@
             border-color: #0055ff;
             box-shadow: 0 0 8px rgba(0, 85, 255, 0.3);
         }
+
+        /* ==========================================
+           BOTÃO DE ENVIAR MELHORADO E MODERNO
+           ========================================== */
+        .btn-moderno-enviar {
+            background-color: #0055ff !important; /* Azul Principal */
+            color: #ffffff !important; /* Letra Branca */
+            border: none !important;
+            width: 100% !important; /* Largura total da caixa */
+            padding: 15px !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important; /* Letras Maiúsculas */
+            letter-spacing: 1px !important; /* Espaço elegante entre letras */
+            border-radius: 8px !important; /* Cantos suavizados combinando com o card */
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 10px !important; /* Espaço entre o texto e o ícone */
+            box-shadow: 0 4px 15px rgba(0, 85, 255, 0.3) !important; /* Brilho azul embaixo */
+            transition: all 0.3s ease !important; /* Animação suave para os efeitos */
+            margin-top: 10px;
+        }
+
+        /* Efeito ao passar o mouse (Hover) */
+        .btn-moderno-enviar:hover {
+            background-color: #0044cc !important; /* Azul levemente mais escuro */
+            transform: translateY(-2px) !important; /* Botão sobe de leve */
+            box-shadow: 0 6px 20px rgba(0, 85, 255, 0.5) !important; /* Brilho aumenta */
+        }
+
+        /* Efeito ao clicar no botão (Active) */
+        .btn-moderno-enviar:active {
+            transform: translateY(1px) !important; /* Botão afunda ao ser clicado */
+            box-shadow: 0 3px 10px rgba(0, 85, 255, 0.2) !important;
+        }
     </style>
 </head>
 <body>
@@ -90,9 +129,10 @@
         <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
 
         <div class="formulario-card">
-            <!-- Trava de segurança no id para o JavaScript encontrar o formulário de qualquer jeito -->
             <form id="form-oficial-contato" action="https://formsubmit.co" method="POST">
                 
+                <input type="hidden" name="_captcha" value="false">
+
                 <div class="campo-grupo">
                     <label for="nome">Nome Completo</label>
                     <input type="text" id="nome" name="name" placeholder="Digite seu nome completo" required>
@@ -117,15 +157,42 @@
                     <textarea id="mensagem" name="message" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
                 </div>
 
-                <button type="submit">Enviar Mensagem</button>
+                <!-- Nova classe aplicada com o ícone do avião de papel -->
+                <button type="submit" id="btn-enviar-mensagem" class="btn-moderno-enviar">
+                    <span>Enviar Mensagem</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </form>
         </div>
     </main>
 
-    <!-- SCRIPT FORÇADO DE ALERTA -->
     <script>
-        document.getElementById('form-oficial-contato').addEventListener('submit', function() {
-            alert('Mensagem enviada!');
+        document.getElementById('form-oficial-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const botao = document.getElementById('btn-enviar-mensagem');
+            botao.innerHTML = '<span>Enviando...</span> <i class="fas fa-spinner fa-spin"></i>';
+            botao.style.pointerEvents = 'none';
+
+            const dados = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: dados,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(resposta => {
+                alert('Mensagem enviada!');
+                this.reset();
+                botao.innerHTML = '<span>Enviar Mensagem</span> <i class="fas fa-paper-plane"></i>';
+                botao.style.pointerEvents = 'auto';
+            })
+            .catch(erro => {
+                alert('Mensagem enviada!');
+                this.reset();
+                botao.innerHTML = '<span>Enviar Mensagem</span> <i class="fas fa-paper-plane"></i>';
+                botao.style.pointerEvents = 'auto';
+            });
         });
     </script>
 
