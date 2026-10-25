@@ -7,25 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Conheça meu portfólio, minha jornada como estudante de Tecnologia da Informação e meus projetos de programação.">
+        content="Conheça Setúbal, estudante de Tecnologia da Informação, sua jornada, seus objetivos e seus projetos.">
 
     <meta name="theme-color" content="#080b14">
 
-    <title>Meu Portfólio | Estudante de TI</title>
+    <title>Setúbal | Portfólio de TI</title>
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* =====================================
-           ESTILO EXCLUSIVO DA PÁGINA INICIAL
-           ===================================== */
+        /* APRESENTAÇÃO */
 
         .inicio {
             width: min(1120px, 88%);
             margin: auto;
         }
-
-        /* APRESENTAÇÃO PRINCIPAL */
 
         .apresentacao {
             min-height: 590px;
@@ -45,12 +41,10 @@
             gap: 10px;
             padding: 9px 15px;
             margin-bottom: 28px;
-
             color: var(--azul);
             background: rgba(98, 213, 255, 0.06);
             border: 1px solid rgba(98, 213, 255, 0.2);
             border-radius: 30px;
-
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 1.5px;
@@ -91,6 +85,7 @@
             color: var(--texto-suave);
             font-size: 1rem;
             line-height: 1.9;
+            margin-bottom: 14px;
         }
 
         .acoes-inicio {
@@ -99,8 +94,6 @@
             gap: 15px;
             margin-top: 35px;
         }
-
-        /* DETALHES DECORATIVOS SEM IMAGENS */
 
         .detalhe {
             width: 100%;
@@ -115,7 +108,7 @@
             opacity: 0.5;
         }
 
-        /* SEÇÃO SOBRE MIM */
+        /* SOBRE MIM */
 
         .sobre-mim {
             padding: 75px 0;
@@ -145,39 +138,28 @@
 
         .bloco-sobre {
             padding: 28px;
-            background: linear-gradient(
-                145deg,
-                #121a2b,
-                #0c1120
-            );
+            background: linear-gradient(145deg, #121a2b, #0c1120);
             border: 1px solid var(--borda);
             border-radius: 16px;
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                background 0.3s ease;
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease;
         }
 
         .bloco-sobre:hover {
             transform: translateY(-6px);
             border-color: rgba(167, 139, 250, 0.5);
-            background: #141c2e;
         }
 
         .icone-texto {
             display: grid;
             place-items: center;
-
             width: 48px;
             height: 48px;
             margin-bottom: 22px;
-
             border: 1px solid rgba(167, 139, 250, 0.25);
             border-radius: 12px;
-
             background: rgba(167, 139, 250, 0.1);
             color: var(--roxo);
-
             font-family: monospace;
             font-size: 1.2rem;
             font-weight: bold;
@@ -198,7 +180,6 @@
         .objetivos {
             padding: 70px 35px;
             margin: 20px 0 85px;
-
             background:
                 radial-gradient(
                     ellipse at top left,
@@ -206,7 +187,6 @@
                     transparent 55%
                 ),
                 #101625;
-
             border: 1px solid var(--borda);
             border-radius: 22px;
         }
@@ -250,7 +230,6 @@
             text-align: center;
             padding: 75px 20px;
             margin-bottom: 45px;
-
             border-top: 1px solid var(--borda);
         }
 
@@ -281,18 +260,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        /* ACESSIBILIDADE */
-
-        @media (prefers-reduced-motion: reduce) {
-            .apresentacao-conteudo {
-                animation: none;
-            }
-
-            .bloco-sobre {
-                transition: none;
             }
         }
 
@@ -346,6 +313,16 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            .apresentacao-conteudo {
+                animation: none;
+            }
+
+            .bloco-sobre {
+                transition: none;
+            }
+        }
     </style>
 </head>
 
@@ -356,11 +333,12 @@
     <header class="topo">
 
         <a href="index.html" class="logo">
-            PORTFÓLIO<span>.</span>
+            SETÚBAL<span>.</span>
         </a>
 
         <nav aria-label="Navegação principal">
             <ul class="menu">
+
                 <li>
                     <a href="index.html" class="ativo">
                         Início
@@ -378,6 +356,7 @@
                         Contato
                     </a>
                 </li>
+
             </ul>
         </nav>
 
@@ -387,7 +366,7 @@
 
     <main class="inicio">
 
-        <!-- BOAS-VINDAS -->
+        <!-- APRESENTAÇÃO -->
 
         <section class="apresentacao">
 
@@ -412,25 +391,25 @@
                 <p class="texto-apresentacao">
                     Estou no começo da minha jornada na TI, aprendendo
                     a transformar ideias em projetos por meio do código.
-                    Cada nova descoberta representa uma oportunidade
-                    de aprender, desenvolver minhas habilidades e
-                    construir meu futuro profissional.
+                    Cada nova descoberta é uma oportunidade de aprender,
+                    desenvolver minhas habilidades e construir meu futuro
+                    profissional.
                 </p>
 
                 <p class="texto-apresentacao">
-                    Criei este site para apresentar um pouco dos meus
-                    interesses, compartilhar minhas experiências de
-                    aprendizado e mostrar minha evolução no mundo
-                    da tecnologia.
+                    Criei este site para apresentar meus interesses,
+                    compartilhar meu aprendizado e mostrar minha evolução
+                    no mundo da tecnologia.
                 </p>
 
                 <div class="acoes-inicio">
 
                     <a href="#sobre" class="botao">
-                        Conheça mais sobre mim ↘
+                        Conheça mais sobre mim ↓
                     </a>
 
-                    <a href="galeria.html" class="botao botao-secundario">
+                    <a href="galeria.html"
+                       class="botao botao-secundario">
                         Explorar galeria ↗
                     </a>
 
@@ -459,9 +438,9 @@
 
                 <p>
                     A tecnologia está sempre evoluindo, e eu quero
-                    evoluir junto com ela. Meu objetivo é aprender
-                    continuamente, praticar o que estudo e transformar
-                    meu conhecimento em experiências reais.
+                    evoluir junto com ela. Meu objetivo é estudar,
+                    praticar o que aprendo e transformar meu conhecimento
+                    em experiências reais.
                 </p>
 
             </div>
@@ -470,15 +449,13 @@
 
                 <article class="bloco-sobre">
 
-                    <div class="icone-texto">
-                        &lt;/&gt;
-                    </div>
+                    <div class="icone-texto">&lt;/&gt;</div>
 
                     <h3>Programação</h3>
 
                     <p>
                         Estou desenvolvendo minha lógica de programação
-                        e aprendendo como escrever códigos para criar
+                        e aprendendo a escrever códigos para criar
                         soluções digitais.
                     </p>
 
@@ -486,14 +463,12 @@
 
                 <article class="bloco-sobre">
 
-                    <div class="icone-texto">
-                        { }
-                    </div>
+                    <div class="icone-texto">{ }</div>
 
                     <h3>Desenvolvimento web</h3>
 
                     <p>
-                        Tenho interesse em HTML e CSS e em aprender
+                        Tenho interesse em HTML e CSS e quero aprender
                         JavaScript para criar páginas modernas,
                         interativas e funcionais.
                     </p>
@@ -502,9 +477,7 @@
 
                 <article class="bloco-sobre">
 
-                    <div class="icone-texto">
-                        ++
-                    </div>
+                    <div class="icone-texto">++</div>
 
                     <h3>Evolução constante</h3>
 
@@ -520,7 +493,7 @@
 
         </section>
 
-        <!-- MEUS OBJETIVOS -->
+        <!-- OBJETIVOS PROFISSIONAIS -->
 
         <section class="objetivos">
 
@@ -535,9 +508,9 @@
 
             <p>
                 Sei que aprender programação exige dedicação,
-                paciência e prática. Por isso, quero continuar
-                estudando, experimentar novas ferramentas e
-                desenvolver projetos que representem meu progresso.
+                paciência e prática. Quero continuar estudando,
+                experimentar novas ferramentas e desenvolver
+                projetos que representem meu progresso.
             </p>
 
             <ul class="lista-objetivos">
@@ -575,9 +548,9 @@
             </h2>
 
             <p>
-                Quero que este site seja um registro da minha evolução
-                como estudante de tecnologia. Explore as outras páginas
-                para conhecer a galeria e entrar em contato comigo.
+                Este site representa o início da minha trajetória
+                na tecnologia. Explore as outras páginas para
+                conhecer a galeria e entrar em contato comigo.
             </p>
 
             <div class="acoes-inicio">
@@ -586,7 +559,8 @@
                     Conheça a galeria ↗
                 </a>
 
-                <a href="contato.html" class="botao botao-secundario">
+                <a href="contato.html"
+                   class="botao botao-secundario">
                     Entre em contato ↗
                 </a>
 
@@ -601,7 +575,7 @@
     <footer class="rodape">
 
         <a href="index.html" class="logo">
-            PORTFÓLIO<span>.</span>
+            SETÚBAL<span>.</span>
         </a>
 
         <p>
@@ -615,4 +589,5 @@
     </footer>
 
 </body>
+
 </html>
