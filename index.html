@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início - Portfólio Setúbal</title>
+    <!-- Vinculando o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Menu Superior Atualizado -->
+    <!-- Menu Superior -->
     <nav>
         <div class="logo">Setúbal<span>.</span></div>
         <ul>
@@ -18,11 +19,57 @@
         </ul>
     </nav>
 
-    <main class="hero-home">
-        <span class="sub-tag">Bem-vindo</span>
-        <h1>Meu Portfólio de Estudos</h1>
-        <p class="descricao-pagina" style="max-width: 600px; margin: 0 auto 30px auto;">Aqui eu organizo todas as minhas páginas e códigos criados ao longo do meu aprendizado no desenvolvimento web.</p>
-        <a href="galeria.html" class="btn-home">Ver Projetos</a>
+    <!-- Estrutura Hero de Alto Impacto Visual -->
+    <main class="hero-container">
+        <!-- Coluna da Esquerda: Textos e Botões -->
+        <div class="hero-conteudo">
+            <span class="sub-tag">Lógica de Programação & Scripts</span>
+            <h1>Construindo Soluções Através de <span class="texto-gradiente">Algoritmos</span></h1>
+            <p class="descricao-hero">
+                Bem-vindo ao meu espaço de desenvolvimento. Aqui transformo problemas complexos em códigos limpos, documentando minha evolução e dominando a arquitetura de scripts modernos estruturados do absoluto zero.
+            </p>
+            
+            <div class="hero-botoes">
+                <a href="galeria.html" class="btn-home">Explorar Scripts</a>
+                <a href="contato.html" class="btn-secundario">Entrar em Contato</a>
+            </div>
+
+            <!-- Pequenos Indicadores de Destaque -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Código Autoral</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Ativo</h3>
+                    <p>No GitHub Pages</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Foco</h3>
+                    <p>Lógica Pura</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coluna da Direita: Elemento Visual Abstrato (Ilustração de Código) -->
+        <div class="hero-visual">
+            <div class="caixa-codigo-decorativa">
+                <div class="topo-janela">
+                    <span class="ponto vermelha"></span>
+                    <span class="ponto amarela"></span>
+                    <span class="ponto verde"></span>
+                </div>
+                <pre><code><span class="comentario">// Iniciando o fluxo lógico</span>
+<span class="palavra-chave">const</span> desenvolvedor = <span class="texto">"Setúbal"</span>;
+<span class="palavra-chave">let</span> stack = [<span class="texto">"Scripts"</span>, <span class="texto">"Lógica"</span>];
+
+<span class="palavra-chave">function</span> <span class="funcao">criarSolucao</span>(problema) {
+    <span class="palavra-chave">if</span> (problema === <span class="palavra-chave">true</span>) {
+        <span class="palavra-chave">return</span> <span class="texto">"Código Limpo 🚀"</span>;
+    }
+}</code></pre>
+            </div>
+        </div>
     </main>
 
 </body>
