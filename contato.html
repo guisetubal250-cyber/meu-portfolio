@@ -6,7 +6,6 @@
     <title>Contato | DevScripts</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estrutura Centralizada Elegante e Limpa */
         .contato-container {
             max-width: 550px;
             margin: 60px auto;
@@ -27,7 +26,6 @@
             margin-bottom: 35px;
         }
 
-        /* Caixa do Formulário Minimalista */
         .formulario-card {
             background-color: #0a0a0a;
             border: 1px solid rgba(0, 85, 255, 0.3);
@@ -76,7 +74,6 @@
 </head>
 <body>
 
-    <!-- MENU SUPERIOR -->
     <header>
         <div class="logo">DevScripts</div>
         <nav>
@@ -88,14 +85,13 @@
         </nav>
     </header>
 
-    <!-- ÁREA PRINCIPAL -->
     <main class="contato-container">
         <h1>Entre em Contato</h1>
         <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
 
         <div class="formulario-card">
-            <!-- Ao enviar, ativa o script mágico do pop-up instantaneamente -->
-            <form action="https://formsubmit.co" method="POST" onsubmit="alert('Mensagem enviada!');">
+            <!-- Trava de segurança no id para o JavaScript encontrar o formulário de qualquer jeito -->
+            <form id="form-oficial-contato" action="https://formsubmit.co" method="POST">
                 
                 <div class="campo-grupo">
                     <label for="nome">Nome Completo</label>
@@ -125,6 +121,13 @@
             </form>
         </div>
     </main>
+
+    <!-- SCRIPT FORÇADO DE ALERTA -->
+    <script>
+        document.getElementById('form-oficial-contato').addEventListener('submit', function() {
+            alert('Mensagem enviada!');
+        });
+    </script>
 
 </body>
 </html>
