@@ -3,188 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | DevScripts</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contato - Gui Setubal</title>
     <style>
-        .contato-container {
-            max-width: 550px;
+        /* Estilos básicos de estrutura */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            background-color: #ffffff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-weight: bold;
+            font-size: 20px;
+            color: #0056b3;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+
+        /* Área do Formulário */
+        main {
+            max-width: 500px;
             margin: 60px auto;
             padding: 0 20px;
+        }
+
+        .form-box {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #222;
             text-align: center;
         }
 
-        .contato-container h1 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-
-        .contato-container p {
-            color: #a0a0a0;
-            font-size: 16px;
-            margin-bottom: 35px;
-        }
-
-        .formulario-card {
-            background-color: #0a0a0a;
-            border: 1px solid rgba(0, 85, 255, 0.3);
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
-            text-align: left;
-        }
-
         .campo-grupo {
-            display: flex;
-            flex-direction: column;
             margin-bottom: 20px;
         }
 
         .campo-grupo label {
-            color: #0055ff;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #444;
         }
 
-        .campo-grupo input,
-        .campo-grupo select,
-        .campo-grupo textarea {
+        .campo-grupo input, .campo-grupo textarea {
             width: 100%;
-            padding: 12px 16px;
-            background-color: #000000 !important;
-            border: 1px solid #222222;
+            padding: 12px;
+            border: 1px solid #cccccc;
             border-radius: 6px;
-            color: #ffffff !important;
-            font-size: 15px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .campo-grupo input:focus, .campo-grupo textarea:focus {
             outline: none;
-            transition: all 0.3s ease;
+            border-color: #0056b3;
         }
 
-        .campo-grupo input:focus,
-        .campo-grupo select:focus,
-        .campo-grupo textarea:focus {
-            border-color: #0055ff;
-            box-shadow: 0 0 8px rgba(0, 85, 255, 0.3);
+        .botao-enviar {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.2s;
         }
 
-        .btn-moderno-enviar {
-            background-color: #0055ff !important;
-            color: #ffffff !important;
-            border: none !important;
-            width: 100% !important;
-            padding: 15px !important;
-            font-size: 16px !important;
-            font-weight: 700 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1px !important;
-            border-radius: 8px !important;
-            cursor: pointer !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            box-shadow: 0 4px 15px rgba(0, 85, 255, 0.3) !important;
-            transition: all 0.3s ease !important;
-            margin-top: 10px;
-        }
-
-        .btn-moderno-enviar:hover {
-            background-color: #0044cc !important;
-            transform: translateY(-2px) !important;
-            box-shadow: 0 6px 20px rgba(0, 85, 255, 0.5) !important;
-        }
-
-        .btn-moderno-enviar:active {
-            transform: translateY(1px) !important;
-            box-shadow: 0 3px 10px rgba(0, 85, 255, 0.2) !important;
+        .botao-enviar:hover {
+            background-color: #004085;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">DevScripts</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="contato.html" class="active">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Menu Superior -->
+    <nav>
+        <div class="logo">Gui Setubal</div>
+        <ul>
+            <li><a href="index.html">Projetos</a></li>
+            <li><a href="contato.html" style="color: #0056b3; font-weight: bold;">Contato</a></li>
+        </ul>
+    </nav>
 
-    <main class="contato-container">
-        <h1>Entre em Contato</h1>
-        <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
-
-        <div class="formulario-card">
-            <form id="form-silencioso" action="https://formsubmit.co" method="POST">
+    <!-- Formulário de Envio -->
+    <main>
+        <div class="form-box">
+            <h2>Fale Comigo</h2>
+            <form id="formularioContato" onsubmit="processarEnvio(event)">
+                <div class="campo-grupo">
+                    <label for="txtNome">Nome Completo</label>
+                    <input type="text" id="txtNome" required placeholder="Digite seu nome">
+                </div>
                 
-                <input type="hidden" name="_captcha" value="false">
-
                 <div class="campo-grupo">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" name="name" placeholder="Digite seu nome completo" required>
+                    <label for="txtEmail">E-mail</label>
+                    <input type="email" id="txtEmail" required placeholder="seuemail@exemplo.com">
                 </div>
 
                 <div class="campo-grupo">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    <label for="txtMensagem">Sua Mensagem</label>
+                    <textarea id="txtMensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
                 </div>
 
-                <div class="campo-grupo">
-                    <label for="motivo">Motivo do Contato</label>
-                    <select id="motivo" name="reason">
-                        <option value="Dúvida sobre Script">Dúvida sobre Script</option>
-                        <option value="Proposta de Projeto">Proposta de Projeto</option>
-                        <option value="Outros">Outros</option>
-                    </select>
-                </div>
-
-                <div class="campo-grupo">
-                    <label for="mensagem">Sua Mensagem</label>
-                    <textarea id="mensagem" name="message" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
-                </div>
-
-                <button type="submit" id="btn-enviar" class="btn-moderno-enviar">
-                    Enviar Mensagem
-                </button>
+                <button type="submit" class="botao-enviar">Enviar Mensagem</button>
             </form>
         </div>
     </main>
 
-    <!-- Script silencioso sem nenhum tipo de alerta ou pop-up -->
+    <!-- ==================================================== -->
+    <!-- CAIXINHA DE ALERTA PERSONALIZADA (ESTA PÁGINA DIZ)  -->
+    <!-- ==================================================== -->
+    <div id="meuAlertaCustomizado" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 22px; border-radius: 8px; max-width: 320px; width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.3); font-family: Arial, sans-serif; box-sizing: border-box;">
+            <!-- Título limpo simulando o navegador -->
+            <h4 style="margin: 0 0 12px 0; color: #333; font-size: 15px; border-bottom: 1px solid #eee; padding-bottom: 8px; font-weight: normal;">Esta página diz:</h4>
+            <!-- Texto interno -->
+            <p style="margin: 0 0 24px 0; color: #555; font-size: 14px;">Mensagem enviada!</p>
+            <!-- Botão de fechamento -->
+            <div style="text-align: right;">
+                <button onclick="fecharAlerta()" style="background: #0056b3; color: white; border: none; padding: 8px 24px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px;">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- JAVASCRIPT DE CONTROLE                               -->
+    <!-- ==================================================== -->
     <script>
-        document.getElementById('form-silencioso').addEventListener('submit', function(e) {
-            e.preventDefault(); // Bloqueia o redirecionamento para páginas externas
+        function processarEnvio(event) {
+            event.preventDefault(); // Bloqueia o reload automático
             
-            const botao = document.getElementById('btn-enviar');
-            botao.innerHTML = 'Enviando...';
-            botao.style.pointerEvents = 'none';
+            // Ativa o balão customizado na tela
+            abrirAlerta();
+            
+            // Limpa o formulário após disparar o aviso
+            document.getElementById("formularioContato").reset();
+        }
 
-            const dados = new FormData(this);
+        function abrirAlerta() {
+            document.getElementById("meuAlertaCustomizado").style.display = "flex";
+        }
 
-            fetch(this.action, {
-                method: 'POST',
-                body: dados,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(resposta => {
-                // Sucesso: Apenas limpa o formulário silenciosamente sem exibir mensagens
-                this.reset();
-                botao.innerHTML = 'Enviar Mensagem';
-                botao.style.pointerEvents = 'auto';
-            })
-            .catch(erro => {
-                // Erro/Atraso: Também limpa o formulário sem alarmar o usuário
-                this.reset();
-                botao.innerHTML = 'Enviar Mensagem';
-                botao.style.pointerEvents = 'auto';
-            });
-        });
+        function fecharAlerta() {
+            document.getElementById("meuAlertaCustomizado").style.display = "none";
+        }
     </script>
 
 </body>
