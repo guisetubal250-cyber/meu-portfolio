@@ -1,5 +1,5 @@
 /* ==========================================
-   RAIZ E CORES DO TEMA (Cyber / Neon)
+   CONFIGURAÇÕES GERAIS E RESETS
    ========================================== */
 * {
     margin: 0;
@@ -16,7 +16,7 @@ body {
 }
 
 /* ==========================================
-   HEADER / MENU
+   MENU SUPERIOR (HEADER)
    ========================================== */
 header {
     background-color: rgba(11, 7, 30, 0.85);
@@ -60,7 +60,7 @@ nav ul li a.active {
 }
 
 /* ==========================================
-   ESTRUTURA HERO (Inspirada no modelo enviado)
+   ESTRUTURA DA PÁGINA INICIAL (INDEX)
    ========================================== */
 .hero-container {
     max-width: 1200px;
@@ -107,7 +107,7 @@ nav ul li a.active {
     margin-bottom: 40px;
 }
 
-/* Botões Modernizados */
+/* Botões Modernos */
 .botoes-grupo {
     display: flex;
     gap: 20px;
@@ -150,7 +150,7 @@ nav ul li a.active {
 }
 
 /* ==========================================
-   CARD DE PERFIL (Coluna Direita)
+   CARD DE PERFIL (INDEX - COLUNA DIREITA)
    ========================================== */
 .perfil-card {
     background: linear-gradient(145deg, #161036, #0e0a25);
@@ -190,7 +190,7 @@ nav ul li a.active {
     color: #ffffff;
 }
 
-/* Grade de etiquetas (Badges) */
+/* Lista de Habilidades (Badges) */
 .badges {
     display: flex;
     flex-direction: column;
@@ -201,7 +201,7 @@ nav ul li a.active {
 .badges span {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 10px 15px;
+    padding: 12px 15px;
     border-radius: 10px;
     font-size: 14px;
     color: #b4b2cd;
@@ -221,12 +221,37 @@ nav ul li a.active {
     color: #ffffff;
 }
 
-/* RESPONSIVIDADE PARA CELULAR */
+/* ==========================================
+   EFEITOS INTERATIVOS DA GALERIA
+   ========================================== */
+.projeto-card {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.projeto-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 0, 127, 0.3) !important;
+    box-shadow: 0 20px 40px rgba(255, 0, 127, 0.15) !important;
+}
+
+/* ==========================================
+   RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS
+   ========================================== */
 @media (max-width: 900px) {
+    header {
+        padding: 20px 30px;
+    }
     .hero-wrapper {
         grid-template-columns: 1fr;
         gap: 50px;
     }
-    .hero-textos { text-align: center; }
-    .botoes-grupo { justify-content: center; }
+    .hero-textos {
+        text-align: center;
+    }
+    .botoes-grupo {
+        justify-content: center;
+    }
+    .hero-textos h1 {
+        font-size: 40px;
+    }
 }
