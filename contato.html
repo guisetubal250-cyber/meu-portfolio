@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato | DevScripts</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones modernos para as redes sociais -->
+    <!-- Ícones modernos -->
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
@@ -46,16 +46,12 @@
                 </div>
             </div>
 
-            <!-- COLUNA DA DIREITA: O Formulário Moderno -->
-            <div class="formulario-box">
-                <!-- LEIA COM ATENÇÃO: Substitua o email abaixo pelo seu email real de desenvolvedor -->
-                <form action="https://formsubmit.co" method="POST">
+            <!-- COLUNA DA DIREITA: O Formulário ou Mensagem de Sucesso -->
+            <div class="formulario-box" id="caixa-contato">
+                <!-- LEMBRETE: Substitua o email abaixo pelo seu email real -->
+                <form id="meu-formulario" action="https://formsubmit.co" method="POST">
                     
-                    <!-- Configurações para redirecionar e desativar robôs -->
-                    <input type="hidden" name="_next" value="https://github.io">
                     <input type="hidden" name="_captcha" value="false">
-                    
-                    <!-- ISSO AQUI MUDA O ASSUNTO DO E-MAIL QUE CHEGA PARA VOCÊ -->
                     <input type="hidden" name="_subject" value="🚀 Nova mensagem de contato do seu Portfólio!">
 
                     <div class="campo">
@@ -73,11 +69,69 @@
                         <textarea id="mensagem" name="message" rows="5" placeholder="Conte-me sobre o seu projeto..." required></textarea>
                     </div>
 
-                    <button type="submit">Enviar Mensagem <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                    <button type="submit" id="btn-enviar">
+                        <span>Enviar Mensagem</span>
+                        <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                    </button>
                 </form>
             </div>
 
         </div>
     </main>
+
+    <!-- Script mágico para processar na mesma tela -->
+    <script>
+        document.getElementById('meu-formulario').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede a página de recarregar ou abrir outra aba
+            
+            const btn = document.getElementById('btn-enviar');
+            const caixa = document.getElementById('caixa-contato');
+            
+            // Mudar o texto do botão para indicar que está enviando
+            btn.innerHTML = '<span>Enviando...</span> <i class="fas fa-spinner fa-spin" style="margin-left: 8px;"></i>';
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.7';
+
+            const formData = new FormData(this);
+
+            // Envia os dados via fetch em segundo plano
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Troca o formulário pela mensagem moderna de sucesso na mesma caixa!
+                    caixa.innerHTML = `
+                        <div style="text-align: center; padding: 40px 20px; animation: fadeIn 0.5s ease forwards;">
+                            <div style="font-size: 55px; color: #00d2ff; margin-bottom: 20px;">
+                                <i class="fas fa-circle-check"></i>
+                            </div>
+                            <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 12px; color: #ffffff;">
+                                Conexão Estabelecida!
+                            </h2>
+                            <p style="color: #94a3b8; font-size: 15px; line-height: 1.6;">
+                                Sua mensagem cruzou os servidores com sucesso. Eu, o criador, fui notificado e responderei em breve!
+                            </p>
+                        </div>
+                    `;
+                } else {
+                    alert('Whoops! Ocorreu um erro ao enviar. Tente novamente.');
+                    btn.innerHTML = '<span>Enviar Mensagem</span> <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>';
+                    btn.style.pointerEvents = 'auto';
+                    btn.style.opacity = '1';
+                }
+            })
+            .catch(error => {
+                alert('Erro de conexão com o servidor.');
+                btn.innerHTML = '<span>Enviar Mensagem</span> <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>';
+                btn.style.pointerEvents = 'auto';
+                btn.style.opacity = '1';
+            });
+        });
+    </script>
 </body>
 </html>
