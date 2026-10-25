@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio de Scripts</title>
+    <title>Início | DevScripts</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca de ícones modernos -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
+
+    <!-- MENU SUPERIOR FIXO -->
     <header>
         <div class="logo">DevScripts</div>
         <nav>
@@ -18,28 +22,37 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Lógica de Programação & Automação</h1>
-            <p>Bem-vindo ao meu espaço de estudos. Aqui compartilho a estrutura dos meus scripts e algoritmos.</p>
-            <a href="galeria.html" class="btn">Ver Projetos</a>
-        </section>
+    <!-- CONTEÚDO PRINCIPAL (HERO) -->
+    <main class="hero-container">
+        <div class="hero-wrapper">
+            
+            <!-- COLUNA DA ESQUERDA: Boas-vindas e Botões -->
+            <div class="hero-textos">
+                <span class="subtitulo-tag">Estudante de Tecnologia</span>
+                <h1>Olá, eu sou <br><span class="nome-destaque">guisetubal250</span></h1>
+                <p>Estou aprendendo desenvolvimento web, lógica de programação e automação. Criando projetos de algoritmos e scripts inteligentes para transformar conhecimento em prática.</p>
+                
+                <div class="botoes-grupo">
+                    <a href="galeria.html" class="btn-principal">Ver projetos <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
+                    <a href="contato.html" class="btn-secundario">Entrar em contato</a>
+                </div>
+            </div>
 
-        <section class="conteudo">
-            <h2>O que eu desenvolvo?</h2>
-            <article class="card">
-                <h3>Scripts de Automação</h3>
-                <p>Criação de códigos para otimizar tarefas repetitivas do dia a dia, tratando dados e organizando arquivos de forma lógica.</p>
-            </article>
-            <article class="card">
-                <h3>Algoritmos Estruturados</h3>
-                <p>Resolução de problemas complexos quebrando a lógica em pequenos blocos eficientes e limpos.</p>
-            </article>
-        </section>
+            <!-- COLUNA DA DIREITA: Card de Perfil Lateral -->
+            <div class="perfil-card">
+                <div class="avatar-circulo">
+                    <span>GS</span>
+                </div>
+                <h2>guisetubal250</h2>
+                <div class="badges">
+                    <span><i class="fas fa-code"></i> Desenvolvimento Web</span>
+                    <span><i class="fas fa-robot"></i> Automação de Tarefas</span>
+                    <span><i class="fas fa-brain"></i> Lógica & Algoritmos</span>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 guisetubal250-cyber. Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
