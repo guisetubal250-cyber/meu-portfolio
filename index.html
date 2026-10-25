@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio - Galeria de Projetos</title>
+    <title>Meu Portfólio - Gui Setubal</title>
     <style>
+        /* Estilo da Página Inicial focado em Azul Escuro, Preto e Branco */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #ffffff; /* Fundo Branco */
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #000000; /* Texto Preto */
         }
 
-        /* Menu de Navegação Original */
+        /* Menu de Navegação */
         nav {
             background-color: #ffffff;
             padding: 15px 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-bottom: 2px solid #000000; /* Linha divisória Preta */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -26,7 +27,7 @@
         nav .logo {
             font-weight: bold;
             font-size: 20px;
-            color: #0056b3;
+            color: #002d62; /* Azul Escuro */
         }
 
         nav ul {
@@ -39,14 +40,53 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #555;
-            font-weight: 500;
+            color: #000000; /* Links Pretos */
+            font-weight: bold;
         }
 
         nav ul li a:hover {
-            color: #0056b3;
+            color: #002d62; /* Azul Escuro no Hover */
         }
 
+        /* Seção de Apresentação Inicial */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+            border-bottom: 2px solid #000000; /* Divisória Preta */
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            color: #002d62; /* Título Azul Escuro */
+            margin: 0 0 10px 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #000000; /* Texto Preto */
+            margin: 0 0 20px 0;
+        }
+
+        /* Botão em Azul Escuro */
+        .btn-contato {
+            display: inline-block;
+            background-color: #002d62; /* Azul Escuro */
+            color: #ffffff; /* Texto Branco */
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn-contato:hover {
+            background-color: #001f3f; /* Azul Mais Escuro no Hover */
+        }
+
+        /* Seção da Galeria de Projetos */
         main {
             max-width: 1200px;
             margin: 40px auto;
@@ -54,15 +94,15 @@
             text-align: center;
         }
 
-        h1 {
+        main h2 {
             margin-bottom: 30px;
+            color: #002d62; /* Título Azul Escuro */
         }
 
-        /* Grade da Galeria Original */
         .galeria-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             width: 100%;
         }
 
@@ -70,35 +110,41 @@
             background-color: #ffffff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px solid #000000; /* Borda do card Preta */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             transition: transform 0.2s;
         }
 
         .projeto-card:hover {
             transform: scale(1.03);
+            border-color: #002d62; /* Borda vira Azul Escuro no Hover */
         }
 
         .projeto-card img {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
             display: block;
+            border-bottom: 2px solid #000000; /* Linha sob a imagem Preta */
         }
 
         .projeto-info {
-            padding: 15px;
+            padding: 20px;
             text-align: left;
+            background-color: #ffffff;
         }
 
         .projeto-info h3 {
             margin: 0 0 10px 0;
             font-size: 18px;
+            color: #002d62; /* Título do projeto Azul Escuro */
         }
 
         .projeto-info p {
             margin: 0;
             font-size: 14px;
-            color: #666;
+            color: #000000; /* Descrição Preta */
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -108,14 +154,21 @@
     <nav>
         <div class="logo">Gui Setubal</div>
         <ul>
-            <li><a href="index.html" style="color: #0056b3; font-weight: bold;">Projetos</a></li>
+            <li><a href="index.html" style="color: #002d62;">Projetos</a></li>
             <li><a href="contato.html">Contato</a></li>
         </ul>
     </nav>
 
-    <!-- Galeria de Projetos -->
+    <!-- Apresentação Inicial -->
+    <header class="hero">
+        <h1>Bem-vindo ao Meu Portfólio</h1>
+        <p>Desenvolvedor Web focado em criar soluções limpas e eficientes.</p>
+        <a href="contato.html" class="btn-contato">Fale Comigo</a>
+    </header>
+
+    <!-- Galeria Principal -->
     <main>
-        <h1>Galeria de Projetos</h1>
+        <h2>Meus Projetos</h2>
 
         <div class="galeria-grid">
             
