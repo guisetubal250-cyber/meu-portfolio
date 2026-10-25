@@ -3,136 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Gui Setubal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        /* Menu de Navegação Original */
-        nav {
-            background-color: #ffffff;
-            padding: 15px 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            font-weight: bold;
-            font-size: 20px;
-            color: #0056b3;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-        }
-
-        nav ul li a:hover {
-            color: #0056b3;
-        }
-
-        main {
-            max-width: 400px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .form-container {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        h2 {
-            margin-top: 0;
-            margin-bottom: 25px;
-            color: #333;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .btn-enviar {
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .btn-enviar:hover {
-            background-color: #004085;
-        }
-    </style>
+    <title>Contato - Portfólio Ana</title>
+    <!-- Vinculando o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Menu Superior -->
+    <!-- Menu Superior Compartilhado -->
     <nav>
-        <div class="logo">Gui Setubal</div>
+        <div class="logo">Ana<span>.</span></div>
         <ul>
-            <li><a href="index.html">Projetos</a></li>
-            <li><a href="contato.html" style="color: #0056b3; font-weight: bold;">Contato</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="contato.html" class="active">Contato</a></li>
         </ul>
     </nav>
 
-    <!-- Formulário Prontinho do Início -->
+    <!-- Formulário Estilizado -->
     <main>
+        <span class="sub-tag">Fale Comigo</span>
+        <h1>Contato</h1>
+        <p class="descricao-pagina">Envie uma mensagem preenchendo os campos abaixo.</p>
+
         <div class="form-container">
-            <h2>Fale Comigo</h2>
             <form id="formularioContato" onsubmit="processarEnvio(event)">
                 <div class="form-group">
-                    <label for="txtNome">Nome Completo:</label>
+                    <label for="txtNome">Nome Completo</label>
                     <input type="text" id="txtNome" required placeholder="Digite seu nome">
                 </div>
                 
                 <div class="form-group">
-                    <label for="txtEmail">E-mail:</label>
+                    <label for="txtEmail">E-mail</label>
                     <input type="email" id="txtEmail" required placeholder="seuemail@exemplo.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="txtMensagem">Mensagem:</label>
+                    <label for="txtMensagem">Sua Mensagem</label>
                     <textarea id="txtMensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
                 </div>
 
@@ -141,14 +47,14 @@
         </div>
     </main>
 
-    <!-- JavaScript Original com Alert Clássico -->
+    <!-- Controle JavaScript Nativo -->
     <script>
         function processarEnvio(event) {
-            event.preventDefault(); // Impede o reload automático da página
+            event.preventDefault(); 
             
-            alert("Mensagem enviada!"); // Retorna o alert original do navegador
+            alert("Mensagem enviada!"); // Alerta nativo clássico do início
             
-            document.getElementById("formularioContato").reset(); // Limpa os campos
+            document.getElementById("formularioContato").reset(); 
         }
     </script>
 
