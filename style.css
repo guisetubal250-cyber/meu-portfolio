@@ -1,33 +1,34 @@
 /* ==================================================== */
-/* ESTILO GERAL (Branco, Preto e Azul Escuro)           */
+/* PALETA DE CORES: PRETO, BRANCO E AZUL (COM GLOW)     */
 /* ==================================================== */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #ffffff; /* Fundo Branco */
+    background: linear-gradient(135deg, #090d16 0%, #020617 100%); /* Fundo Escuro Profundo */
     margin: 0;
     padding: 0;
-    color: #000000; /* Texto Preto */
-    scroll-behavior: smooth;
+    color: #ffffff; /* Texto Branco */
+    min-height: 100vh;
 }
 
-/* --- MENU DE NAVEGAÇÃO --- */
+/* --- MENU DE NAVEGAÇÃO SUPERIOR --- */
 nav {
-    background-color: #ffffff;
+    background-color: #020617;
     padding: 20px 40px;
-    border-bottom: 3px solid #000000; /* Divisória Preta */
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2); /* Linha com brilho sutil */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 nav .logo {
     font-weight: 800;
-    font-size: 22px;
-    color: #002d62; /* Azul Escuro */
-    letter-spacing: -0.5px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+nav .logo span {
+    color: #38bdf8; /* Ponto azul iluminado no nome */
 }
 
 nav ul {
@@ -35,159 +36,134 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #000000; /* Texto Preto */
-    font-weight: bold;
+    color: #94a3b8;
+    font-weight: 600;
     font-size: 16px;
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #002d62; /* Azul Escuro */
+nav ul li a:hover, nav ul li a.active {
+    color: #38bdf8; /* Azul iluminado */
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.6); /* Brilho suave */
 }
 
-/* --- SEÇÃO 1: INÍCIO (HERO) --- */
-.hero {
+/* --- SEÇÃO PRINCIPAL / TEXTOS --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
     text-align: center;
-    padding: 100px 20px;
-    background-color: #ffffff;
-    border-bottom: 3px solid #000000; /* Divisória Preta */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.hero h1 {
-    font-size: 46px;
-    color: #002d62; /* Azul Escuro */
-    margin: 0 0 20px 0;
+.sub-tag {
+    color: #38bdf8;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+h1 {
+    font-size: 42px;
+    color: #ffffff;
+    margin: 0 0 15px 0;
     font-weight: 800;
     letter-spacing: -1px;
 }
 
-.hero p {
-    font-size: 20px;
-    color: #000000; /* Texto Preto */
-    margin: 0 0 35px 0;
-    max-width: 650px;
-    line-height: 1.6;
-}
-
-.btn-acao {
-    display: inline-block;
-    background-color: #002d62; /* Azul Escuro */
-    color: #ffffff; /* Texto Branco */
-    text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 6px;
-    font-weight: bold;
+.descricao-pagina {
+    color: #94a3b8;
     font-size: 16px;
-    box-shadow: 0 4px 0px #000000; /* Efeito Sombra Sólida Preta */
-    border: 2px solid #000000;
-    transition: all 0.1s ease;
-}
-
-.btn-acao:hover {
-    background-color: #001f3f;
-    transform: translateY(2px);
-    box-shadow: 0 2px 0px #000000;
-}
-
-/* --- SEÇÃO 2: GALERIA DE PROJETOS --- */
-.secao-galeria {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    text-align: center;
-    border-bottom: 3px solid #000000; /* Divisória Preta */
-}
-
-.secao-galeria h2 {
-    font-size: 32px;
-    color: #002d62; /* Azul Escuro */
     margin-bottom: 50px;
-    font-weight: 800;
 }
 
+/* --- GRID DA GALERIA DE PROJETOS --- */
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
+    gap: 30px;
     width: 100%;
 }
 
 .projeto-card {
-    background-color: #ffffff;
-    border-radius: 8px;
+    background-color: #0f172a; /* Caixa do card escura */
+    border-radius: 12px;
     overflow: hidden;
-    border: 3px solid #000000; /* Borda Grossa Preta */
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .projeto-card:hover {
-    transform: scale(1.02);
-    border-color: #002d62; /* Vira Azul Escuro */
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1); /* Iluminação externa ao passar o mouse */
 }
 
-.projeto-card img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 3px solid #000000; /* Divisória Preta */
+/* Bloco colorido simulando a imagem enviada */
+.projeto-banner {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
+
+/* Cores dos Banners baseados na foto do usuário */
+.banner-html { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
+.banner-css { background: linear-gradient(135deg, #86198f 0%, #d946ef 100%); }
+.banner-js { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); }
 
 .projeto-info {
     padding: 25px;
     text-align: left;
 }
 
+.projeto-tag {
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+}
+
 .projeto-info h3 {
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
     font-size: 20px;
-    color: #002d62; /* Azul Escuro */
+    color: #ffffff;
     font-weight: 700;
 }
 
 .projeto-info p {
     margin: 0;
-    font-size: 15px;
-    color: #000000; /* Texto Preto */
+    font-size: 14px;
+    color: #94a3b8;
     line-height: 1.5;
 }
 
-/* --- SEÇÃO 3: FORMULÁRIO DE CONTATO --- */
-.secao-contato {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.secao-contato h2 {
-    font-size: 32px;
-    color: #002d62; /* Azul Escuro */
-    margin-bottom: 40px;
-    font-weight: 800;
-}
-
+/* --- ESTRUTURA DO FORMULÁRIO DE CONTATO --- */
 .form-container {
-    background: #ffffff;
+    background-color: #0f172a;
     padding: 40px;
-    border-radius: 8px;
-    border: 3px solid #000000; /* Borda Preta */
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .form-group {
@@ -197,45 +173,68 @@ nav ul li a:hover {
 
 .form-group label {
     display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #000000; /* Texto Preto */
-    font-size: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #94a3b8;
+    font-size: 14px;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 14px;
-    border: 2px solid #000000; /* Borda do Campo Preta */
-    border-radius: 6px;
+    border: 1px solid #334155;
+    border-radius: 8px;
     box-sizing: border-box;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #020617;
+    color: #ffffff;
     font-size: 15px;
     font-family: inherit;
+    transition: all 0.3s ease;
 }
 
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
-    border-color: #002d62; /* Foco vira Azul Escuro */
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
 }
 
 .btn-enviar {
-    background-color: #002d62; /* Azul Escuro */
-    color: #ffffff; /* Texto Branco */
-    border: 2px solid #000000;
+    background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
     padding: 16px;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 4px 0px #000000;
-    transition: all 0.1s ease;
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
+    transition: all 0.2s ease;
 }
 
 .btn-enviar:hover {
-    background-color: #001f3f;
-    transform: translateY(2px);
-    box-shadow: 0 2px 0px #000000;
+    opacity: 0.95;
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* --- SEÇÃO HERO DA HOME --- */
+.hero-home {
+    padding: 100px 20px;
+}
+
+.btn-home {
+    display: inline-block;
+    background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+.btn-home:hover {
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
 }
