@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio - Gui Setubal</title>
+    <title>Meu Portfólio Completo - Gui Setubal</title>
     <style>
-        /* Estilo da Página Inicial focado em Azul Escuro, Preto e Branco */
+        /* Paleta de Cores Estrita: Azul Escuro, Preto e Branco */
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff; /* Fundo Branco */
             margin: 0;
             padding: 0;
             color: #000000; /* Texto Preto */
+            scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
         }
 
-        /* Menu de Navegação */
+        /* --- MENU DE NAVEGAÇÃO --- */
         nav {
             background-color: #ffffff;
             padding: 15px 30px;
-            border-bottom: 2px solid #000000; /* Linha divisória Preta */
+            border-bottom: 2px solid #000000; /* Divisória Preta */
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav .logo {
@@ -40,69 +44,76 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #000000; /* Links Pretos */
+            color: #000000; /* Texto Preto */
             font-weight: bold;
+            font-size: 15px;
+            transition: color 0.2s;
         }
 
         nav ul li a:hover {
             color: #002d62; /* Azul Escuro no Hover */
         }
 
-        /* Seção de Apresentação Inicial */
+        /* --- SEÇÃO 1: INÍCIO (HERO) --- */
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background-color: #ffffff;
             border-bottom: 2px solid #000000; /* Divisória Preta */
-            width: 100%;
-            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero h1 {
-            font-size: 36px;
-            color: #002d62; /* Título Azul Escuro */
-            margin: 0 0 10px 0;
+            font-size: 38px;
+            color: #002d62; /* Azul Escuro */
+            margin: 0 0 15px 0;
         }
 
         .hero p {
             font-size: 18px;
             color: #000000; /* Texto Preto */
-            margin: 0 0 20px 0;
+            margin: 0 0 30px 0;
+            max-width: 600px;
+            line-height: 1.5;
         }
 
-        /* Botão em Azul Escuro */
-        .btn-contato {
+        .btn-acao {
             display: inline-block;
             background-color: #002d62; /* Azul Escuro */
             color: #ffffff; /* Texto Branco */
             text-decoration: none;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: 4px;
             font-weight: bold;
+            font-size: 16px;
             transition: background-color 0.2s;
         }
 
-        .btn-contato:hover {
-            background-color: #001f3f; /* Azul Mais Escuro no Hover */
+        .btn-acao:hover {
+            background-color: #001f3f; /* Azul Mais Escuro */
         }
 
-        /* Seção da Galeria de Projetos */
-        main {
+        /* --- SEÇÃO 2: GALERIA DE PROJETOS --- */
+        .secao-galeria {
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 60px 20px;
             text-align: center;
+            border-bottom: 2px solid #000000; /* Divisória Preta */
         }
 
-        main h2 {
-            margin-bottom: 30px;
-            color: #002d62; /* Título Azul Escuro */
+        .secao-galeria h2 {
+            font-size: 30px;
+            color: #002d62; /* Azul Escuro */
+            margin-bottom: 40px;
         }
 
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
             width: 100%;
         }
 
@@ -110,14 +121,14 @@
             background-color: #ffffff;
             border-radius: 8px;
             overflow: hidden;
-            border: 2px solid #000000; /* Borda do card Preta */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 2px solid #000000; /* Borda Preta */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: transform 0.2s;
         }
 
         .projeto-card:hover {
-            transform: scale(1.03);
-            border-color: #002d62; /* Borda vira Azul Escuro no Hover */
+            transform: scale(1.02);
+            border-color: #002d62; /* Muda para Azul Escuro no Hover */
         }
 
         .projeto-card img {
@@ -125,58 +136,130 @@
             height: 210px;
             object-fit: cover;
             display: block;
-            border-bottom: 2px solid #000000; /* Linha sob a imagem Preta */
+            border-bottom: 2px solid #000000; /* Divisória Preta */
         }
 
         .projeto-info {
             padding: 20px;
             text-align: left;
-            background-color: #ffffff;
         }
 
         .projeto-info h3 {
             margin: 0 0 10px 0;
             font-size: 18px;
-            color: #002d62; /* Título do projeto Azul Escuro */
+            color: #002d62; /* Azul Escuro */
         }
 
         .projeto-info p {
             margin: 0;
             font-size: 14px;
-            color: #000000; /* Descrição Preta */
+            color: #000000; /* Texto Preto */
             line-height: 1.4;
+        }
+
+        /* --- SEÇÃO 3: FORMULÁRIO DE CONTATO --- */
+        .secao-contato {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .secao-contato h2 {
+            font-size: 30px;
+            color: #002d62; /* Azul Escuro */
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 8px;
+            border: 2px solid #000000; /* Borda Preta */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            max-width: 480px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #000000; /* Texto Preto */
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #000000; /* Campos com Borda Preta */
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #000000; /* Entrada Preta */
+            font-size: 14px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #002d62; /* Foco muda para Azul Escuro */
+        }
+
+        .btn-enviar {
+            background-color: #002d62; /* Azul Escuro */
+            color: #ffffff; /* Texto Branco */
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn-enviar:hover {
+            background-color: #001f3f; /* Azul Mais Escuro */
         }
     </style>
 </head>
 <body>
 
-    <!-- Menu Superior -->
+    <!-- Menu Superior de Navegação -->
     <nav>
         <div class="logo">Gui Setubal</div>
         <ul>
-            <li><a href="index.html" style="color: #002d62;">Projetos</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
 
-    <!-- Apresentação Inicial -->
-    <header class="hero">
+    <!-- 1. Seção Início -->
+    <header id="inicio" class="hero">
         <h1>Bem-vindo ao Meu Portfólio</h1>
-        <p>Desenvolvedor Web focado em criar soluções limpas e eficientes.</p>
-        <a href="contato.html" class="btn-contato">Fale Comigo</a>
+        <p>Desenvolvedor Web focado em criar soluções limpas, eficientes e de alto impacto visual.</p>
+        <a href="#contato" class="btn-acao">Fale Comigo</a>
     </header>
 
-    <!-- Galeria Principal -->
-    <main>
+    <!-- 2. Seção Galeria -->
+    <section id="galeria" class="secao-galeria">
         <h2>Meus Projetos</h2>
-
         <div class="galeria-grid">
             
             <div class="projeto-card">
                 <img src="foto1.jpg" alt="Projeto 1">
                 <div class="projeto-info">
                     <h3>Nome do Projeto 1</h3>
-                    <p>Descrição sobre o que foi feito neste desenvolvimento.</p>
+                    <p>Descrição detalhada sobre o desenvolvimento e os recursos desta aplicação.</p>
                 </div>
             </div>
 
@@ -184,7 +267,7 @@
                 <img src="foto2.jpg" alt="Projeto 2">
                 <div class="projeto-info">
                     <h3>Nome do Projeto 2</h3>
-                    <p>Descrição detalhando as ferramentas aplicadas.</p>
+                    <p>Descrição focada nas principais ferramentas e linguagens integradas.</p>
                 </div>
             </div>
 
@@ -192,12 +275,41 @@
                 <img src="https://picsum.photos" alt="Exemplo Online">
                 <div class="projeto-info">
                     <h3>Exemplo de Projeto Online</h3>
-                    <p>Imagem via link externo para teste de visualização.</p>
+                    <p>Imagem via link externo inserida para validar a grade de exibição responsiva.</p>
                 </div>
             </div>
 
         </div>
-    </main>
+    </section>
+
+    <!-- 3. Seção Contato -->
+    <section id="contato" class="secao-contato">
+        <h2>Entre em Contato</h2>
+        <div class="form-container">
+            <form id="meuFormulario" onsubmit="enviarFormulario(event)">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Sua Mensagem:</label>
+                    <textarea id="mensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- JavaScript Simples Integrado (Alert Clássico) -->
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Impede o reload da página
+            
+            alert("Mensagem enviada!"); // Retorna o comportamento original do alert
+            
+            document.getElementById("meuFormulario").reset(); // Limpa os campos após envio
+        }
+    </script>
 
 </body>
 </html>
