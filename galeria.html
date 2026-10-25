@@ -6,63 +6,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="theme-color" content="#080b14">
     <meta name="description"
-        content="Galeria de projetos de lógica de programação, scripts e Python.">
+          content="Galeria de projetos de Setúbal: lógica de programação, scripts e Python.">
 
     <title>Setúbal | Galeria de Projetos</title>
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* FUNDO DA GALERIA */
+        /* =================================
+           TEMA PRINCIPAL
+           ================================= */
 
         body {
-            background: #f4f7fc;
-            color: #111827;
-        }
-
-        .topo {
-            background: #1b2231;
+            background:
+                radial-gradient(
+                    ellipse at 10% 0%,
+                    rgba(93, 63, 180, 0.13),
+                    transparent 45%
+                ),
+                #080b14;
+            color: #f4f6ff;
         }
 
         .galeria-pagina {
             width: min(1120px, 90%);
             margin: 0 auto;
-            padding: 65px 0 80px;
+            padding: 70px 0 85px;
         }
 
-        /* TÍTULO */
+        /* =================================
+           CABEÇALHO DA GALERIA
+           ================================= */
 
         .galeria-cabecalho {
+            max-width: 800px;
+            margin: 0 auto 50px;
             text-align: center;
-            margin-bottom: 45px;
-            animation: entrada 0.7s ease both;
+            animation: entrada 0.8s ease both;
         }
 
         .galeria-cabecalho .etiqueta {
-            margin-bottom: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #62d5ff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
         .galeria-cabecalho h1 {
-            color: #111827;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            letter-spacing: -1.5px;
+            color: #f4f6ff;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
         }
 
         .galeria-cabecalho h1 span {
-            background: linear-gradient(120deg, #2563eb, #06b6d4);
+            background: linear-gradient(120deg, #a78bfa, #62d5ff);
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
         }
 
         .galeria-cabecalho p {
-            margin-top: 15px;
-            color: #64748b;
+            color: #a2abc2;
             font-size: 1.05rem;
+            line-height: 1.9;
         }
 
-        /* GRADE DE PROJETOS */
+        /* =================================
+           LINHA DECORATIVA
+           ================================= */
+
+        .linha-decorativa {
+            width: 90px;
+            height: 4px;
+            margin: 25px auto 0;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #a78bfa, #62d5ff);
+        }
+
+        /* =================================
+           GRADE DOS PROJETOS
+           ================================= */
 
         .grade-projetos {
             display: grid;
@@ -71,57 +100,74 @@
         }
 
         .projeto {
+            min-width: 0;
             overflow: hidden;
-            background: #ffffff;
-            border: 1px solid #dce4f0;
+            background: linear-gradient(145deg, #121a2b, #0c1120);
+            border: 1px solid rgba(255, 255, 255, 0.09);
             border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
-            transition: transform 0.3s ease,
-                        box-shadow 0.3s ease;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+            animation: entrada 0.7s ease both;
+        }
+
+        .projeto:nth-child(2) {
+            animation-delay: 0.12s;
+        }
+
+        .projeto:nth-child(3) {
+            animation-delay: 0.24s;
         }
 
         .projeto:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.10);
+            transform: translateY(-8px);
+            border-color: rgba(167, 139, 250, 0.45);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
         }
 
-        /* BLOCOS COLORIDOS */
+        /* =================================
+           BLOCOS COLORIDOS DOS CARTÕES
+           ================================= */
 
         .projeto-topo {
-            height: 190px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 195px;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
         }
 
-        .projeto-topo::before {
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border: 1px solid rgba(255, 255, 255, 0.20);
-            border-radius: 50%;
-            transform: scale(1.3);
-        }
-
+        .projeto-topo::before,
         .projeto-topo::after {
             content: "";
             position: absolute;
-            width: 130px;
-            height: 130px;
-            border: 1px solid rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            transform: scale(1.5);
+            pointer-events: none;
+        }
+
+        .projeto-topo::before {
+            width: 180px;
+            height: 180px;
+            transform: translate(-45px, 30px);
+        }
+
+        .projeto-topo::after {
+            width: 125px;
+            height: 125px;
+            transform: translate(55px, -30px);
         }
 
         .projeto-topo h2 {
             position: relative;
             z-index: 1;
             color: #ffffff;
-            font-size: clamp(1.7rem, 2.5vw, 2.4rem);
-            font-weight: 700;
+            font-size: clamp(1.7rem, 3vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: 1px;
             text-align: center;
         }
 
@@ -130,96 +176,178 @@
         }
 
         .scripts {
-            background: linear-gradient(120deg, #7c3aed, #ec4899);
+            background: linear-gradient(120deg, #7c3aed, #d946a8);
         }
 
         .python {
             background: linear-gradient(120deg, #059669, #14b8a6);
         }
 
-        /* CONTEÚDO DOS CARTÕES */
+        /* =================================
+           CONTEÚDO DOS CARTÕES
+           ================================= */
 
         .projeto-conteudo {
-            padding: 25px;
+            padding: 27px 25px 30px;
         }
 
         .projeto-numero {
             display: inline-block;
-            color: #2563eb;
-            font-size: 0.76rem;
+            color: #62d5ff;
+            font-size: 0.73rem;
             font-weight: 800;
-            margin-bottom: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
         .projeto-conteudo h3 {
-            color: #111827;
+            color: #f4f6ff;
             font-size: 1.25rem;
-            margin-bottom: 12px;
+            line-height: 1.4;
+            margin-bottom: 14px;
         }
 
         .projeto-conteudo p {
-            color: #64748b;
-            font-size: 0.96rem;
-            line-height: 1.75;
-            margin-bottom: 22px;
+            min-height: 85px;
+            color: #a2abc2;
+            font-size: 0.94rem;
+            line-height: 1.85;
+            margin-bottom: 23px;
+        }
+
+        .lista-tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tecnologia {
+            padding: 6px 10px;
+            color: #c4b5fd;
+            background: rgba(167, 139, 250, 0.09);
+            border: 1px solid rgba(167, 139, 250, 0.17);
+            border-radius: 7px;
+            font-size: 0.72rem;
+            font-weight: 600;
         }
 
         .projeto-link {
-            display: inline-block;
-            color: #2563eb;
-            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #62d5ff;
             font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
             transition: color 0.2s ease;
         }
 
         .projeto-link:hover {
-            color: #7c3aed;
+            color: #c4b5fd;
         }
 
-        /* SEÇÃO FINAL */
+        /* =================================
+           SOBRE OS ESTUDOS
+           ================================= */
+
+        .sobre-projetos {
+            margin-top: 75px;
+            padding: 38px;
+            background:
+                radial-gradient(
+                    ellipse at top left,
+                    rgba(167, 139, 250, 0.12),
+                    transparent 60%
+                ),
+                #101625;
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 20px;
+        }
+
+        .sobre-projetos h2 {
+            color: #f4f6ff;
+            font-size: clamp(1.7rem, 4vw, 2.5rem);
+            margin-bottom: 17px;
+        }
+
+        .sobre-projetos h2 span {
+            color: #62d5ff;
+        }
+
+        .sobre-projetos p {
+            max-width: 800px;
+            color: #a2abc2;
+            line-height: 1.9;
+        }
+
+        /* =================================
+           CHAMADA PARA CONTATO
+           ================================= */
 
         .mensagem-final {
-            margin-top: 65px;
-            padding: 35px;
+            margin-top: 30px;
+            padding: 55px 25px;
             text-align: center;
-            background: #ffffff;
-            border: 1px solid #dce4f0;
+            background: linear-gradient(
+                145deg,
+                rgba(37, 99, 235, 0.09),
+                rgba(124, 58, 237, 0.09)
+            );
+            border: 1px solid rgba(98, 213, 255, 0.15);
             border-radius: 20px;
         }
 
         .mensagem-final h2 {
-            color: #111827;
-            margin-bottom: 12px;
-            font-size: 1.8rem;
+            color: #f4f6ff;
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            margin-bottom: 15px;
         }
 
         .mensagem-final p {
-            color: #64748b;
-            line-height: 1.8;
-            margin-bottom: 22px;
+            max-width: 620px;
+            margin: 0 auto 28px;
+            color: #a2abc2;
+            line-height: 1.9;
         }
 
-        .mensagem-final .botao {
-            color: #ffffff;
-            background: linear-gradient(120deg, #2563eb, #0891b2);
+        .botao-contato {
+            display: inline-block;
+            padding: 14px 23px;
+            color: #080b14;
+            background: linear-gradient(120deg, #62d5ff, #a78bfa);
+            border-radius: 10px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform 0.2s ease, filter 0.2s ease;
         }
 
-        /* RODAPÉ */
+        .botao-contato:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        /* =================================
+           RODAPÉ
+           ================================= */
 
         .rodape {
-            background: #1b2231;
+            background: #080b14;
+            border-top: 1px solid rgba(255, 255, 255, 0.09);
         }
 
         .rodape p {
-            color: #cbd5e1;
+            color: #a2abc2;
         }
 
-        /* ANIMAÇÕES */
+        /* =================================
+           ANIMAÇÕES
+           ================================= */
 
         @keyframes entrada {
             from {
                 opacity: 0;
-                transform: translateY(18px);
+                transform: translateY(20px);
             }
 
             to {
@@ -228,20 +356,32 @@
             }
         }
 
-        /* TABLETS */
+        /* =================================
+           RESPONSIVIDADE
+           ================================= */
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
             .grade-projetos {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
+
+            .projeto:last-child {
+                grid-column: 1 / -1;
+            }
         }
 
-        /* CELULARES */
-
-        @media (max-width: 580px) {
+        @media (max-width: 600px) {
             .galeria-pagina {
                 width: 90%;
-                padding-top: 45px;
+                padding-top: 50px;
+            }
+
+            .galeria-cabecalho {
+                margin-bottom: 35px;
+            }
+
+            .galeria-cabecalho h1 {
+                letter-spacing: -1px;
             }
 
             .grade-projetos {
@@ -249,12 +389,25 @@
                 gap: 22px;
             }
 
+            .projeto:last-child {
+                grid-column: auto;
+            }
+
             .projeto-topo {
-                height: 170px;
+                height: 175px;
+            }
+
+            .projeto-conteudo p {
+                min-height: auto;
+            }
+
+            .sobre-projetos {
+                margin-top: 45px;
+                padding: 28px 22px;
             }
 
             .mensagem-final {
-                padding: 28px 20px;
+                padding: 40px 20px;
             }
         }
 
@@ -271,7 +424,7 @@
 
 <body>
 
-    <!-- MENU -->
+    <!-- CABEÇALHO E NAVEGAÇÃO -->
 
     <header class="topo">
 
@@ -299,31 +452,37 @@
 
     </header>
 
-    <!-- CONTEÚDO -->
+    <!-- CONTEÚDO PRINCIPAL -->
 
     <main class="galeria-pagina">
+
+        <!-- INTRODUÇÃO -->
 
         <section class="galeria-cabecalho">
 
             <span class="etiqueta">
-                MEUS PROJETOS
+                MEUS ESTUDOS • MEUS PROJETOS
             </span>
 
             <h1>
-                Minha <span>Galeria</span>
+                Minha <span>Galeria.</span>
             </h1>
 
             <p>
-                Projetos e atividades desenvolvidos durante meus estudos.
+                Um espaço para apresentar meus estudos, meus exercícios
+                e minha evolução como estudante de Tecnologia da Informação.
             </p>
+
+            <div class="linha-decorativa"></div>
 
         </section>
 
-        <!-- CARTÕES -->
+        <!-- CARTÕES DOS PROJETOS -->
 
-        <section class="grade-projetos" aria-label="Projetos de programação">
+        <section class="grade-projetos"
+                 aria-label="Galeria de projetos de programação">
 
-            <!-- LÓGICA DE PROGRAMAÇÃO -->
+            <!-- PROJETO 01 -->
 
             <article class="projeto">
 
@@ -340,19 +499,26 @@
                     <h3>Lógica de Programação</h3>
 
                     <p>
-                        Exercícios de raciocínio lógico, algoritmos,
-                        variáveis, condições e estruturas de repetição.
+                        Estudos sobre algoritmos, variáveis, operadores,
+                        estruturas condicionais e laços de repetição.
+                        A base para aprender a programar.
                     </p>
 
-                    <a class="projeto-link" href="contato.html">
-                        Conheça mais →
+                    <div class="lista-tecnologias">
+                        <span class="tecnologia">Algoritmos</span>
+                        <span class="tecnologia">Variáveis</span>
+                        <span class="tecnologia">Condições</span>
+                    </div>
+
+                    <a href="contato.html" class="projeto-link">
+                        Tenho interesse em aprender mais →
                     </a>
 
                 </div>
 
             </article>
 
-            <!-- SCRIPTS -->
+            <!-- PROJETO 02 -->
 
             <article class="projeto">
 
@@ -369,20 +535,26 @@
                     <h3>Scripts e Terminal</h3>
 
                     <p>
-                        Códigos e automações para executar tarefas,
-                        explorar comandos e entender como os scripts
-                        funcionam.
+                        Exploração de comandos, pequenos scripts
+                        e automações para entender como executar
+                        tarefas usando código.
                     </p>
 
-                    <a class="projeto-link" href="contato.html">
-                        Conheça mais →
+                    <div class="lista-tecnologias">
+                        <span class="tecnologia">Terminal</span>
+                        <span class="tecnologia">Bash</span>
+                        <span class="tecnologia">Automação</span>
+                    </div>
+
+                    <a href="contato.html" class="projeto-link">
+                        Tenho interesse em aprender mais →
                     </a>
 
                 </div>
 
             </article>
 
-            <!-- PYTHON -->
+            <!-- PROJETO 03 -->
 
             <article class="projeto">
 
@@ -399,13 +571,19 @@
                     <h3>Programação em Python</h3>
 
                     <p>
-                        Meus estudos de Python, incluindo variáveis,
-                        tipos de dados, condições, laços e pequenos
-                        programas.
+                        Prática com a linguagem Python, aprendendo
+                        tipos de dados, entradas, saídas, condições
+                        e estruturas de repetição.
                     </p>
 
-                    <a class="projeto-link" href="contato.html">
-                        Conheça mais →
+                    <div class="lista-tecnologias">
+                        <span class="tecnologia">Python</span>
+                        <span class="tecnologia">Funções</span>
+                        <span class="tecnologia">Prática</span>
+                    </div>
+
+                    <a href="contato.html" class="projeto-link">
+                        Tenho interesse em aprender mais →
                     </a>
 
                 </div>
@@ -414,21 +592,40 @@
 
         </section>
 
-        <!-- FINAL -->
+        <!-- SOBRE A JORNADA -->
+
+        <section class="sobre-projetos">
+
+            <h2>
+                Sempre aprendendo.
+                <span>Sempre evoluindo.</span>
+            </h2>
+
+            <p>
+                Estou no início da minha jornada na Tecnologia da
+                Informação. Cada exercício, cada código e cada projeto
+                são oportunidades de aprender algo novo. Esta galeria
+                representa meus interesses e o caminho que quero seguir
+                no desenvolvimento de software.
+            </p>
+
+        </section>
+
+        <!-- CONTATO -->
 
         <section class="mensagem-final">
 
             <h2>
-                Todo projeto começa com uma ideia.
+                Vamos conversar sobre tecnologia?
             </h2>
 
             <p>
-                Estou aprendendo e desenvolvendo novas habilidades
-                a cada etapa da minha jornada na Tecnologia da Informação.
+                Tem alguma sugestão, ideia ou dica de programação?
+                Acesse a página de contato e envie sua mensagem.
             </p>
 
-            <a href="contato.html" class="botao">
-                Entre em contato ↗
+            <a href="contato.html" class="botao-contato">
+                Ir para contato ↗
             </a>
 
         </section>
@@ -448,7 +645,7 @@
         </p>
 
         <p>
-            © 2026 — Todos os direitos reservados.
+            © 2026 — Projeto de desenvolvimento web.
         </p>
 
     </footer>
