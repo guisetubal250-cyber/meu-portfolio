@@ -1,106 +1,617 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore um mundo de criatividade, tecnologia e inspiração.">
-    <title>Vision | Página Inicial</title>
+
+    <meta name="description"
+        content="Conheça meu portfólio, minha jornada como estudante de Tecnologia da Informação e meus projetos de programação.">
+
+    <meta name="theme-color" content="#080b14">
+
+    <title>Meu Portfólio | Estudante de TI</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================
+           ESTILO EXCLUSIVO DA PÁGINA INICIAL
+           ===================================== */
+
+        .inicio {
+            width: min(1120px, 88%);
+            margin: auto;
+        }
+
+        /* APRESENTAÇÃO PRINCIPAL */
+
+        .apresentacao {
+            min-height: 590px;
+            display: flex;
+            align-items: center;
+            padding: 85px 0;
+        }
+
+        .apresentacao-conteudo {
+            max-width: 850px;
+            animation: entrada 0.9s ease both;
+        }
+
+        .selo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 15px;
+            margin-bottom: 28px;
+
+            color: var(--azul);
+            background: rgba(98, 213, 255, 0.06);
+            border: 1px solid rgba(98, 213, 255, 0.2);
+            border-radius: 30px;
+
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .selo::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--azul);
+            box-shadow: 0 0 12px var(--azul);
+        }
+
+        .apresentacao h1 {
+            max-width: 800px;
+            font-size: clamp(3rem, 7vw, 5.8rem);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 28px;
+        }
+
+        .apresentacao h1 span {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .texto-destaque {
+            max-width: 720px;
+            color: var(--texto);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .texto-apresentacao {
+            max-width: 680px;
+            color: var(--texto-suave);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        .acoes-inicio {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        /* DETALHES DECORATIVOS SEM IMAGENS */
+
+        .detalhe {
+            width: 100%;
+            height: 1px;
+            margin-top: 45px;
+            background: linear-gradient(
+                90deg,
+                var(--roxo),
+                var(--azul),
+                transparent
+            );
+            opacity: 0.5;
+        }
+
+        /* SEÇÃO SOBRE MIM */
+
+        .sobre-mim {
+            padding: 75px 0;
+            border-top: 1px solid var(--borda);
+        }
+
+        .cabecalho-secao {
+            max-width: 700px;
+            margin-bottom: 38px;
+        }
+
+        .cabecalho-secao h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin-bottom: 18px;
+        }
+
+        .cabecalho-secao p {
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        .grade-sobre {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .bloco-sobre {
+            padding: 28px;
+            background: linear-gradient(
+                145deg,
+                #121a2b,
+                #0c1120
+            );
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .bloco-sobre:hover {
+            transform: translateY(-6px);
+            border-color: rgba(167, 139, 250, 0.5);
+            background: #141c2e;
+        }
+
+        .icone-texto {
+            display: grid;
+            place-items: center;
+
+            width: 48px;
+            height: 48px;
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            border-radius: 12px;
+
+            background: rgba(167, 139, 250, 0.1);
+            color: var(--roxo);
+
+            font-family: monospace;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .bloco-sobre h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .bloco-sobre p {
+            font-size: 0.94rem;
+            line-height: 1.8;
+        }
+
+        /* OBJETIVOS */
+
+        .objetivos {
+            padding: 70px 35px;
+            margin: 20px 0 85px;
+
+            background:
+                radial-gradient(
+                    ellipse at top left,
+                    rgba(167, 139, 250, 0.12),
+                    transparent 55%
+                ),
+                #101625;
+
+            border: 1px solid var(--borda);
+            border-radius: 22px;
+        }
+
+        .objetivos h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .objetivos > p {
+            max-width: 720px;
+            line-height: 1.9;
+        }
+
+        .lista-objetivos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 32px;
+            list-style: none;
+        }
+
+        .lista-objetivos li {
+            padding: 17px;
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+            background: rgba(8, 11, 20, 0.45);
+            color: var(--texto-suave);
+        }
+
+        .lista-objetivos li::before {
+            content: "✓";
+            margin-right: 12px;
+            color: var(--azul);
+            font-weight: bold;
+        }
+
+        /* CHAMADA FINAL */
+
+        .final-inicio {
+            text-align: center;
+            padding: 75px 20px;
+            margin-bottom: 45px;
+
+            border-top: 1px solid var(--borda);
+        }
+
+        .final-inicio h2 {
+            max-width: 750px;
+            margin: 0 auto 20px;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+        }
+
+        .final-inicio p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+
+        .final-inicio .acoes-inicio {
+            justify-content: center;
+        }
+
+        /* ANIMAÇÃO */
+
+        @keyframes entrada {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ACESSIBILIDADE */
+
+        @media (prefers-reduced-motion: reduce) {
+            .apresentacao-conteudo {
+                animation: none;
+            }
+
+            .bloco-sobre {
+                transition: none;
+            }
+        }
+
+        /* TABLETS */
+
+        @media (max-width: 800px) {
+            .grade-sobre {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .apresentacao {
+                min-height: auto;
+                padding: 75px 0;
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 550px) {
+            .inicio {
+                width: 90%;
+            }
+
+            .apresentacao {
+                padding: 60px 0;
+            }
+
+            .apresentacao h1 {
+                font-size: clamp(2.7rem, 12vw, 4rem);
+                letter-spacing: -1.8px;
+            }
+
+            .acoes-inicio {
+                flex-direction: column;
+            }
+
+            .acoes-inicio .botao {
+                width: 100%;
+                text-align: center;
+            }
+
+            .grade-sobre {
+                grid-template-columns: 1fr;
+            }
+
+            .objetivos {
+                padding: 35px 22px;
+            }
+
+            .lista-objetivos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <header class="topo">
-        <a href="index.html" class="logo">VISION<span>.</span></a>
+    <!-- CABEÇALHO -->
 
-        <nav aria-label="Menu principal">
+    <header class="topo">
+
+        <a href="index.html" class="logo">
+            PORTFÓLIO<span>.</span>
+        </a>
+
+        <nav aria-label="Navegação principal">
             <ul class="menu">
-                <li><a href="index.html" class="ativo">Início</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li>
+                    <a href="index.html" class="ativo">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="galeria.html">
+                        Galeria
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contato.html">
+                        Contato
+                    </a>
+                </li>
             </ul>
         </nav>
+
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-conteudo">
-                <span class="etiqueta">CRIATIVIDADE SEM LIMITES</span>
+    <!-- CONTEÚDO PRINCIPAL -->
 
-                <h1>Explore um mundo de
-                    <span>possibilidades.</span>
+    <main class="inicio">
+
+        <!-- BOAS-VINDAS -->
+
+        <section class="apresentacao">
+
+            <div class="apresentacao-conteudo">
+
+                <span class="selo">
+                    ESTUDANTE DE TECNOLOGIA DA INFORMAÇÃO
+                </span>
+
+                <h1>
+                    Bem-vindo ao
+                    <span>meu universo.</span>
                 </h1>
 
-                <p>
-                    Um espaço dedicado à tecnologia, à arte e à criatividade.
-                    Descubra ideias, explore imagens e entre em contato conosco.
+                <p class="texto-destaque">
+                    Olá! Seja muito bem-vindo ao meu espaço na internet.
+                    Sou um estudante iniciante de Tecnologia da Informação,
+                    interessado em programação, desenvolvimento web
+                    e inovação.
                 </p>
 
-                <div class="botoes">
-                    <a href="galeria.html" class="botao">Explorar galeria ↗</a>
-                    <a href="contato.html" class="botao botao-secundario">Fale conosco</a>
-                </div>
-            </div>
-
-            <div class="hero-imagem">
-                <img
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85"
-                    alt="Placa eletrônica com componentes tecnológicos">
-                <div class="imagem-legenda">
-                    <span>01 / INOVAÇÃO</span>
-                    <strong>O futuro começa com uma ideia.</strong>
-                </div>
-            </div>
-        </section>
-
-        <section class="sobre secao">
-            <div class="titulo-secao">
-                <span class="etiqueta">QUEM SOMOS</span>
-                <h2>Ideias que ganham <span>vida.</span></h2>
-                <p>
-                    Acreditamos que a criatividade pode transformar
-                    a maneira como enxergamos o mundo.
+                <p class="texto-apresentacao">
+                    Estou no começo da minha jornada na TI, aprendendo
+                    a transformar ideias em projetos por meio do código.
+                    Cada nova descoberta representa uma oportunidade
+                    de aprender, desenvolver minhas habilidades e
+                    construir meu futuro profissional.
                 </p>
+
+                <p class="texto-apresentacao">
+                    Criei este site para apresentar um pouco dos meus
+                    interesses, compartilhar minhas experiências de
+                    aprendizado e mostrar minha evolução no mundo
+                    da tecnologia.
+                </p>
+
+                <div class="acoes-inicio">
+
+                    <a href="#sobre" class="botao">
+                        Conheça mais sobre mim ↘
+                    </a>
+
+                    <a href="galeria.html" class="botao botao-secundario">
+                        Explorar galeria ↗
+                    </a>
+
+                </div>
+
+                <div class="detalhe"></div>
+
             </div>
 
-            <div class="cards">
-                <article class="card">
-                    <span class="numero">01</span>
-                    <h3>Tecnologia</h3>
-                    <p>Descubra novas possibilidades por meio da inovação digital.</p>
-                    <a href="galeria.html">Descobrir mais →</a>
-                </article>
-
-                <article class="card">
-                    <span class="numero">02</span>
-                    <h3>Criatividade</h3>
-                    <p>Transformamos ideias em experiências visuais marcantes.</p>
-                    <a href="galeria.html">Ver inspirações →</a>
-                </article>
-
-                <article class="card">
-                    <span class="numero">03</span>
-                    <h3>Conexão</h3>
-                    <p>Compartilhe suas ideias e converse com nossa equipe.</p>
-                    <a href="contato.html">Entrar em contato →</a>
-                </article>
-            </div>
         </section>
 
-        <section class="chamada">
-            <div>
-                <span class="etiqueta">SUA IDEIA IMPORTA</span>
-                <h2>Vamos criar algo incrível?</h2>
-                <p>Envie uma mensagem e compartilhe sua ideia conosco.</p>
+        <!-- SOBRE MIM -->
+
+        <section class="sobre-mim" id="sobre">
+
+            <div class="cabecalho-secao">
+
+                <span class="etiqueta">
+                    UM POUCO SOBRE MIM
+                </span>
+
+                <h2>
+                    Aprendendo hoje.
+                    <span>Construindo o amanhã.</span>
+                </h2>
+
+                <p>
+                    A tecnologia está sempre evoluindo, e eu quero
+                    evoluir junto com ela. Meu objetivo é aprender
+                    continuamente, praticar o que estudo e transformar
+                    meu conhecimento em experiências reais.
+                </p>
+
             </div>
-            <a href="contato.html" class="botao">Começar agora ↗</a>
+
+            <div class="grade-sobre">
+
+                <article class="bloco-sobre">
+
+                    <div class="icone-texto">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>Programação</h3>
+
+                    <p>
+                        Estou desenvolvendo minha lógica de programação
+                        e aprendendo como escrever códigos para criar
+                        soluções digitais.
+                    </p>
+
+                </article>
+
+                <article class="bloco-sobre">
+
+                    <div class="icone-texto">
+                        { }
+                    </div>
+
+                    <h3>Desenvolvimento web</h3>
+
+                    <p>
+                        Tenho interesse em HTML e CSS e em aprender
+                        JavaScript para criar páginas modernas,
+                        interativas e funcionais.
+                    </p>
+
+                </article>
+
+                <article class="bloco-sobre">
+
+                    <div class="icone-texto">
+                        ++
+                    </div>
+
+                    <h3>Evolução constante</h3>
+
+                    <p>
+                        Quero ampliar meus conhecimentos, enfrentar
+                        novos desafios e melhorar meus projetos
+                        a cada etapa da minha jornada.
+                    </p>
+
+                </article>
+
+            </div>
+
         </section>
+
+        <!-- MEUS OBJETIVOS -->
+
+        <section class="objetivos">
+
+            <span class="etiqueta">
+                MEU CAMINHO NA TECNOLOGIA
+            </span>
+
+            <h2>
+                O começo de uma
+                <span>grande jornada.</span>
+            </h2>
+
+            <p>
+                Sei que aprender programação exige dedicação,
+                paciência e prática. Por isso, quero continuar
+                estudando, experimentar novas ferramentas e
+                desenvolver projetos que representem meu progresso.
+            </p>
+
+            <ul class="lista-objetivos">
+
+                <li>
+                    Aprender novas linguagens de programação.
+                </li>
+
+                <li>
+                    Criar sites e aplicações web.
+                </li>
+
+                <li>
+                    Desenvolver projetos próprios.
+                </li>
+
+                <li>
+                    Construir uma carreira na área de TI.
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- CONHEÇA MAIS -->
+
+        <section class="final-inicio">
+
+            <span class="etiqueta">
+                EXPLORE MEU ESPAÇO
+            </span>
+
+            <h2>
+                Isso é apenas o começo.
+            </h2>
+
+            <p>
+                Quero que este site seja um registro da minha evolução
+                como estudante de tecnologia. Explore as outras páginas
+                para conhecer a galeria e entrar em contato comigo.
+            </p>
+
+            <div class="acoes-inicio">
+
+                <a href="galeria.html" class="botao">
+                    Conheça a galeria ↗
+                </a>
+
+                <a href="contato.html" class="botao botao-secundario">
+                    Entre em contato ↗
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
+    <!-- RODAPÉ -->
+
     <footer class="rodape">
-        <a href="index.html" class="logo">VISION<span>.</span></a>
-        <p>Projeto acadêmico de desenvolvimento web.</p>
-        <p>© 2026 Vision. Todos os direitos reservados.</p>
+
+        <a href="index.html" class="logo">
+            PORTFÓLIO<span>.</span>
+        </a>
+
+        <p>
+            Desenvolvido por um estudante de TI.
+        </p>
+
+        <p>
+            © 2026 — Projeto de desenvolvimento web.
+        </p>
+
     </footer>
 
 </body>
