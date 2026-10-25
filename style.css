@@ -1,240 +1,170 @@
 /* ==================================================== */
-/* PALETA DE CORES: PRETO, BRANCO E AZUL (COM GLOW)     */
+/* NOVOS ESTILOS REFINADOS PARA A PÁGINA INICIAL        */
 /* ==================================================== */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #090d16 0%, #020617 100%); /* Fundo Escuro Profundo */
-    margin: 0;
-    padding: 0;
-    color: #ffffff; /* Texto Branco */
-    min-height: 100vh;
-}
 
-/* --- MENU DE NAVEGAÇÃO SUPERIOR --- */
-nav {
-    background-color: #020617;
-    padding: 20px 40px;
-    border-bottom: 1px solid rgba(56, 189, 248, 0.2); /* Linha com brilho sutil */
+/* Container dividido em duas colunas responsivas */
+.hero-container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-nav .logo {
-    font-weight: 800;
-    font-size: 24px;
-    color: #ffffff;
-}
-
-nav .logo span {
-    color: #38bdf8; /* Ponto azul iluminado no nome */
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #94a3b8;
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover, nav ul li a.active {
-    color: #38bdf8; /* Azul iluminado */
-    text-shadow: 0 0 10px rgba(56, 189, 248, 0.6); /* Brilho suave */
-}
-
-/* --- SEÇÃO PRINCIPAL / TEXTOS --- */
-main {
+    gap: 50px;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    text-align: center;
+    margin: 40px auto;
+    padding: 40px 20px;
+    text-align: left; /* Alinhamento profissional à esquerda */
 }
 
-.sub-tag {
-    color: #38bdf8;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    display: block;
+.hero-conteudo {
+    flex: 1;
+    max-width: 600px;
 }
 
-h1 {
-    font-size: 42px;
-    color: #ffffff;
-    margin: 0 0 15px 0;
-    font-weight: 800;
-    letter-spacing: -1px;
+.hero-conteudo h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.descricao-pagina {
+/* Efeito de Texto Gradiente com Brilho */
+.texto-gradiente {
+    background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+}
+
+.descricao-hero {
     color: #94a3b8;
-    font-size: 16px;
-    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 35px;
 }
 
-/* --- GRID DA GALERIA DE PROJETOS --- */
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    width: 100%;
-}
-
-.projeto-card {
-    background-color: #0f172a; /* Caixa do card escura */
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.projeto-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(56, 189, 248, 0.4);
-    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1); /* Iluminação externa ao passar o mouse */
-}
-
-/* Bloco colorido simulando a imagem enviada */
-.projeto-banner {
-    height: 180px;
+/* Área de botões alinhados */
+.hero-botoes {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 1px;
+    gap: 15px;
+    margin-bottom: 45px;
 }
 
-/* Cores dos Banners baseados na foto do usuário */
-.banner-html { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
-.banner-css { background: linear-gradient(135deg, #86198f 0%, #d946ef 100%); }
-.banner-js { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); }
-
-.projeto-info {
-    padding: 25px;
-    text-align: left;
-}
-
-.projeto-tag {
-    color: #38bdf8;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.projeto-info h3 {
-    margin: 0 0 10px 0;
-    font-size: 20px;
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.projeto-info p {
-    margin: 0;
-    font-size: 14px;
-    color: #94a3b8;
-    line-height: 1.5;
-}
-
-/* --- ESTRUTURA DO FORMULÁRIO DE CONTATO --- */
-.form-container {
-    background-color: #0f172a;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 25px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #94a3b8;
-    font-size: 14px;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    box-sizing: border-box;
-    background-color: #020617;
-    color: #ffffff;
-    font-size: 15px;
-    font-family: inherit;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
-}
-
-.btn-enviar {
-    background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
-    color: #ffffff;
-    border: none;
-    padding: 16px;
-    width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
-    transition: all 0.2s ease;
-}
-
-.btn-enviar:hover {
-    opacity: 0.95;
-    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
-}
-
-/* --- SEÇÃO HERO DA HOME --- */
-.hero-home {
-    padding: 100px 20px;
-}
-
-.btn-home {
+.btn-secundario {
     display: inline-block;
-    background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
-    color: white;
+    background-color: transparent;
+    color: #ffffff;
     text-decoration: none;
     padding: 16px 32px;
     border-radius: 8px;
     font-weight: bold;
-    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
-    transition: all 0.2s ease;
-    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
 }
 
-.btn-home:hover {
-    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+.btn-secundario:hover {
+    border-color: #38bdf8;
+    color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+/* Painel de Estatísticas Fictícias */
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+}
+
+.stat-item h3 {
+    margin: 0;
+    font-size: 26px;
+    color: #38bdf8;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.stat-item p {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ilustração Visual Decorativa de Código (Coluna Direita) */
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Simula uma janela de IDE / Editor de Código flutuando */
+.caixa-codigo-decorativa {
+    background-color: #0b0f19;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(56, 189, 248, 0.05);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    overflow: hidden;
+    animation: flutuarAnima 4s ease-in-out infinite; /* Efeito flutuante sutil */
+}
+
+.topo-janela {
+    background-color: #020617;
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.topo-janela .ponto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.topo-janela .vermelha { background-color: #ef4444; }
+.topo-janela .amarela { background-color: #eab308; }
+.topo-janela .verde { background-color: #22c55e; }
+
+.caixa-codigo-decorativa pre {
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* Cores do código falso */
+.comentario { color: #64748b; font-style: italic; }
+.palavra-chave { color: #f43f5e; }
+.texto { color: #10b981; }
+.funcao { color: #38bdf8; }
+
+/* Animação suave de flutuação para o elemento visual */
+@keyframes flutuarAnima {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsividade para telas menores de celular */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 20px;
+    }
+    .hero-botoes {
+        justify-content: center;
+    }
+    .hero-stats {
+        justify-content: center;
+        gap: 25px;
+    }
+    .hero-visual {
+        width: 100%;
+        margin-top: 20px;
+    }
 }
