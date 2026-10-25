@@ -1,51 +1,84 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#080b14">
-
-    <meta name="description"
-          content="Galeria de projetos de Setúbal: lógica de programação, scripts e Python.">
-
+    <meta name="description" content="Galeria de estudos de Setúbal em programação.">
     <title>Setúbal | Galeria</title>
-
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* NÃO ALTERAR O FUNDO GERAL DO SITE */
+        body {
+            margin: 0;
+            background: #080b14;
+            color: #f4f6ff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-        /* CABEÇALHO DA GALERIA */
+        .topo {
+            min-height: 70px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: #111827;
+            border-bottom: 1px solid #252d40;
+        }
+
+        .logo {
+            color: #f4f6ff;
+            font-size: 1.7rem;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .menu a:hover,
+        .menu a.ativo {
+            color: #62d5ff;
+        }
 
         .galeria-pagina {
             width: min(1120px, 90%);
-            margin: 0 auto;
+            margin: auto;
             padding: 65px 0 80px;
         }
 
         .galeria-cabecalho {
-            text-align: center;
-            margin: 0 auto 50px;
             max-width: 800px;
-            animation: entrada 0.7s ease both;
+            margin: 0 auto 50px;
+            text-align: center;
         }
 
-        .etiqueta-galeria {
-            display: inline-block;
-            margin-bottom: 15px;
+        .etiqueta {
             color: #62d5ff;
-            font-size: 0.76rem;
+            font-size: .76rem;
             font-weight: 800;
             letter-spacing: 2px;
         }
 
         .galeria-cabecalho h1 {
-            font-size: clamp(2.7rem, 6vw, 4.3rem);
-            line-height: 1.15;
+            font-size: clamp(2.8rem, 6vw, 4.3rem);
             letter-spacing: -2px;
-            margin-bottom: 18px;
+            margin: 20px 0;
         }
 
         .galeria-cabecalho h1 span {
@@ -55,20 +88,21 @@
             -webkit-background-clip: text;
         }
 
-        .galeria-cabecalho p {
-            font-size: 1.02rem;
+        .galeria-cabecalho p,
+        .projeto-conteudo p,
+        .sobre-projetos p,
+        .mensagem-final p {
+            color: #a2abc2;
             line-height: 1.9;
         }
 
         .linha-decorativa {
             width: 85px;
             height: 4px;
-            margin: 24px auto 0;
-            border-radius: 20px;
+            margin: 25px auto 0;
+            border-radius: 10px;
             background: linear-gradient(90deg, #a78bfa, #62d5ff);
         }
-
-        /* GRADE */
 
         .grade-projetos {
             display: grid;
@@ -79,21 +113,16 @@
         .projeto {
             min-width: 0;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: #111827;
+            border: 1px solid #293249;
             border-radius: 20px;
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+            transition: transform .3s, box-shadow .3s;
         }
 
         .projeto:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.30);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.20);
+            transform: translateY(-7px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
         }
-
-        /* CORES DOS CARTÕES */
 
         .projeto-topo {
             height: 195px;
@@ -102,7 +131,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            transition: filter 0.3s ease;
+            transition: filter .3s;
         }
 
         .projeto:hover .projeto-topo {
@@ -113,9 +142,8 @@
         .projeto-topo::after {
             content: "";
             position: absolute;
-            border: 1px solid rgba(255, 255, 255, 0.22);
+            border: 1px solid rgba(255, 255, 255, .22);
             border-radius: 50%;
-            pointer-events: none;
         }
 
         .projeto-topo::before {
@@ -133,70 +161,42 @@
         .projeto-topo h2 {
             position: relative;
             z-index: 1;
-            color: #ffffff;
+            color: white;
             font-size: clamp(1.7rem, 3vw, 2.4rem);
-            font-weight: 800;
             letter-spacing: 1px;
-            text-align: center;
         }
-
-        /* AZUL VIVO */
 
         .logica {
-            background: linear-gradient(
-                135deg,
-                #315eea 0%,
-                #3987ff 50%,
-                #35c4f5 100%
-            );
+            background: linear-gradient(135deg, #315eea, #3987ff, #35c4f5);
         }
-
-        /* ROXO E ROSA VIBRANTES */
 
         .scripts {
-            background: linear-gradient(
-                135deg,
-                #8138ed 0%,
-                #b83de0 55%,
-                #ed4fa9 100%
-            );
+            background: linear-gradient(135deg, #8138ed, #b83de0, #ed4fa9);
         }
-
-        /* VERDE E TURQUESA */
 
         .python {
-            background: linear-gradient(
-                135deg,
-                #009b70 0%,
-                #00b894 55%,
-                #20d5b9 100%
-            );
+            background: linear-gradient(135deg, #009b70, #00b894, #20d5b9);
         }
 
-        /* CONTEÚDO DOS CARTÕES */
-
         .projeto-conteudo {
-            padding: 26px 25px 30px;
+            padding: 26px 24px 30px;
         }
 
         .projeto-numero {
-            display: inline-block;
             color: #62d5ff;
-            font-size: 0.74rem;
+            font-size: .74rem;
             font-weight: 800;
             letter-spacing: 1px;
-            margin-bottom: 14px;
         }
 
         .projeto-conteudo h3 {
             font-size: 1.22rem;
             line-height: 1.45;
-            margin-bottom: 13px;
+            margin: 15px 0 12px;
         }
 
         .projeto-conteudo p {
-            font-size: 0.94rem;
-            line-height: 1.85;
+            font-size: .94rem;
             margin-bottom: 22px;
         }
 
@@ -210,100 +210,76 @@
         .tecnologia {
             padding: 6px 10px;
             color: #c4b5fd;
-            background: rgba(167, 139, 250, 0.10);
-            border: 1px solid rgba(167, 139, 250, 0.20);
+            background: rgba(167, 139, 250, .10);
+            border: 1px solid rgba(167, 139, 250, .20);
             border-radius: 7px;
-            font-size: 0.73rem;
-            font-weight: 600;
+            font-size: .73rem;
         }
 
         .projeto-link {
-            display: inline-block;
             color: #62d5ff;
-            font-size: 0.9rem;
+            font-size: .9rem;
             font-weight: 700;
             text-decoration: none;
-            transition: color 0.2s ease;
         }
 
         .projeto-link:hover {
             color: #c4b5fd;
         }
 
-        /* SEÇÃO SOBRE */
-
-        .sobre-projetos {
-            margin-top: 65px;
+        .sobre-projetos,
+        .mensagem-final {
+            margin-top: 35px;
             padding: 35px;
-            border: 1px solid rgba(167, 139, 250, 0.20);
+            background: #101625;
+            border: 1px solid #293249;
             border-radius: 18px;
         }
 
-        .sobre-projetos h2 {
-            font-size: clamp(1.6rem, 4vw, 2.3rem);
-            margin-bottom: 15px;
+        .sobre-projetos h2,
+        .mensagem-final h2 {
+            font-size: clamp(1.7rem, 4vw, 2.4rem);
         }
 
         .sobre-projetos h2 span {
             color: #62d5ff;
         }
 
-        .sobre-projetos p {
-            max-width: 850px;
-            line-height: 1.9;
-        }
-
-        /* CHAMADA PARA CONTATO */
-
         .mensagem-final {
-            margin-top: 28px;
-            padding: 45px 25px;
             text-align: center;
-            border: 1px solid rgba(98, 213, 255, 0.18);
-            border-radius: 18px;
-        }
-
-        .mensagem-final h2 {
-            font-size: clamp(1.6rem, 4vw, 2.4rem);
-            margin-bottom: 15px;
+            padding: 45px 25px;
         }
 
         .mensagem-final p {
             max-width: 650px;
             margin: 0 auto 25px;
-            line-height: 1.9;
         }
 
         .botao-contato {
             display: inline-block;
             padding: 14px 24px;
-            color: #ffffff;
-            background: linear-gradient(120deg, #477bfa, #8955df);
+            color: #080b14;
+            background: linear-gradient(120deg, #62d5ff, #a78bfa);
             border-radius: 10px;
             font-weight: 800;
             text-decoration: none;
-            transition: transform 0.2s ease;
         }
 
-        .botao-contato:hover {
-            transform: translateY(-3px);
+        .rodape {
+            padding: 28px 7%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            background: #080b14;
+            border-top: 1px solid #252d40;
         }
 
-        /* ANIMAÇÃO */
-
-        @keyframes entrada {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .rodape p {
+            color: #8994ac;
+            font-size: .88rem;
         }
-
-        /* TABLETS */
 
         @media (max-width: 900px) {
             .grade-projetos {
@@ -315,45 +291,38 @@
             }
         }
 
-        /* CELULARES */
-
-        @media (max-width: 600px) {
-            .galeria-pagina {
-                width: 90%;
-                padding-top: 45px;
+        @media (max-width: 650px) {
+            .topo {
+                padding: 20px 5%;
+                flex-direction: column;
             }
 
-            .galeria-cabecalho {
-                margin-bottom: 35px;
+            .menu {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .grade-projetos {
                 grid-template-columns: 1fr;
-                gap: 22px;
             }
 
             .projeto:last-child {
                 grid-column: auto;
             }
 
-            .projeto-topo {
-                height: 175px;
-            }
-
             .sobre-projetos {
-                margin-top: 40px;
                 padding: 25px 20px;
             }
 
-            .mensagem-final {
-                padding: 35px 20px;
+            .rodape {
+                flex-direction: column;
+                text-align: center;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
+            *, *::before, *::after {
                 animation: none !important;
                 transition: none !important;
             }
@@ -362,48 +331,23 @@
 </head>
 
 <body>
-
-    <!-- MENU PRINCIPAL -->
-
     <header class="topo">
-
-        <a href="index.html" class="logo">
-            SETÚBAL<span>.</span>
-        </a>
+        <a href="index.html" class="logo">SETÚBAL</a>
 
         <nav aria-label="Menu principal">
             <ul class="menu">
-                <li>
-                    <a href="index.html">Início</a>
-                </li>
-
-                <li>
-                    <a href="galeria.html" class="ativo">Galeria</a>
-                </li>
-
-                <li>
-                    <a href="contato.html">Contato</a>
-                </li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html" class="ativo">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
-
     </header>
 
-    <!-- CONTEÚDO -->
-
     <main class="galeria-pagina">
-
-        <!-- APRESENTAÇÃO -->
-
         <section class="galeria-cabecalho">
+            <span class="etiqueta">MEUS ESTUDOS • MEUS PROJETOS</span>
 
-            <span class="etiqueta-galeria">
-                MEUS ESTUDOS • MEUS PROJETOS
-            </span>
-
-            <h1>
-                Minha <span>Galeria.</span>
-            </h1>
+            <h1>Minha <span>Galeria.</span></h1>
 
             <p>
                 Conheça as áreas de programação que estou estudando
@@ -411,32 +355,22 @@
             </p>
 
             <div class="linha-decorativa"></div>
-
         </section>
 
-        <!-- PROJETOS -->
-
-        <section class="grade-projetos"
-                 aria-label="Projetos de programação">
-
-            <!-- LÓGICA -->
-
+        <section class="grade-projetos" aria-label="Projetos de programação">
             <article class="projeto">
-
                 <div class="projeto-topo logica">
                     <h2>LÓGICA</h2>
                 </div>
 
                 <div class="projeto-conteudo">
-
                     <span class="projeto-numero">PROJETO 01</span>
-
                     <h3>Lógica de Programação</h3>
 
                     <p>
-                        Aprendizado de algoritmos, variáveis, operadores,
+                        Estudos de algoritmos, variáveis, operadores,
                         condições e estruturas de repetição para resolver
-                        problemas por meio do código.
+                        problemas usando código.
                     </p>
 
                     <div class="lista-tecnologias">
@@ -445,32 +379,22 @@
                         <span class="tecnologia">Condições</span>
                     </div>
 
-                    <a href="contato.html" class="projeto-link">
-                        Conheça mais →
-                    </a>
-
+                    <a href="contato.html" class="projeto-link">Conheça mais →</a>
                 </div>
-
             </article>
 
-            <!-- SCRIPTS -->
-
             <article class="projeto">
-
                 <div class="projeto-topo scripts">
                     <h2>SCRIPTS</h2>
                 </div>
 
                 <div class="projeto-conteudo">
-
                     <span class="projeto-numero">PROJETO 02</span>
-
                     <h3>Scripts e Terminal</h3>
 
                     <p>
                         Exploração de comandos, scripts e automações
-                        para compreender como o código pode executar
-                        tarefas e facilitar processos.
+                        para compreender como executar tarefas com código.
                     </p>
 
                     <div class="lista-tecnologias">
@@ -479,32 +403,22 @@
                         <span class="tecnologia">Automação</span>
                     </div>
 
-                    <a href="contato.html" class="projeto-link">
-                        Conheça mais →
-                    </a>
-
+                    <a href="contato.html" class="projeto-link">Conheça mais →</a>
                 </div>
-
             </article>
 
-            <!-- PYTHON -->
-
             <article class="projeto">
-
                 <div class="projeto-topo python">
                     <h2>PYTHON</h2>
                 </div>
 
                 <div class="projeto-conteudo">
-
                     <span class="projeto-numero">PROJETO 03</span>
-
                     <h3>Programação em Python</h3>
 
                     <p>
-                        Prática com Python por meio de pequenos programas,
-                        tipos de dados, entradas, saídas, condições,
-                        funções e laços de repetição.
+                        Prática com tipos de dados, entradas, saídas,
+                        condições, funções e laços de repetição em Python.
                     </p>
 
                     <div class="lista-tecnologias">
@@ -513,66 +427,37 @@
                         <span class="tecnologia">Prática</span>
                     </div>
 
-                    <a href="contato.html" class="projeto-link">
-                        Conheça mais →
-                    </a>
-
+                    <a href="contato.html" class="projeto-link">Conheça mais →</a>
                 </div>
-
             </article>
-
         </section>
-
-        <!-- MINHA JORNADA -->
 
         <section class="sobre-projetos">
-
-            <h2>
-                Aprendendo hoje.
-                <span>Evoluindo sempre.</span>
-            </h2>
+            <h2>Aprendendo hoje. <span>Evoluindo sempre.</span></h2>
 
             <p>
-                Sou estudante iniciante de Tecnologia da Informação
-                e estou desenvolvendo minhas habilidades em programação.
-                Cada exercício é uma oportunidade de aprender, praticar
-                e construir projetos cada vez melhores.
+                Sou estudante iniciante de Tecnologia da Informação.
+                Cada exercício e projeto é uma oportunidade de aprender,
+                praticar e construir habilidades para o futuro.
             </p>
-
         </section>
 
-        <!-- CONTATO -->
-
         <section class="mensagem-final">
-
             <h2>Vamos conversar sobre tecnologia?</h2>
 
             <p>
-                Tem uma sugestão, uma ideia ou uma dica de programação?
+                Tem alguma sugestão, ideia ou dica de programação?
                 Entre em contato e vamos trocar conhecimentos.
             </p>
 
-            <a href="contato.html" class="botao-contato">
-                Ir para contato ↗
-            </a>
-
+            <a href="contato.html" class="botao-contato">Ir para contato ↗</a>
         </section>
-
     </main>
 
-    <!-- RODAPÉ -->
-
     <footer class="rodape">
-
-        <a href="index.html" class="logo">
-            SETÚBAL<span>.</span>
-        </a>
-
+        <a href="index.html" class="logo">SETÚBAL</a>
         <p>Portfólio de um estudante de TI.</p>
-
-        <p>© 2026 — Projeto de desenvolvimento web.</p>
-
+        <p>© 2026 — Todos os direitos reservados.</p>
     </footer>
-
 </body>
 </html>
