@@ -3,57 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria - Meus Projetos</title>
+    <title>Galeria - Portfólio Ana</title>
+    <!-- Vinculando o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">DevScripts</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="galeria.html" class="active">Galeria</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
+    <!-- Menu Superior Compartilhado -->
+    <nav>
+        <div class="logo">Ana<span>.</span></div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="galeria.html" class="active">Galeria</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Estrutura Exata Baseada na Imagem Enviada -->
     <main>
-        <h1>Minha Galeria de Projetos</h1>
-        <p style="color: #94a3b8; margin-bottom: 30px;">Acompanhe visualmente as estruturas lógicas e as tecnologias utilizadas no desenvolvimento de rotinas automatizadas.</p>
-        
-        <div class="grid-galeria">
-            <!-- Item 1 -->
-            <div class="item-galeria">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%231e293b'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='24' fill='%2338bdf8' text-anchor='middle'>[ LOGICA CONDICIONAL ]</text></svg>" alt="Lógica de Programação Estruturada">
-                <div class="info-galeria">
-                    <h3>01. Lógica Condicional</h3>
-                    <p>Desenvolvimento de fluxos algoritmos estruturados utilizando estruturas de decisão (IF/ELSE) e loops de repetição para validação de dados.</p>
+        <span class="sub-tag">Meus Projetos</span>
+        <h1>Galeria</h1>
+        <p class="descricao-pagina">Projetos e atividades desenvolvidos durante meus estudos.</p>
+
+        <div class="galeria-grid">
+            
+            <!-- Card 1: HTML -->
+            <div class="projeto-card">
+                <div class="projeto-banner banner-html">HTML</div>
+                <div class="projeto-info">
+                    <span class="projeto-tag">Projeto 01</span>
+                    <h3>Minha primeira página</h3>
+                    <p>Uma página criada para praticar elementos e tags estruturais do HTML.</p>
                 </div>
             </div>
 
-            <!-- Item 2 -->
-            <div class="item-galeria">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%231e293b'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='24' fill='%2338bdf8' text-anchor='middle'>[ PYTHON AUTOMATION ]</text></svg>" alt="Scripts de Automação com Python">
-                <div class="info-galeria">
-                    <h3>02. Automação com Python</h3>
-                    <p>Criação de scripts limpos e modulares voltados para a manipulação automatizada de sistemas de arquivos e leitura de logs.</p>
+            <!-- Card 2: CSS -->
+            <div class="projeto-card">
+                <div class="projeto-banner banner-css">CSS</div>
+                <div class="projeto-info">
+                    <span class="projeto-tag">Projeto 02</span>
+                    <h3>Site responsivo</h3>
+                    <p>Projeto focado em estilos, layouts flexíveis e adaptação para dispositivos móveis.</p>
                 </div>
             </div>
 
-            <!-- Item 3 -->
-            <div class="item-galeria">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%231e293b'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='24' fill='%2338bdf8' text-anchor='middle'>[ BASH TERMINAL ]</text></svg>" alt="Terminal Shell Bash">
-                <div class="info-galeria">
-                    <h3>03. Scripts Bash & Terminal</h3>
-                    <p>Construção de rotinas executadas diretamente no prompt de comando (CLI), focadas em comandos estruturados e gerenciamento de tarefas.</p>
+            <!-- Card 3: JS -->
+            <div class="projeto-card">
+                <div class="projeto-banner banner-js">JS</div>
+                <div class="projeto-info">
+                    <span class="projeto-tag">Projeto 03</span>
+                    <h3>Prática de programação</h3>
+                    <p>Exercícios dinâmicos construídos para aprender lógica e interações com o usuário.</p>
                 </div>
             </div>
+
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 guisetubal250-cyber. Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
