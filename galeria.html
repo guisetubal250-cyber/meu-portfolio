@@ -1,111 +1,458 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galeria de imagens de tecnologia, natureza e arquitetura.">
-    <title>Vision | Galeria</title>
+
+    <meta name="description"
+        content="Galeria de projetos de lógica de programação, scripts e Python.">
+
+    <title>Setúbal | Galeria de Projetos</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* FUNDO DA GALERIA */
+
+        body {
+            background: #f4f7fc;
+            color: #111827;
+        }
+
+        .topo {
+            background: #1b2231;
+        }
+
+        .galeria-pagina {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+            padding: 65px 0 80px;
+        }
+
+        /* TÍTULO */
+
+        .galeria-cabecalho {
+            text-align: center;
+            margin-bottom: 45px;
+            animation: entrada 0.7s ease both;
+        }
+
+        .galeria-cabecalho .etiqueta {
+            margin-bottom: 10px;
+        }
+
+        .galeria-cabecalho h1 {
+            color: #111827;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            letter-spacing: -1.5px;
+        }
+
+        .galeria-cabecalho h1 span {
+            background: linear-gradient(120deg, #2563eb, #06b6d4);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .galeria-cabecalho p {
+            margin-top: 15px;
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        /* GRADE DE PROJETOS */
+
+        .grade-projetos {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .projeto {
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #dce4f0;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .projeto:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.10);
+        }
+
+        /* BLOCOS COLORIDOS */
+
+        .projeto-topo {
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projeto-topo::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            border-radius: 50%;
+            transform: scale(1.3);
+        }
+
+        .projeto-topo::after {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 50%;
+            transform: scale(1.5);
+        }
+
+        .projeto-topo h2 {
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+            font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .logica {
+            background: linear-gradient(120deg, #2563eb, #38bdf8);
+        }
+
+        .scripts {
+            background: linear-gradient(120deg, #7c3aed, #ec4899);
+        }
+
+        .python {
+            background: linear-gradient(120deg, #059669, #14b8a6);
+        }
+
+        /* CONTEÚDO DOS CARTÕES */
+
+        .projeto-conteudo {
+            padding: 25px;
+        }
+
+        .projeto-numero {
+            display: inline-block;
+            color: #2563eb;
+            font-size: 0.76rem;
+            font-weight: 800;
+            margin-bottom: 13px;
+        }
+
+        .projeto-conteudo h3 {
+            color: #111827;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .projeto-conteudo p {
+            color: #64748b;
+            font-size: 0.96rem;
+            line-height: 1.75;
+            margin-bottom: 22px;
+        }
+
+        .projeto-link {
+            display: inline-block;
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .projeto-link:hover {
+            color: #7c3aed;
+        }
+
+        /* SEÇÃO FINAL */
+
+        .mensagem-final {
+            margin-top: 65px;
+            padding: 35px;
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #dce4f0;
+            border-radius: 20px;
+        }
+
+        .mensagem-final h2 {
+            color: #111827;
+            margin-bottom: 12px;
+            font-size: 1.8rem;
+        }
+
+        .mensagem-final p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        .mensagem-final .botao {
+            color: #ffffff;
+            background: linear-gradient(120deg, #2563eb, #0891b2);
+        }
+
+        /* RODAPÉ */
+
+        .rodape {
+            background: #1b2231;
+        }
+
+        .rodape p {
+            color: #cbd5e1;
+        }
+
+        /* ANIMAÇÕES */
+
+        @keyframes entrada {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* TABLETS */
+
+        @media (max-width: 850px) {
+            .grade-projetos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 580px) {
+            .galeria-pagina {
+                width: 90%;
+                padding-top: 45px;
+            }
+
+            .grade-projetos {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .projeto-topo {
+                height: 170px;
+            }
+
+            .mensagem-final {
+                padding: 28px 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
+    <!-- MENU -->
+
     <header class="topo">
-        <a href="index.html" class="logo">VISION<span>.</span></a>
+
+        <a href="index.html" class="logo">
+            SETÚBAL<span>.</span>
+        </a>
 
         <nav aria-label="Menu principal">
             <ul class="menu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="galeria.html" class="ativo">Galeria</a></li>
-                <li><a href="contato.html">Contato</a></li>
+
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li>
+                    <a href="galeria.html" class="ativo">Galeria</a>
+                </li>
+
+                <li>
+                    <a href="contato.html">Contato</a>
+                </li>
+
             </ul>
         </nav>
+
     </header>
 
-    <main>
-        <section class="pagina-cabecalho">
-            <span class="etiqueta">NOSSO UNIVERSO VISUAL</span>
-            <h1>Galeria de <span>inspirações.</span></h1>
-            <p>Uma coleção de imagens para explorar diferentes mundos e ideias.</p>
+    <!-- CONTEÚDO -->
+
+    <main class="galeria-pagina">
+
+        <section class="galeria-cabecalho">
+
+            <span class="etiqueta">
+                MEUS PROJETOS
+            </span>
+
+            <h1>
+                Minha <span>Galeria</span>
+            </h1>
+
+            <p>
+                Projetos e atividades desenvolvidos durante meus estudos.
+            </p>
+
         </section>
 
-        <section class="galeria secao">
-            <figure class="foto foto-grande">
-                <img
-                    src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=85"
-                    alt="Céu estrelado durante a noite">
-                <figcaption>
-                    <span>01 / UNIVERSO</span>
-                    <h2>Além das estrelas</h2>
-                </figcaption>
-            </figure>
+        <!-- CARTÕES -->
 
-            <figure class="foto">
-                <img
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85"
-                    alt="Detalhes de uma placa eletrônica">
-                <figcaption>
-                    <span>02 / TECNOLOGIA</span>
-                    <h2>O mundo digital</h2>
-                </figcaption>
-            </figure>
+        <section class="grade-projetos" aria-label="Projetos de programação">
 
-            <figure class="foto">
-                <img
-                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85"
-                    alt="Paisagem natural com montanhas e lago">
-                <figcaption>
-                    <span>03 / NATUREZA</span>
-                    <h2>Novos horizontes</h2>
-                </figcaption>
-            </figure>
+            <!-- LÓGICA DE PROGRAMAÇÃO -->
 
-            <figure class="foto">
-                <img
-                    src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85"
-                    alt="Arquitetura moderna vista de baixo">
-                <figcaption>
-                    <span>04 / ARQUITETURA</span>
-                    <h2>Formas e espaços</h2>
-                </figcaption>
-            </figure>
+            <article class="projeto">
 
-            <figure class="foto">
-                <img
-                    src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85"
-                    alt="Ondas do oceano">
-                <figcaption>
-                    <span>05 / OCEANO</span>
-                    <h2>Energia em movimento</h2>
-                </figcaption>
-            </figure>
+                <div class="projeto-topo logica">
+                    <h2>LÓGICA</h2>
+                </div>
 
-            <figure class="foto">
-                <img
-                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=85"
-                    alt="Pessoas trabalhando em equipe com computadores">
-                <figcaption>
-                    <span>06 / CRIATIVIDADE</span>
-                    <h2>Ideias em equipe</h2>
-                </figcaption>
-            </figure>
+                <div class="projeto-conteudo">
+
+                    <span class="projeto-numero">
+                        PROJETO 01
+                    </span>
+
+                    <h3>Lógica de Programação</h3>
+
+                    <p>
+                        Exercícios de raciocínio lógico, algoritmos,
+                        variáveis, condições e estruturas de repetição.
+                    </p>
+
+                    <a class="projeto-link" href="contato.html">
+                        Conheça mais →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- SCRIPTS -->
+
+            <article class="projeto">
+
+                <div class="projeto-topo scripts">
+                    <h2>SCRIPTS</h2>
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <span class="projeto-numero">
+                        PROJETO 02
+                    </span>
+
+                    <h3>Scripts e Terminal</h3>
+
+                    <p>
+                        Códigos e automações para executar tarefas,
+                        explorar comandos e entender como os scripts
+                        funcionam.
+                    </p>
+
+                    <a class="projeto-link" href="contato.html">
+                        Conheça mais →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- PYTHON -->
+
+            <article class="projeto">
+
+                <div class="projeto-topo python">
+                    <h2>PYTHON</h2>
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <span class="projeto-numero">
+                        PROJETO 03
+                    </span>
+
+                    <h3>Programação em Python</h3>
+
+                    <p>
+                        Meus estudos de Python, incluindo variáveis,
+                        tipos de dados, condições, laços e pequenos
+                        programas.
+                    </p>
+
+                    <a class="projeto-link" href="contato.html">
+                        Conheça mais →
+                    </a>
+
+                </div>
+
+            </article>
+
         </section>
 
-        <section class="chamada">
-            <div>
-                <span class="etiqueta">FAÇA PARTE</span>
-                <h2>Gostou do que viu?</h2>
-                <p>Envie sua opinião ou compartilhe uma ideia.</p>
-            </div>
-            <a href="contato.html" class="botao">Fale conosco ↗</a>
+        <!-- FINAL -->
+
+        <section class="mensagem-final">
+
+            <h2>
+                Todo projeto começa com uma ideia.
+            </h2>
+
+            <p>
+                Estou aprendendo e desenvolvendo novas habilidades
+                a cada etapa da minha jornada na Tecnologia da Informação.
+            </p>
+
+            <a href="contato.html" class="botao">
+                Entre em contato ↗
+            </a>
+
         </section>
+
     </main>
 
+    <!-- RODAPÉ -->
+
     <footer class="rodape">
-        <a href="index.html" class="logo">VISION<span>.</span></a>
-        <p>Projeto acadêmico de desenvolvimento web.</p>
-        <p>© 2026 Vision. Todos os direitos reservados.</p>
+
+        <a href="index.html" class="logo">
+            SETÚBAL<span>.</span>
+        </a>
+
+        <p>
+            Portfólio de um estudante de TI.
+        </p>
+
+        <p>
+            © 2026 — Todos os direitos reservados.
+        </p>
+
     </footer>
 
 </body>
+
 </html>
