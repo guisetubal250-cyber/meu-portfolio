@@ -5,148 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato | DevScripts</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Biblioteca de ícones modernos -->
+    <!-- Ícone moderno de check para o sucesso -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        /* Estilos específicos para ligar o HTML perfeitamente ao style.css */
-        .page-container {
-            max-width: 1200px;
+        /* Estrutura Centralizada Elegante */
+        .contato-container {
+            max-width: 550px;
             margin: 60px auto;
-            padding: 0 30px;
+            padding: 0 20px;
+            text-align: center;
         }
-        .contato-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .contato-info h1 {
-            font-size: 42px;
+
+        .contato-container h1 {
+            font-size: 36px;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #ffffff;
         }
-        .contato-info p {
-            color: #cbd5e1;
-            font-size: 17px;
-            line-height: 1.6;
-            margin-bottom: 35px;
-        }
-        .info-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 35px;
-        }
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: #ffffff;
+
+        .contato-container p {
+            color: #a0a0a0;
             font-size: 16px;
+            margin-bottom: 35px;
         }
-        .info-item i {
-            color: #0055ff;
-            font-size: 20px;
-        }
-        .redes-sociais {
-            display: flex;
-            gap: 15px;
-        }
-        .rede-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
+
+        /* Caixa do Formulário Minimalista */
+        .formulario-card {
             background-color: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 18px;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 85, 255, 0.3); /* Borda azul sutil */
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+            text-align: left;
+            transition: all 0.4s ease;
         }
-        .rede-icon:hover {
-            background-color: #0055ff;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 85, 255, 0.4);
-        }
-        .formulario-box {
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-            transition: all 0.5s ease;
-        }
-        .campo {
+
+        .campo-grupo {
             display: flex;
             flex-direction: column;
-            margin-bottom: 22px;
-            text-align: left;
+            margin-bottom: 20px;
         }
-        .campo label {
-            color: #0055ff !important;
-            font-size: 12px;
+
+        .campo-grupo label {
+            color: #0055ff; /* Rótulo Azul */
+            font-size: 13px;
             font-weight: 700;
-            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 8px;
         }
-        .campo input, 
-        .campo select,
-        .campo textarea {
+
+        .campo-grupo input,
+        .campo-grupo select,
+        .campo-grupo textarea {
             width: 100%;
-            padding: 14px 18px;
-            border-radius: 8px;
-            border: 1px solid #222222;
+            padding: 12px 16px;
             background-color: #000000 !important;
+            border: 1px solid #222222;
+            border-radius: 6px;
             color: #ffffff !important;
             font-size: 15px;
             outline: none;
             transition: all 0.3s ease;
         }
-        .campo input:focus, 
-        .campo select:focus,
-        .campo textarea:focus {
+
+        .campo-grupo input:focus,
+        .campo-grupo select:focus,
+        .campo-grupo textarea:focus {
             border-color: #0055ff;
-            box-shadow: 0 0 10px rgba(0, 85, 255, 0.2);
+            box-shadow: 0 0 8px rgba(0, 85, 255, 0.3);
         }
-        form button, button[type="submit"] {
-            background: #0055ff !important;
-            color: #ffffff !important;
-            border: none !important;
-            padding: 16px !important;
-            font-size: 16px !important;
-            font-weight: 700 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1.5px !important;
-            border-radius: 8px !important;
-            cursor: pointer !important;
-            box-shadow: 0 4px 20px rgba(0, 85, 255, 0.3) !important;
-            transition: all 0.3s ease !important;
-            margin-top: 10px !important;
-            width: 100% !important;
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
-        }
-        form button:hover, button[type="submit"]:hover {
-            transform: translateY(-3px) !important;
-            background: #0044cc !important;
-            box-shadow: 0 8px 25px rgba(0, 85, 255, 0.5) !important;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+
+        /* Animação suave para a caixinha de sucesso */
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENU SUPERIOR FIXO -->
+    <!-- MENU SUPERIOR -->
     <header>
         <div class="logo">DevScripts</div>
         <nav>
@@ -158,104 +97,98 @@
         </nav>
     </header>
 
-    <!-- CONTAINER DA PÁGINA -->
-    <main class="page-container">
-        <div class="contato-wrapper">
-            
-            <!-- COLUNA DA ESQUERDA: Informações de Texto -->
-            <div class="contato-info">
-                <h1>Entre em Contato</h1>
-                <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
+    <!-- ÁREA PRINCIPAL -->
+    <main class="contato-container">
+        <h1>Entre em Contato</h1>
+        <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
+
+        <div class="formulario-card" id="caixa-principal">
+            <!-- LEMBRETE: Substitua o e-mail abaixo pelo seu e-mail verdadeiro -->
+            <form id="form-contato" action="https://formsubmit.co" method="POST">
                 
-                <div class="info-links">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>seuemail@exemplo.com</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Brasil</span>
-                    </div>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="🚀 Nova mensagem do seu Portfólio!">
+
+                <div class="campo-grupo">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="name" placeholder="Digite seu nome completo" required>
                 </div>
 
-                <div class="redes-sociais">
-                    <a href="https://github.com" target="_blank" class="rede-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank" class="rede-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank" class="rede-icon"><i class="fab fa-instagram"></i></a>
+                <div class="campo-grupo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
                 </div>
-            </div>
 
-            <!-- COLUNA DA DIREITA: Caixa do Formulário Interativo -->
-            <div class="formulario-box" id="caixa-contato">
-                <!-- SUBSTITUA O EMAIL ABAIXO PELO SEU EMAIL REAL -->
-                <form id="meu-formulario" action="https://formsubmit.co" method="POST">
-                    
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="🚀 Nova mensagem de contato do seu Portfólio!">
+                <div class="campo-grupo">
+                    <label for="motivo">Motivo do Contato</label>
+                    <select id="motivo" name="reason">
+                        <option value="Dúvida sobre Script">Dúvida sobre Script</option>
+                        <option value="Proposta de Projeto">Proposta de Projeto</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
 
-                    <div class="campo">
-                        <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome" name="name" placeholder="Digite seu nome" required>
-                    </div>
+                <div class="campo-grupo">
+                    <label for="mensagem">Sua Mensagem</label>
+                    <textarea id="mensagem" name="message" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                </div>
 
-                    <div class="campo">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-                    </div>
-
-                    <div class="campo">
-                        <label for="motivo">Motivo do Contato:</label>
-                        <select id="motivo" name="reason">
-                            <option value="Dúvida sobre Script">Dúvida sobre Script</option>
-                            <option value="Proposta de Projeto">Proposta de Projeto</option>
-                            <option value="Outros">Outros</option>
-                        </select>
-                    </div>
-
-                    <div class="campo">
-                        <label for="mensagem">Sua Mensagem:</label>
-                        <textarea id="mensagem" name="message" rows="4" placeholder="Escreva aqui sua mensagem..." required></textarea>
-                    </div>
-
-                    <button type="submit" id="btn-enviar">
-                        <span>Enviar Mensagem</span>
-                        <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
-                    </button>
-                </form>
-            </div>
-
+                <button type="submit">Enviar Mensagem</button>
+            </form>
         </div>
     </main>
 
-    <!-- Script para processar o envio e exibir a caixinha linda de sucesso -->
+    <!-- Script de Envio Silencioso com Mensagem Maravilhosa no Final -->
     <script>
-        document.getElementById('meu-formulario').addEventListener('submit', function(e) {
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const btn = document.getElementById('btn-enviar');
-            const caixa = document.getElementById('caixa-contato');
+            const botao = this.querySelector('button[type="submit"]');
+            const caixa = document.getElementById('caixa-principal');
             
-            btn.innerHTML = '<span>Enviando...</span> <i class="fas fa-spinner fa-spin" style="margin-left: 8px;"></i>';
-            btn.style.pointerEvents = 'none';
-            btn.style.opacity = '0.7';
+            botao.innerHTML = 'Enviando...';
+            botao.style.pointerEvents = 'none';
+            botao.style.opacity = '0.7';
 
-            const formData = new FormData(this);
+            const dados = new FormData(this);
 
             fetch(this.action, {
                 method: 'POST',
-                body: formData,
+                body: dados,
                 headers: { 'Accept': 'application/json' }
             })
-            .then(response => {
-                if (response.ok) {
+            .then(resposta => {
+                if (resposta.ok) {
+                    // Substitui o formulário por uma caixinha maravilhosa de sucesso
+                    caixa.style.animation = 'aparecer 0.5s ease forwards';
+                    caixa.style.borderColor = '#0055ff';
                     caixa.innerHTML = `
-                        <div style="text-align: center; padding: 30px 10px; animation: fadeIn 0.6s ease forwards;">
-                            <div style="font-size: 55px; color: #0055ff; margin-bottom: 20px;">
-                                <i class="fas fa-circle-check"></i>
+                        <div style="text-align: center; padding: 20px 0;">
+                            <div style="font-size: 50px; color: #0055ff; margin-bottom: 15px;">
+                                <i class="fas fa-envelope-circle-check"></i>
                             </div>
-                            <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 12px; color: #ffffff;">
-                                Mensagem Recebida!
+                            <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">
+                                Mensagem Enviada!
                             </h2>
-                            <p style="color: #cbd5e1; font-size: 15px; line-height: 1.6;">
-                                Sua conexão cruzou a rede com sucesso. Eu, o criador, fui notificado e responderei em breve!
+                            <p style="color: #a0a0a0; font-size: 14px; line-height: 1.5; margin: 0;">
+                                O envio foi concluído com sucesso. Eu, o criador do projeto, já fui notificado no meu e-mail e responderei em breve!
                             </p>
+                        </div>
+                    `;
+                } else {
+                    alert('Erro ao enviar. Por favor, tente novamente.');
+                    botao.innerHTML = 'Enviar Mensagem';
+                    botao.style.pointerEvents = 'auto';
+                    botao.style.opacity = '1';
+                }
+            })
+            .catch(erro => {
+                alert('Erro na conexão com o servidor.');
+                botao.innerHTML = 'Enviar Mensagem';
+                botao.style.pointerEvents = 'auto';
+                botao.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>
