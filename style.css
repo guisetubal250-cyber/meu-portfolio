@@ -28,3 +28,27 @@
     transform: translateY(1px); /* Botão afunda ao ser clicado */
     box-shadow: 0 3px 10px rgba(0, 210, 255, 0.3);
 }
+/* Seletor super forte para o botão mudar de qualquer jeito */
+form button, button[type="submit"] {
+    background: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 14px 28px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border-radius: 50px !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4) !important;
+    transition: all 0.3s ease !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+form button:hover, button[type="submit"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6) !important;
+    background: linear-gradient(135deg, #00e5ff 0%, #0052d4 100%) !important;
+}
