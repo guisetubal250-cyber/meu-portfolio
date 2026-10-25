@@ -1,53 +1,30 @@
-/* Forçar o formulário a aparecer na tela */
-.formulario-container form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #111c2e; /* Tom azulado um pouco mais claro que o fundo */
-    border-radius: 8px;
-    border: 1px solid #00d2ff; /* Borda brilhante combinando com o menu */
-}
-
-.formulario-container .campo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.formulario-container label {
-    color: #ffffff !important; /* Força o texto a ficar branco */
-    font-size: 16px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.formulario-container input, 
-.formulario-container textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #ffffff !important; /* Força o fundo da caixa a ficar branco */
-    color: #000000 !important; /* Força o texto digitado a ficar preto */
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
+/* Estilo Moderno para o Botão de Enviar */
 .formulario-container button {
-    background-color: #00d2ff; /* Botão azul brilhante */
-    color: #000000;
+    background: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%); /* Degradê moderno azul */
+    color: #ffffff; /* Texto branco para dar contraste */
     border: none;
-    padding: 12px;
+    padding: 14px 28px;
     font-size: 16px;
-    font-weight: bold;
-    border-radius: 4px;
+    font-weight: 700; /* Texto mais marcante */
+    text-transform: uppercase; /* Letras maiúsculas estilo moderno */
+    letter-spacing: 1px; /* Espaçamento elegante entre as letras */
+    border-radius: 50px; /* Bordas totalmente arredondadas (estilo pílula) */
     cursor: pointer;
-    transition: background 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4); /* Sombra neon suave */
+    transition: all 0.3s ease; /* Efeito suave ao passar o mouse */
+    margin-top: 15px;
+    width: 100%; /* Ocupa toda a largura da caixa do formulário */
 }
 
+/* Efeito ao passar o mouse por cima (Hover) */
 .formulario-container button:hover {
-    background-color: #0099cc; /* Cor do botão ao passar o mouse */
+    transform: translateY(-2px); /* Botão sobe levemente */
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6); /* Sombra brilha mais */
+    background: linear-gradient(135deg, #00e5ff 0%, #0052d4 100%); /* Muda o degradê de leve */
+}
+
+/* Efeito ao clicar no botão (Active) */
+.formulario-container button:active {
+    transform: translateY(1px); /* Botão afunda ao ser clicado */
+    box-shadow: 0 3px 10px rgba(0, 210, 255, 0.3);
 }
