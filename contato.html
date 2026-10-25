@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato | DevScripts</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones modernos -->
-    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         /* Estrutura Centralizada Elegante e Limpa */
         .contato-container {
@@ -96,15 +94,9 @@
         <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
 
         <div class="formulario-card">
-            <!-- MUITO IMPORTANTE: Substitua o email abaixo pelo seu email real para não dar erro -->
-            <form action="https://formsubmit.co" method="POST">
+            <!-- Ao enviar, ativa o script mágico do pop-up instantaneamente -->
+            <form action="https://formsubmit.co" method="POST" onsubmit="alert('Mensagem enviada!');">
                 
-                <!-- Desativa o sistema de Captcha para enviar mais rápido -->
-                <input type="hidden" name="_captcha" value="false">
-                
-                <!-- Redireciona de volta para o próprio contato de forma limpa -->
-                <input type="hidden" name="_next" value="https://github.io">
-
                 <div class="campo-grupo">
                     <label for="nome">Nome Completo</label>
                     <input type="text" id="nome" name="name" placeholder="Digite seu nome completo" required>
