@@ -1,254 +1,206 @@
-/* ==========================================
-   CONFIGURAÇÕES GERAIS E RESETS
-   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #000000; /* Fundo Preto Puro */
-    color: #ffffff; /* Texto Branco */
+    background-color: #0f172a;
+    color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
-/* ==========================================
-   MENU SUPERIOR (HEADER)
-   ========================================== */
+/* Menu Superior (Navbar) */
 header {
-    background-color: #0a0a0a; /* Preto ligeiramente mais claro */
-    border-bottom: 2px solid #0055ff; /* Linha Azul Brilhante */
+    background-color: #1e293b;
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    border-bottom: 2px solid #38bdf8;
 }
 
-header .logo {
+.logo {
     font-size: 24px;
-    font-weight: 800;
-    color: #ffffff; /* Logo Branco */
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(0, 85, 255, 0.3);
+    font-weight: bold;
+    color: #38bdf8;
 }
 
 nav ul {
+    display: flex;
     list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-nav ul li a {
-    color: #a0a0a0; /* Links cinzas para dar contraste */
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover, 
-nav ul li a.active {
-    color: #0055ff; /* Azul ao passar o mouse ou ativo */
-    text-shadow: 0 0 10px rgba(0, 85, 255, 0.5);
-}
-
-/* ==========================================
-   ESTRUTURA DA PÁGINA INICIAL (INDEX)
-   ========================================== */
-.hero-container {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 30px;
-}
-
-.hero-wrapper {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-    align-items: center;
-}
-
-/* Coluna de Textos */
-.subtitulo-tag {
-    color: #0055ff; /* Detalhes em azul */
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.hero-textos h1 {
-    font-size: 54px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 25px;
-    color: #ffffff; /* Texto Principal Branco */
-}
-
-.nome-destaque {
-    color: #0055ff; /* Destaque em Azul */
-}
-
-.hero-textos p {
-    color: #d0d0d0; /* Parágrafo Branco Suave */
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 40px;
-}
-
-/* Botões Modernos */
-.botoes-grupo {
-    display: flex;
     gap: 20px;
 }
 
-.btn-principal {
-    background: #0055ff; /* Botão Azul */
-    color: #ffffff; /* Texto Branco */
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-weight: 700;
+nav a {
+    color: #94a3b8;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 20px rgba(0, 85, 255, 0.4);
-    transition: all 0.3s ease;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
-.btn-principal:hover {
-    transform: translateY(-3px);
-    background: #0044cc; /* Azul mais escuro no hover */
-    box-shadow: 0 6px 25px rgba(0, 85, 255, 0.6);
+nav a:hover, nav a.active {
+    color: #38bdf8;
 }
 
-.btn-secundario {
-    border: 2px solid #ffffff; /* Borda Branca */
-    color: #ffffff; /* Texto Branco */
-    padding: 13px 30px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-.btn-secundario:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-3px);
-}
-
-/* ==========================================
-   CARD DE PERFIL (INDEX - COLUNA DIREITA)
-   ========================================== */
-.perfil-card {
-    background: #0a0a0a; /* Caixa Preta */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda discreta */
-    border-radius: 24px;
-    padding: 50px 40px;
-    text-align: center;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.avatar-circulo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: #0055ff; /* Círculo Azul */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 25px;
-    box-shadow: 0 0 25px rgba(0, 85, 255, 0.4);
-}
-
-.avatar-circulo span {
-    font-size: 36px;
-    font-weight: 800;
-    color: #ffffff; /* Iniciais Brancas */
-    letter-spacing: -1px;
-}
-
-.perfil-card h2 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-/* Lista de Habilidades (Badges) */
-.badges {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+/* Área Principal */
+main {
+    flex: 1;
+    padding: 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
 }
 
-.badges span {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 12px 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    color: #cbd5e1;
+h1, h2 {
+    color: #f8fafc;
+    margin-bottom: 20px;
+}
+
+/* Banner Principal (Hero) */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid #334155;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #94a3b8;
+}
+
+/* Botões */
+.btn {
+    background-color: #38bdf8;
+    color: #0f172a;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* Grid de Cards & Galeria */
+.conteudo, .grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Cards da Home */
+.card {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    border-left: 4px solid #38bdf8;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+/* Customização dos Itens da Galeria */
+.item-galeria {
+    background-color: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    transition: transform 0.3s, border-color 0.3s;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+.item-galeria:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #334155;
+}
+
+.info-galeria {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    justify-content: center;
-    transition: all 0.3s ease;
+    flex-grow: 1;
 }
 
-.badges span i {
-    color: #0055ff; /* Ícones em Azul */
+.info-galeria h3 {
+    color: #38bdf8;
+    font-size: 18px;
 }
 
-.perfil-card:hover .badges span {
-    border-color: rgba(0, 85, 255, 0.3);
-    color: #ffffff;
+.info-galeria p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-/* ==========================================
-   EFEITOS INTERATIVOS DA GALERIA
-   ========================================== */
-.projeto-card {
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+/* Formulário de Contato */
+.form-container form {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+    border: 1px solid #334155;
 }
 
-.projeto-card:hover {
-    transform: translateY(-8px);
-    border-color: #0055ff !important; /* Borda Azul no hover */
-    box-shadow: 0 20px 40px rgba(0, 85, 255, 0.2) !important;
+.campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* ==========================================
-   RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS
-   ========================================== */
-@media (max-width: 900px) {
-    header {
-        padding: 20px 30px;
-    }
-    .hero-wrapper {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    .hero-textos {
-        text-align: center;
-    }
-    .botoes-grupo {
-        justify-content: center;
-    }
-    .hero-textos h1 {
-        font-size: 40px;
-    }
+.campo label {
+    font-weight: bold;
+    color: #94a3b8;
+}
+
+.campo input, .campo select, .campo textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: #fff;
+    font-size: 16px;
+}
+
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+/* Rodapé */
+footer {
+    background-color: #0f172a;
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+    font-size: 14px;
+    border-top: 1px solid #1e293b;
+    margin-top: auto;
 }
