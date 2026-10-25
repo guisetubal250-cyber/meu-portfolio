@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato | DevScripts</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícone moderno de check para o sucesso -->
+    <!-- Ícones modernos -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        /* Estrutura Centralizada Elegante */
+        /* Estrutura Centralizada Elegante e Limpa */
         .contato-container {
             max-width: 550px;
             margin: 60px auto;
@@ -32,12 +32,11 @@
         /* Caixa do Formulário Minimalista */
         .formulario-card {
             background-color: #0a0a0a;
-            border: 1px solid rgba(0, 85, 255, 0.3); /* Borda azul sutil */
+            border: 1px solid rgba(0, 85, 255, 0.3);
             border-radius: 12px;
             padding: 35px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
             text-align: left;
-            transition: all 0.4s ease;
         }
 
         .campo-grupo {
@@ -47,7 +46,7 @@
         }
 
         .campo-grupo label {
-            color: #0055ff; /* Rótulo Azul */
+            color: #0055ff;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
@@ -75,12 +74,6 @@
             border-color: #0055ff;
             box-shadow: 0 0 8px rgba(0, 85, 255, 0.3);
         }
-
-        /* Animação suave para a caixinha de sucesso */
-        @keyframes aparecer {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
@@ -102,12 +95,15 @@
         <h1>Entre em Contato</h1>
         <p>Dúvidas sobre os scripts ou propostas de projetos? Mande uma mensagem!</p>
 
-        <div class="formulario-card" id="caixa-principal">
-            <!-- LEMBRETE: Substitua o e-mail abaixo pelo seu e-mail verdadeiro -->
-            <form id="form-contato" action="https://formsubmit.co" method="POST">
+        <div class="formulario-card">
+            <!-- MUITO IMPORTANTE: Substitua o email abaixo pelo seu email real para não dar erro -->
+            <form action="https://formsubmit.co" method="POST">
                 
+                <!-- Desativa o sistema de Captcha para enviar mais rápido -->
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="🚀 Nova mensagem do seu Portfólio!">
+                
+                <!-- Redireciona de volta para o próprio contato de forma limpa -->
+                <input type="hidden" name="_next" value="https://github.io">
 
                 <div class="campo-grupo">
                     <label for="nome">Nome Completo</label>
@@ -138,57 +134,5 @@
         </div>
     </main>
 
-    <!-- Script de Envio Silencioso com Mensagem Maravilhosa no Final -->
-    <script>
-        document.getElementById('form-contato').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const botao = this.querySelector('button[type="submit"]');
-            const caixa = document.getElementById('caixa-principal');
-            
-            botao.innerHTML = 'Enviando...';
-            botao.style.pointerEvents = 'none';
-            botao.style.opacity = '0.7';
-
-            const dados = new FormData(this);
-
-            fetch(this.action, {
-                method: 'POST',
-                body: dados,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(resposta => {
-                if (resposta.ok) {
-                    // Substitui o formulário por uma caixinha maravilhosa de sucesso
-                    caixa.style.animation = 'aparecer 0.5s ease forwards';
-                    caixa.style.borderColor = '#0055ff';
-                    caixa.innerHTML = `
-                        <div style="text-align: center; padding: 20px 0;">
-                            <div style="font-size: 50px; color: #0055ff; margin-bottom: 15px;">
-                                <i class="fas fa-envelope-circle-check"></i>
-                            </div>
-                            <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">
-                                Mensagem Enviada!
-                            </h2>
-                            <p style="color: #a0a0a0; font-size: 14px; line-height: 1.5; margin: 0;">
-                                O envio foi concluído com sucesso. Eu, o criador do projeto, já fui notificado no meu e-mail e responderei em breve!
-                            </p>
-                        </div>
-                    `;
-                } else {
-                    alert('Erro ao enviar. Por favor, tente novamente.');
-                    botao.innerHTML = 'Enviar Mensagem';
-                    botao.style.pointerEvents = 'auto';
-                    botao.style.opacity = '1';
-                }
-            })
-            .catch(erro => {
-                alert('Erro na conexão com o servidor.');
-                botao.innerHTML = 'Enviar Mensagem';
-                botao.style.pointerEvents = 'auto';
-                botao.style.opacity = '1';
-            });
-        });
-    </script>
 </body>
 </html>
